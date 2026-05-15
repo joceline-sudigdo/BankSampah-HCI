@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>CleanCycle - Upload KTP</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet"
+  />
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#006e28",
+            "primary-container": "#34c759",
+            background: "#f4fcee",
+            surface: "#f4fcee",
+            "surface-container-high": "#e2ebde",
+            "surface-container-highest": "#dde5d8",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#eef6e9",
+            "on-surface": "#161d16",
+            "on-surface-variant": "#3d4a3c",
+            "secondary-container": "#baf474",
+            "on-secondary-container": "#447000"
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    }
+
+    .chunky-shadow {
+      box-shadow: 4px 4px 0px 0px rgba(22, 29, 22, 1);
+    }
+
+    .chunky-shadow-hover:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px 0px rgba(22, 29, 22, 1);
+    }
+
+    .chunky-shadow-active:active {
+      transform: translate(2px, 2px);
+      box-shadow: 0px 0px 0px 0px rgba(22, 29, 22, 1);
+    }
+
+    .drag-active {
+      background-color: #dff7d4;
+    }
+  </style>
+</head>
+
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+
+  <!-- HEADER -->
+  <header class="w-full sticky top-0 bg-surface border-b-4 border-on-surface z-50 chunky-shadow">
+
+    <div class="flex justify-between items-center px-5 md:px-10 py-4 max-w-[1200px] mx-auto">
+
+      <div class="text-3xl font-black">
+        CleanCycle
+      </div>
+
+      <div class="flex items-center gap-2">
+
+        <span class="material-symbols-outlined text-primary text-[32px]">
+          shield
+        </span>
+
+        <span class="uppercase tracking-widest hidden md:block font-bold">
+          Secure Session
+        </span>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- MAIN -->
+  <main class="flex-grow flex flex-col items-center px-5 py-10 max-w-[800px] mx-auto w-full">
+
+    <!-- TITLE -->
+    <div class="text-center mb-10">
+
+      <p class="font-bold text-primary uppercase tracking-widest mb-3">
+        Step 2 of 2
+      </p>
+
+      <h1 class="text-5xl font-black mb-4">
+        Secure Your Identity
+      </h1>
+
+      <p class="text-lg text-on-surface-variant max-w-[500px]">
+        To keep our community green and safe, we need to verify your credentials.
+      </p>
+
+    </div>
+
+    <!-- FORM -->
+    <div class="w-full bg-surface-container-lowest border-4 border-on-surface rounded-2xl p-6 md:p-10 chunky-shadow">
+
+      <form class="space-y-8">
+
+        <!-- UPLOAD -->
+        <section class="space-y-5">
+
+          <div class="flex items-center gap-2">
+
+            <span class="material-symbols-outlined">
+              fingerprint
+            </span>
+
+            <h2 class="text-2xl font-bold">
+              KTP Upload
+            </h2>
+
+          </div>
+
+          <!-- FILE INPUT -->
+          <input
+            type="file"
+            id="ktpInput"
+            accept=".png,.jpg,.jpeg"
+            class="hidden"
+          />
+
+          <!-- DROP AREA -->
+          <div id="dropArea">
+
+            <div
+              class="w-full aspect-video md:aspect-[3/1] bg-surface-container-high border-4 border-dashed border-on-surface rounded-2xl flex flex-col items-center justify-center p-8 text-center cursor-pointer hover:bg-[#dff7d4] transition-all"
+            >
+
+              <span class="material-symbols-outlined text-[60px] mb-3 text-on-surface-variant">
+                upload_file
+              </span>
+
+              <p class="text-xl font-bold">
+                Drag and drop your KTP scan here
+              </p>
+
+              <p class="text-sm text-on-surface-variant">
+                PNG, JPG up to 10MB
+              </p>
+
+              <p
+                id="fileName"
+                class="mt-4 font-bold text-primary hidden"
+              ></p>
+
+            </div>
+
+          </div>
+
+          <!-- BUTTON -->
+          <button
+            id="uploadBtn"
+            type="button"
+            class="w-full py-4 px-6 bg-surface-container-highest border-4 border-on-surface rounded-2xl font-bold uppercase flex items-center justify-center gap-2 chunky-shadow chunky-shadow-hover chunky-shadow-active"
+          >
+
+            <span class="material-symbols-outlined">
+              add_a_photo
+            </span>
+
+            Upload File
+
+          </button>
+
+        </section>
+
+        <!-- PASSWORD -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+          <div class="flex flex-col gap-2">
+
+            <label class="font-bold">
+              Password
+            </label>
+
+            <input
+              type="password"
+              placeholder="••••••••"
+              class="w-full p-4 border-4 border-on-surface rounded-2xl"
+            />
+
+          </div>
+
+          <div class="flex flex-col gap-2">
+
+            <label class="font-bold">
+              Confirm Password
+            </label>
+
+            <input
+              type="password"
+              placeholder="••••••••"
+              class="w-full p-4 border-4 border-on-surface rounded-2xl"
+            />
+
+          </div>
+
+        </section>
+
+        <!-- FINISH BUTTON -->
+        <button
+          onclick="finishSetup(event)"
+          type="submit"
+          class="w-full py-6 px-8 bg-primary-container text-on-surface border-4 border-on-surface rounded-2xl text-2xl font-black flex items-center justify-center gap-3 chunky-shadow chunky-shadow-hover chunky-shadow-active"
+        >
+
+          Finish Setup & Get 100 XP
+
+          <span
+            class="material-symbols-outlined text-[32px]"
+            style="font-variation-settings: 'FILL' 1;"
+          >
+            stars
+          </span>
+
+        </button>
+
+      </form>
+
+    </div>
+
+  </main>
+
+  <!-- SUCCESS POPUP -->
+  <div
+    id="successPopup"
+    class="fixed inset-0 bg-black/50 flex items-center justify-center z-[999] hidden"
+  >
+
+    <div
+      class="bg-surface-container-lowest border-4 border-on-surface rounded-2xl p-8 w-[90%] max-w-[420px] chunky-shadow text-center"
+    >
+
+      <div
+        class="w-24 h-24 mx-auto mb-5 rounded-full bg-primary-container border-4 border-on-surface flex items-center justify-center"
+      >
+
+        <span
+          class="material-symbols-outlined text-[48px]"
+          style="font-variation-settings: 'FILL' 1;"
+        >
+          stars
+        </span>
+
+      </div>
+
+      <h2 class="text-4xl font-black mb-3">
+        Setup Complete!
+      </h2>
+
+      <p class="text-lg text-on-surface-variant mb-6">
+        Your CleanCycle account is ready.
+        You earned
+        <span class="font-bold text-primary">
+          100 XP
+        </span>
+        🎉
+      </p>
+
+      <button
+        onclick="goToDashboard()"
+        class="w-full py-4 bg-primary-container border-4 border-on-surface rounded-2xl text-xl font-black chunky-shadow chunky-shadow-hover chunky-shadow-active"
+      >
+        Continue to Dashboard
+      </button>
+
+    </div>
+
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+
+    const uploadBtn = document.getElementById("uploadBtn");
+    const fileInput = document.getElementById("ktpInput");
+    const dropArea = document.getElementById("dropArea");
+    const fileName = document.getElementById("fileName");
+
+    // OPEN FILE
+    uploadBtn.addEventListener("click", () => {
+      fileInput.click();
+    });
+
+    // CLICK AREA
+    dropArea.addEventListener("click", () => {
+      fileInput.click();
+    });
+
+    // FILE SELECT
+    fileInput.addEventListener("change", () => {
+
+      if (fileInput.files.length > 0) {
+
+        const file = fileInput.files[0];
+
+        fileName.textContent = `Uploaded: ${file.name}`;
+        fileName.classList.remove("hidden");
+
+      }
+
+    });
+
+    // DRAG OVER
+    dropArea.addEventListener("dragover", (e) => {
+
+      e.preventDefault();
+
+      dropArea.classList.add("drag-active");
+
+    });
+
+    // DRAG LEAVE
+    dropArea.addEventListener("dragleave", () => {
+
+      dropArea.classList.remove("drag-active");
+
+    });
+
+    // DROP FILE
+    dropArea.addEventListener("drop", (e) => {
+
+      e.preventDefault();
+
+      dropArea.classList.remove("drag-active");
+
+      const files = e.dataTransfer.files;
+
+      if (files.length > 0) {
+
+        fileInput.files = files;
+
+        fileName.textContent = `Uploaded: ${files[0].name}`;
+        fileName.classList.remove("hidden");
+
+      }
+
+    });
+
+    // FINISH SETUP
+    function finishSetup(event) {
+
+      event.preventDefault();
+
+      document
+        .getElementById("successPopup")
+        .classList.remove("hidden");
+
+    }
+
+    // REDIRECT
+    function goToDashboard() {
+
+      window.location.href = "user-dashboard.html";
+
+    }
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html class="light" lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "tertiary-fixed": "#ffdad7",
+            "secondary-container": "#baf474",
+            "secondary-fixed": "#baf474",
+            "on-surface-variant": "#3d4a3c",
+            "primary": "#006e28",
+            "on-secondary": "#ffffff",
+            "on-background": "#161d16",
+            "on-primary-container": "#004d1a",
+            "inverse-primary": "#53e16f",
+            "surface-container-low": "#eef6e9",
+            "on-tertiary-fixed-variant": "#7e2a27",
+            "on-surface": "#161d16",
+            "on-error-container": "#93000a",
+            "surface-container": "#e8f0e3",
+            "on-secondary-fixed": "#102000",
+            "inverse-on-surface": "#ebf3e6",
+            "surface-container-highest": "#dde5d8",
+            "background": "#f4fcee",
+            "surface-dim": "#d4ddd0",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed-variant": "#2f4f00",
+            "tertiary": "#9c413d",
+            "tertiary-fixed-dim": "#ffb3ad",
+            "surface": "#f4fcee",
+            "tertiary-container": "#ff8e86",
+            "outline": "#6d7b6b",
+            "on-error": "#ffffff",
+            "surface-tint": "#006e28",
+            "on-primary-fixed-variant": "#00531c",
+            "secondary": "#406900",
+            "surface-container-lowest": "#ffffff",
+            "surface-bright": "#f4fcee",
+            "surface-container-high": "#e2ebde",
+            "on-primary-fixed": "#002107",
+            "on-primary": "#ffffff",
+            "surface-variant": "#dde5d8",
+            "on-secondary-container": "#447000",
+            "secondary-fixed-dim": "#9fd75b",
+            "outline-variant": "#bccbb8",
+            "primary-container": "#34c759",
+            "inverse-surface": "#2b322a",
+            "error-container": "#ffdad6",
+            "primary-fixed-dim": "#53e16f",
+            "on-tertiary-container": "#772523",
+            "on-tertiary-fixed": "#410004",
+            "error": "#ba1a1a",
+            "primary-fixed": "#72fe88"
+          },
+          borderRadius: {
+            DEFAULT: "1rem",
+            lg: "2rem",
+            xl: "3rem",
+            full: "9999px"
+          },
+          spacing: {
+            "stack-lg": "32px",
+            "stack-sm": "8px",
+            "stack-md": "16px",
+            "margin-desktop": "40px",
+            "margin-mobile": "20px",
+            "unit": "8px",
+            "gutter": "16px"
+          },
+          fontFamily: {
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"]
+          },
+          fontSize: {
+            "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "700"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+            "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "800"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "500"}],
+            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "800"}],
+            "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "500"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+
+  <link rel="stylesheet" href="style.css"/>
+
+</head>
+
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+
+  <!-- Top Navigation Bar -->
+  <header class="bg-surface border-b-[3px] border-[#1A1A1A] shadow-[0px_4px_0px_0px_rgba(26,26,26,1)] sticky top-0 z-50">
+    <nav class="flex justify-between items-center w-full px-margin-desktop py-stack-md max-w-[1200px] mx-auto">
+
+      <div class="text-headline-md font-headline-md font-black text-primary tracking-tight">
+        Bank Sampah Malang
+      </div>
+
+      <div class="hidden md:flex gap-gutter items-center">
+        <a class="text-primary border-b-4 border-primary font-bold font-label-lg text-label-lg py-1 px-2" href="#">Home</a>
+        <a class="text-on-surface-variant font-medium font-label-lg text-label-lg hover:text-primary transition-all duration-200 py-1 px-2" href="#">Request</a>
+        <a class="text-on-surface-variant font-medium font-label-lg text-label-lg hover:text-primary transition-all duration-200 py-1 px-2" href="#">Market</a>
+        <a class="text-on-surface-variant font-medium font-label-lg text-label-lg hover:text-primary transition-all duration-200 py-1 px-2" href="#">Social</a>
+      </div>
+
+      <div class="flex gap-stack-md items-center">
+        <button class="p-2 text-on-surface hover:text-primary transition-colors">
+          <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+        </button>
+
+        <button class="p-2 text-on-surface hover:text-primary transition-colors">
+          <span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+        </button>
+      </div>
+
+    </nav>
+  </header>
+
+  <main class="max-w-[1200px] mx-auto px-margin-desktop py-stack-lg min-h-screen grid grid-cols-1 lg:grid-cols-2 gap-stack-lg items-center">
+
+    <!-- Welcome Hero Section -->
+    <section class="flex flex-col items-center lg:items-start text-center lg:text-left space-y-stack-lg">
+
+      <div class="relative w-64 h-64 lg:w-80 lg:h-80 bg-secondary-container rounded-full chunky-border flex items-center justify-center overflow-hidden">
+        <img alt="Mascot EcoBuddy" class="w-full h-full object-cover" src="screen.png"/>
+      </div>
+
+      <div class="space-y-stack-sm">
+        <h1 class="font-display-lg text-display-lg text-on-background">
+          Selamat Datang di <span class="text-primary">CleanCycle!</span>
+        </h1>
+
+        <p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+          Ubah sampahmu menjadi poin berharga dan selamatkan bumi bersama EcoBuddy. Siap berpetualang hari ini?
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-stack-md w-full max-w-md lg:max-w-none">
+
+        <button 
+  onclick="window.location.href='awal.html'"
+  class="flex-1 chunky-border bg-primary-container text-on-primary-container px-stack-lg py-stack-md rounded-full font-headline-md text-headline-md block-shadow-primary btn-interact-primary flex items-center justify-center gap-stack-sm"
+>
+  Mulai Petualangan
+
+  <span class="material-symbols-outlined" data-icon="rocket_launch">
+    rocket_launch
+  </span>
+</button>
+
+        <button class="flex-1 chunky-border bg-surface text-on-surface px-stack-lg py-stack-md rounded-full font-headline-md text-headline-md block-shadow-secondary btn-interact flex items-center justify-center">
+          Masuk
+        </button>
+
+      </div>
+
+      <!-- Experience Bar Mini -->
+      <div class="w-full max-w-md bg-surface-container-high h-4 rounded-full chunky-border overflow-hidden">
+        <div class="bg-primary h-full w-2/3"></div>
+      </div>
+
+      <p class="font-label-sm text-label-sm text-on-surface-variant">
+        650 / 1000 XP untuk Level Berikutnya
+      </p>
+
+    </section>
+
+    <!-- Login Card Section -->
+    <section class="flex justify-center lg:justify-end">
+
+      <div class="w-full max-w-md bg-surface-container-lowest chunky-border rounded-xl p-stack-lg block-shadow-secondary relative">
+
+        <!-- Floating Streak Tag -->
+        <div class="absolute -top-6 -right-4 bg-tertiary-container chunky-border px-stack-md py-stack-sm rounded-full block-shadow-secondary flex items-center gap-2">
+          <span class="material-symbols-outlined text-tertiary" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+
+          <span class="font-label-lg text-label-lg text-on-tertiary-container">
+            7 Hari Beruntun!
+          </span>
+        </div>
+
+        <h2 class="font-headline-lg text-headline-lg text-on-surface mb-stack-md">
+          Akses Akunmu
+        </h2>
+
+        <div class="space-y-stack-md">
+
+          <div class="space-y-stack-sm">
+            <label class="font-label-lg text-label-lg text-on-surface-variant block ml-2">
+              Nomor Telepon
+            </label>
+
+            <div class="relative">
+              <span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant material-symbols-outlined" data-icon="phone">phone</span>
+
+              <input class="w-full pl-12 pr-4 py-4 chunky-border rounded-full font-body-lg text-body-lg bg-surface focus:ring-4 focus:ring-primary-container focus:border-primary outline-none transition-all placeholder:text-outline-variant" placeholder="+62 812-3456-789" type="tel"/>
+            </div>
+          </div>
+
+          <button class="w-full chunky-border bg-secondary-fixed text-on-secondary-fixed py-stack-md rounded-full font-headline-md text-headline-md block-shadow-secondary btn-interact">
+            Lanjutkan
+          </button>
+
+          <div class="flex items-center gap-stack-md py-stack-md">
+            <hr class="flex-1 border-t-2 border-outline-variant"/>
+            <span class="font-label-sm text-label-sm text-on-surface-variant">ATAU LOGIN DENGAN</span>
+            <hr class="flex-1 border-t-2 border-outline-variant"/>
+          </div>
+
+          <div class="grid grid-cols-2 gap-stack-md">
+
+            <button class="chunky-border bg-white text-on-surface py-stack-sm rounded-full flex items-center justify-center gap-2 block-shadow-secondary btn-interact">
+              <span class="material-symbols-outlined" data-icon="google">google</span>
+              <span class="font-label-lg">Google</span>
+            </button>
+
+            <button class="chunky-border bg-white text-on-surface py-stack-sm rounded-full flex items-center justify-center gap-2 block-shadow-secondary btn-interact">
+              <span class="material-symbols-outlined" data-icon="apple">ios</span>
+              <span class="font-label-lg">Apple</span>
+            </button>
+
+          </div>
+
+        </div>
+
+        <p class="mt-stack-lg text-center font-label-sm text-label-sm text-on-surface-variant">
+          Belum punya akun?
+          <a class="text-primary font-bold hover:underline" href="register.html">
+            Daftar Sekarang!
+          </a>
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-surface-container-highest border-t-[3px] border-[#1A1A1A] mt-stack-lg">
+
+    <div class="w-full py-stack-lg px-margin-desktop grid grid-cols-1 md:grid-cols-2 gap-stack-lg items-center max-w-[1200px] mx-auto">
+
+      <div class="space-y-stack-sm text-center md:text-left">
+        <div class="text-headline-md font-headline-md font-black text-secondary">
+          Bank Sampah Malang
+        </div>
+
+        <p class="font-body-md text-body-md text-on-surface-variant">
+          © 2026 Bank Sampah Malang. Waste is just a resource in the wrong place!
+        </p>
+      </div>
+
+      <div class="flex flex-wrap justify-center md:justify-end gap-x-stack-lg gap-y-stack-sm">
+        <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline decoration-2 underline-offset-4 transition-all" href="#">Community Feed</a>
+
+        <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline decoration-2 underline-offset-4 transition-all" href="#">Leaderboard</a>
+
+        <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline decoration-2 underline-offset-4 transition-all" href="#">How to Play</a>
+
+        <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary underline decoration-2 underline-offset-4 transition-all" href="#">Eco-Impact Report</a>
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>

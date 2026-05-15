@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>Daftar CleanCycle - Langkah 1</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#006e28",
+            background: "#f4fcee",
+            surface: "#f4fcee",
+            "surface-container-low": "#eef6e9",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-highest": "#dde5d8",
+            "primary-container": "#34c759",
+            "primary-fixed": "#72fe88",
+            "secondary-fixed-dim": "#9fd75b",
+            "secondary-container": "#baf474",
+            "on-surface": "#161d16",
+            "on-surface-variant": "#3d4a3c",
+            outline: "#6d7b6b"
+          },
+
+          fontFamily: {
+            sans: ["Plus Jakarta Sans"]
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .neo-border {
+      border: 3px solid #161d16;
+    }
+
+    .neo-shadow {
+      box-shadow: 4px 4px 0px #161d16;
+    }
+
+    .neo-shadow-button {
+      box-shadow: 0px 4px 0px #102000;
+    }
+
+    .neo-shadow-button:active {
+      transform: translateY(2px);
+      box-shadow: 0px 2px 0px #102000;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      opacity: 0;
+      cursor: pointer;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+
+  <!-- HEADER -->
+  <header class="sticky top-0 z-50 bg-surface border-b-4 border-on-surface shadow-[4px_4px_0px_0px_#161d16]">
+
+    <div class="max-w-[1200px] mx-auto px-5 md:px-10 py-4 flex items-center justify-between">
+
+      <!-- Logo -->
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary text-3xl"
+          style="font-variation-settings:'FILL' 1;">
+          recycling
+        </span>
+
+        <h1 class="text-3xl font-extrabold">
+          CleanCycle
+        </h1>
+      </div>
+
+      <!-- Menu -->
+      <nav class="hidden md:flex items-center gap-8 text-[15px] font-semibold">
+        <a class="text-on-surface-variant hover:text-primary transition-colors" href="#">
+          Cara Kerja
+        </a>
+
+        <a class="text-on-surface-variant hover:text-primary transition-colors" href="#">
+          Peringkat
+        </a>
+
+        <a class="text-on-surface-variant hover:text-primary transition-colors" href="#">
+          Komunitas
+        </a>
+      </nav>
+
+      <!-- Login -->
+      <button onclick="window.location.href='loginpage.html'"
+        class="hidden sm:block px-6 py-2 rounded-full neo-border bg-white font-semibold hover:-translate-y-1 transition-all active:translate-y-1">
+        Masuk
+      </button>
+
+    </div>
+
+  </header>
+
+  <!-- MAIN -->
+  <main class="flex-1 flex items-center justify-center px-5 py-10">
+
+    <div
+      class="w-full max-w-[560px] bg-surface-container-low rounded-[28px] neo-border neo-shadow p-8 relative overflow-hidden">
+
+      <!-- Badge -->
+      <div
+        class="inline-flex items-center px-4 py-1 rounded-full bg-secondary-container neo-border text-[12px] font-bold uppercase tracking-wider mb-4">
+        Pendaftaran
+      </div>
+
+      <!-- Title -->
+      <div class="mb-6">
+
+        <h2 class="text-[40px] leading-[45px] font-extrabold mb-2">
+          Gabung Jadi Eco Hero Squad!
+        </h2>
+
+        <p class="text-on-surface-variant text-[16px] leading-7">
+          Lengkapi data dirimu untuk mulai mengumpulkan poin dan menyelamatkan bumi bersama CleanCycle.
+        </p>
+
+      </div>
+
+      <!-- Progress -->
+      <div class="mb-8">
+
+        <div class="flex justify-between mb-2 text-sm font-bold">
+          <span>Langkah 1 dari 2</span>
+          <span>50%</span>
+        </div>
+
+        <div class="w-full h-4 bg-surface-container-highest rounded-full neo-border overflow-hidden">
+
+          <div class="h-full w-1/2 bg-primary-container border-r-2 border-on-surface rounded-full"></div>
+
+        </div>
+
+      </div>
+
+      <!-- FORM -->
+      <form class="space-y-6">
+
+        <!-- Nama -->
+        <div>
+
+          <label class="block mb-2 font-bold text-sm">
+            Nama Lengkap
+          </label>
+
+          <div class="relative">
+
+            <input type="text" placeholder="John Doe"
+              class="w-full h-14 px-5 rounded-full neo-border bg-white outline-none focus:ring-4 focus:ring-green-200 text-lg" />
+
+            <span class="material-symbols-outlined absolute right-5 top-1/2 -translate-y-1/2 text-on-surface-variant">
+              person
+            </span>
+
+          </div>
+
+        </div>
+
+        <!-- Username + Tanggal -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+          <!-- Username -->
+          <div>
+
+            <label class="block mb-2 font-bold text-sm">
+              Username
+            </label>
+
+            <div class="relative">
+
+              <input type="text" placeholder="eco_warrior"
+                class="w-full h-14 px-5 rounded-full neo-border bg-white outline-none focus:ring-4 focus:ring-green-200 text-lg" />
+
+              <span class="material-symbols-outlined absolute right-5 top-1/2 -translate-y-1/2 text-on-surface-variant">
+                alternate_email
+              </span>
+
+            </div>
+
+          </div>
+
+          <!-- Tanggal -->
+          <div>
+
+            <label class="block mb-2 font-bold text-sm">
+              Tanggal Lahir
+            </label>
+
+            <div class="relative">
+
+              <input type="date"
+                class="w-full h-14 px-5 rounded-full neo-border bg-white outline-none focus:ring-4 focus:ring-green-200 text-lg appearance-none" />
+
+              <span class="material-symbols-outlined absolute right-5 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">
+                calendar_today
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Email -->
+        <div>
+
+          <label class="block mb-2 font-bold text-sm">
+            Alamat Email
+          </label>
+
+          <div class="relative">
+
+            <input type="email" placeholder="nama@email.com"
+              class="w-full h-14 px-5 rounded-full neo-border bg-white outline-none focus:ring-4 focus:ring-green-200 text-lg" />
+
+            <span class="material-symbols-outlined absolute right-5 top-1/2 -translate-y-1/2 text-on-surface-variant">
+              mail
+            </span>
+
+          </div>
+
+        </div>
+
+        <!-- Button -->
+        <div class="pt-4 flex flex-col md:flex-row gap-4 items-center">
+
+          <button type="button"
+            onclick="window.location.href='regist-upload ktp.html'"
+            class="w-full md:w-2/3 h-16 rounded-full bg-primary-container neo-border neo-shadow-button text-[22px] font-bold flex items-center justify-center gap-2 hover:-translate-y-1 transition-all group">
+
+            Lanjutkan
+
+            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">
+              arrow_forward
+            </span>
+
+          </button>
+
+          <p class="text-sm text-on-surface-variant leading-6">
+            Dengan mendaftar, kamu menyetujui
+            <a href="#" class="underline font-bold text-primary">
+              Panduan Komunitas
+            </a>
+            kami.
+          </p>
+
+        </div>
+
+      </form>
+
+      <!-- Blur Decoration -->
+      <div class="absolute -top-10 -right-10 w-32 h-32 bg-green-300/20 blur-3xl rounded-full"></div>
+
+      <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-lime-300/20 blur-3xl rounded-full"></div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-surface-container-highest border-t-4 border-on-surface mt-10">
+
+    <div
+      class="max-w-[1200px] mx-auto px-5 md:px-10 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
+
+      <!-- Left -->
+      <div class="text-center md:text-left">
+
+        <h3 class="text-2xl font-extrabold">
+          CleanCycle
+        </h3>
+
+        <p class="text-on-surface-variant mt-1">
+          © 2026 CleanCycle. Membuat bumi lebih hijau dengan cara yang seru.
+        </p>
+
+      </div>
+
+      <!-- Links -->
+      <div class="flex flex-wrap justify-center gap-6 text-sm font-semibold">
+
+        <a href="#" class="underline text-on-surface-variant hover:text-on-surface">
+          Eco Tips
+        </a>
+
+        <a href="#" class="underline text-on-surface-variant hover:text-on-surface">
+          Panduan Komunitas
+        </a>
+
+        <a href="#" class="underline text-on-surface-variant hover:text-on-surface">
+          Kebijakan Privasi
+        </a>
+
+        <a href="#" class="underline text-on-surface-variant hover:text-on-surface">
+          Bantuan
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>

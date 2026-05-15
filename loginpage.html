@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>CleanCycle | Hero Login</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800;900&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    }
+
+    .neo-shadow {
+      box-shadow: 4px 4px 0px 0px rgba(22, 29, 22, 1);
+    }
+
+    .neo-shadow-lg {
+      box-shadow: 8px 8px 0px 0px rgba(22, 29, 22, 1);
+    }
+
+    .neo-shadow-button {
+      box-shadow: 0px 4px 0px 0px #004d1a;
+    }
+
+    .neo-shadow-social {
+      box-shadow: 0px 3px 0px 0px rgba(22, 29, 22, 1);
+    }
+
+    .active-press:active {
+      transform: translateY(2px);
+      box-shadow: 0px 1px 0px 0px #004d1a;
+    }
+
+    .active-press-social:active {
+      transform: translateY(2px);
+      box-shadow: 0px 1px 0px 0px rgba(22, 29, 22, 1);
+    }
+
+    .eco-pattern {
+      background-color: #f4fcee;
+      background-image: radial-gradient(#bccbb8 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+  </style>
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "secondary-fixed-dim": "#9fd75b",
+            "on-surface": "#161d16",
+            "primary": "#006e28",
+            "on-secondary-fixed-variant": "#2f4f00",
+            "surface-variant": "#dde5d8",
+            "surface-bright": "#f4fcee",
+            "on-tertiary-container": "#772523",
+            "primary-fixed": "#72fe88",
+            "surface-container-low": "#eef6e9",
+            "primary-container": "#34c759",
+            "inverse-surface": "#2b322a",
+            "surface-container-highest": "#dde5d8",
+            "secondary-fixed": "#baf474",
+            "surface-container-high": "#e2ebde",
+            "surface-container": "#e8f0e3",
+            "on-error": "#ffffff",
+            "background": "#f4fcee",
+            "on-background": "#161d16",
+            "tertiary-container": "#ff8e86",
+            "on-primary-fixed": "#002107",
+            "tertiary-fixed-dim": "#ffb3ad",
+            "on-secondary-fixed": "#102000",
+            "on-tertiary": "#ffffff",
+            "surface": "#f4fcee",
+            "on-primary-container": "#004d1a",
+            "on-secondary-container": "#447000",
+            "outline-variant": "#bccbb8",
+            "tertiary": "#9c413d",
+            "inverse-on-surface": "#ebf3e6",
+            "error": "#ba1a1a",
+            "on-tertiary-fixed": "#410004",
+            "on-secondary": "#ffffff",
+            "inverse-primary": "#53e16f",
+            "on-primary-fixed-variant": "#00531c",
+            "primary-fixed-dim": "#53e16f",
+            "error-container": "#ffdad6",
+            "tertiary-fixed": "#ffdad7",
+            "surface-container-lowest": "#ffffff",
+            "on-primary": "#ffffff",
+            "secondary-container": "#baf474",
+            "on-tertiary-fixed-variant": "#7e2a27",
+            "on-surface-variant": "#3d4a3c",
+            "surface-dim": "#d4ddd0",
+            "outline": "#6d7b6b",
+            "secondary": "#406900",
+            "on-error-container": "#93000a",
+            "surface-tint": "#006e28"
+          },
+
+          borderRadius: {
+            DEFAULT: "1rem",
+            lg: "2rem",
+            xl: "3rem",
+            full: "9999px"
+          },
+
+          spacing: {
+            "margin-desktop": "40px",
+            "gutter": "16px",
+            "stack-lg": "32px",
+            "margin-mobile": "20px",
+            "unit": "8px",
+            "stack-md": "16px",
+            "stack-sm": "8px"
+          },
+
+          fontFamily: {
+            "body-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"]
+          },
+
+          fontSize: {
+            "body-md": ["16px", {
+              lineHeight: "24px",
+              fontWeight: "500"
+            }],
+            "body-lg": ["18px", {
+              lineHeight: "28px",
+              fontWeight: "500"
+            }],
+            "headline-md": ["24px", {
+              lineHeight: "32px",
+              fontWeight: "700"
+            }],
+            "headline-lg-mobile": ["28px", {
+              lineHeight: "34px",
+              fontWeight: "800"
+            }],
+            "display-lg": ["40px", {
+              lineHeight: "48px",
+              letterSpacing: "-0.02em",
+              fontWeight: "800"
+            }],
+            "label-lg": ["14px", {
+              lineHeight: "20px",
+              letterSpacing: "0.02em",
+              fontWeight: "700"
+            }],
+            "label-sm": ["12px", {
+              lineHeight: "16px",
+              letterSpacing: "0.04em",
+              fontWeight: "700"
+            }],
+            "headline-lg": ["32px", {
+              lineHeight: "40px",
+              letterSpacing: "-0.01em",
+              fontWeight: "800"
+            }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-background eco-pattern min-h-screen flex flex-col items-center justify-center p-margin-mobile md:p-margin-desktop text-on-surface">
+
+  <!-- Header -->
+  <header class="w-full fixed top-0 left-0 bg-surface border-b-4 border-on-surface neo-shadow z-50">
+    <div class="flex justify-between items-center px-margin-desktop py-4 max-w-[1200px] mx-auto">
+
+      <div class="font-headline-lg text-headline-lg font-black text-on-surface">
+        CleanCycle
+      </div>
+
+      <div class="hidden md:flex gap-8 items-center">
+        <a class="text-on-surface-variant font-medium hover:text-primary transition-colors font-label-lg text-label-lg" href="#">
+          Bagaimana Cara Kerja?
+        </a>
+
+        <a class="text-on-surface-variant font-medium hover:text-primary transition-colors font-label-lg text-label-lg" href="#">
+          Peringkat
+        </a>
+
+        <a class="text-on-surface-variant font-medium hover:text-primary transition-colors font-label-lg text-label-lg" href="#">
+          Komunitas
+        </a>
+      </div>
+
+      <button 
+  onclick="window.location.href='regist.html'"
+  class="font-label-lg text-label-lg bg-primary-container text-on-primary-container border-2 border-on-surface px-6 py-2 rounded-full neo-shadow-social active-press-social transition-all"
+>
+  Gabung Sekarang
+</button>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="w-full max-w-[480px] mt-24">
+
+    <!-- Login Card -->
+    <div class="bg-surface border-[4px] border-on-surface p-8 md:p-10 rounded-lg neo-shadow-lg relative overflow-hidden">
+
+      <!-- Badge -->
+      <div class="absolute -top-4 -right-4 bg-tertiary-container border-2 border-on-surface px-4 py-2 rotate-12 neo-shadow">
+        <div class="flex items-center gap-2">
+         
+
+         
+        </div>
+      </div>
+
+      <!-- Heading -->
+      <div class="text-center mb-8">
+
+        <h1 class="font-display-lg text-display-lg text-on-surface mb-2 tracking-tight">
+          Selamat datang kembali, Eco-Warrior!
+        </h1>
+
+        <p class="font-body-md text-body-md text-on-surface-variant">
+          Siap mengurangi jejak karbon dan menyelamatkan bumi? Masuk untuk melanjutkan perjalananmu.
+        </p>
+
+      </div>
+
+      <!-- Form -->
+      <form action="#" class="space-y-stack-md" onsubmit="return false;">
+
+        <div class="space-y-2">
+
+          <label class="font-label-lg text-label-lg text-on-surface flex items-center gap-2" for="username">
+            <span class="material-symbols-outlined text-primary">
+              person
+            </span>
+
+            Username atau Email
+          </label>
+
+          <input
+            class="w-full p-4 rounded-full border-2 border-on-surface bg-surface-container-lowest focus:ring-4 focus:ring-primary-container focus:outline-none transition-all font-body-md text-body-md placeholder:text-outline-variant"
+            id="username"
+            placeholder="ecowarrior_24"
+            type="text"
+          />
+
+        </div>
+
+        <div class="space-y-2">
+
+          <div class="flex justify-between items-center">
+
+            <label class="font-label-lg text-label-lg text-on-surface flex items-center gap-2" for="password">
+              <span class="material-symbols-outlined text-primary">
+                lock
+              </span>
+
+              Password
+            </label>
+
+            <a class="font-label-sm text-label-sm text-primary hover:underline" href="#">
+              Lupa Password?
+            </a>
+
+          </div>
+
+          <input
+            class="w-full p-4 rounded-full border-2 border-on-surface bg-surface-container-lowest focus:ring-4 focus:ring-primary-container focus:outline-none transition-all font-body-md text-body-md"
+            id="password"
+            placeholder="••••••••"
+            type="password"
+          />
+
+        </div>
+
+        <!-- Login Button -->
+        <button
+  onclick="window.location.href='user-dashboard.html'"
+  class="w-full bg-primary-container text-on-primary-container border-[3px] border-on-surface py-4 rounded-full font-headline-md text-headline-md flex items-center justify-center gap-2 neo-shadow-button active-press transition-all mt-4"
+  type="button"
+>
+    Log In
+    
+    <span class="material-symbols-outlined">
+        arrow_forward
+    </span>
+</button>
+
+      </form>
+
+      <!-- Divider -->
+      <div class="relative my-8 flex items-center">
+
+        <div class="flex-grow border-t-2 border-outline-variant"></div>
+
+        <span class="px-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">
+          atau
+        </span>
+
+        <div class="flex-grow border-t-2 border-outline-variant"></div>
+
+      </div>
+
+      <!-- Google Login -->
+      <div>
+        <button class="w-full flex items-center justify-center gap-3 bg-surface-container-high border-2 border-on-surface py-4 px-4 rounded-full font-label-lg text-label-lg neo-shadow-social active-press-social transition-all">
+
+          <img
+            src="image.png"
+            alt="Google Logo"
+            class="w-5 h-5 object-contain"
+          />
+
+          Lanjutkan dengan Google
+
+        </button>
+      </div>
+
+      <!-- Register -->
+      <p class="mt-10 text-center font-body-md text-body-md text-on-surface-variant">
+        Belum punya akun?
+        <a
+          class="text-primary font-bold underline decoration-4 underline-offset-4 hover:text-on-secondary-fixed-variant"
+          href="regist.html"
+        >
+          Buat Akun
+        </a>
+      </p>
+
+    </div>
+
+    <!-- Progress -->
+    <div class="mt-8 flex flex-col items-center">
+
+      <div class="w-full bg-surface-container border-2 border-on-surface rounded-full h-4 relative overflow-hidden neo-shadow">
+        <div class="bg-primary-container h-full w-2/3 border-r-2 border-on-surface"></div>
+      </div>
+
+      <p class="mt-2 font-label-sm text-label-sm text-on-surface-variant">
+        Target Harian Global: 67% Pengurangan Karbon Tercapai!
+      </p>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full mt-stack-lg bg-surface-container-highest border-t-4 border-on-surface">
+
+    <div class="flex flex-col md:flex-row justify-between items-center gap-gutter px-margin-desktop py-stack-lg w-full max-w-[1200px] mx-auto">
+
+      <div class="font-headline-md text-headline-md font-extrabold text-on-surface">
+        CleanCycle
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-6">
+
+        <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface underline" href="#">
+          Eco-Tips
+        </a>
+
+        <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface underline" href="#">
+          Community Guidelines
+        </a>
+
+        <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface underline" href="#">
+          Privacy Policy
+        </a>
+
+        <a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface underline" href="#">
+          Contact Support
+        </a>
+
+      </div>
+
+      <p class="font-label-lg text-label-lg text-on-surface-variant opacity-75">
+        © 2026 CleanCycle. Gamifying a Greener Planet.
+      </p>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>

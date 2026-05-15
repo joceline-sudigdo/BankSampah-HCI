@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CleanCycle | Eco-Hero Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-background": "#161d16",
+                      "on-primary-fixed": "#002107",
+                      "on-tertiary-fixed-variant": "#7e2a27",
+                      "primary-container": "#34c759",
+                      "secondary-fixed-dim": "#9fd75b",
+                      "error": "#ba1a1a",
+                      "primary-fixed-dim": "#53e16f",
+                      "surface-tint": "#006e28",
+                      "surface-container-high": "#e2ebde",
+                      "on-surface": "#161d16",
+                      "surface-bright": "#f4fcee",
+                      "on-surface-variant": "#3d4a3c",
+                      "on-error": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "tertiary-container": "#ff8e86",
+                      "surface": "#f4fcee",
+                      "outline-variant": "#bccbb8",
+                      "on-secondary-fixed-variant": "#2f4f00",
+                      "on-tertiary": "#ffffff",
+                      "outline": "#6d7b6b",
+                      "surface-dim": "#d4ddd0",
+                      "primary-fixed": "#72fe88",
+                      "primary": "#006e28",
+                      "surface-container-highest": "#dde5d8",
+                      "tertiary-fixed-dim": "#ffb3ad",
+                      "on-tertiary-container": "#772523",
+                      "secondary-container": "#baf474",
+                      "inverse-surface": "#2b322a",
+                      "tertiary": "#9c413d",
+                      "secondary": "#406900",
+                      "on-secondary": "#ffffff",
+                      "on-secondary-container": "#447000",
+                      "on-primary-fixed-variant": "#00531c",
+                      "on-primary": "#ffffff",
+                      "surface-container-low": "#eef6e9",
+                      "background": "#f4fcee",
+                      "secondary-fixed": "#baf474",
+                      "inverse-primary": "#53e16f",
+                      "tertiary-fixed": "#ffdad7",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-fixed": "#410004",
+                      "on-secondary-fixed": "#102000",
+                      "on-primary-container": "#004d1a",
+                      "surface-variant": "#dde5d8",
+                      "inverse-on-surface": "#ebf3e6",
+                      "surface-container": "#e8f0e3"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "stack-lg": "32px",
+                      "unit": "8px",
+                      "margin-desktop": "40px",
+                      "stack-md": "16px",
+                      "margin-mobile": "20px",
+                      "stack-sm": "8px"
+              },
+              "fontFamily": {
+                      "body-md": ["Plus Jakarta Sans"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "display-lg": ["Plus Jakarta Sans"],
+                      "label-lg": ["Plus Jakarta Sans"],
+                      "label-sm": ["Plus Jakarta Sans"],
+                      "headline-lg-mobile": ["Plus Jakarta Sans"],
+                      "headline-lg": ["Plus Jakarta Sans"],
+                      "body-lg": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "500"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                      "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "700"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "700"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "34px", "fontWeight": "800"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "800"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .chunky-border { border: 3px solid #161d16; }
+        .block-shadow {
+    box-shadow: 4px 4px 0px 0px rgba(22,29,22,1);
+}
+        .hover-lift:hover { transform: translateY(-4px); box-shadow: 6px 6px 0px 0px rgba(22,29,22,1); }
+        .active-squish:active { transform: translateY(2px); box-shadow: 2px 2px 0px 0px rgba(22,29,22,1); }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 border-b-2 border-on-background bg-surface dark:bg-surface-container shadow-[4px_4px_0px_0px_rgba(22,29,22,1)]">
+<div class="flex justify-between items-center w-full px-margin-desktop py-unit max-w-[1440px] mx-auto">
+<div class="flex items-center gap-stack-md">
+<span class="font-headline-md text-headline-md font-extrabold text-primary dark:text-primary-fixed-dim tracking-tight">CleanCycle</span>
+<nav class="hidden md:flex gap-gutter">
+<a class="text-primary border-b-4 border-primary pb-1 font-bold" href="#">Dashboard</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg" href="#">Leaderboard</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg" href="#">Map</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-lg text-label-lg" href="#">Store</a>
+</nav>
+</div>
+<div class="flex items-center gap-stack-md">
+<div class="hidden md:flex items-center gap-unit bg-surface-container-high rounded-full px-4 py-2 chunky-border">
+<span class="material-symbols-outlined text-primary" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-label-lg w-32" placeholder="Search rewards..." type="text"/>
+</div>
+<button class="bg-primary-container text-on-primary-container chunky-border px-6 py-2 rounded-lg font-bold shadow-[3px_3px_0px_0px_rgba(22,29,22,1)] hover-lift active-squish">
+                    Recycle Now
+                </button>
+<div class="flex gap-stack-sm">
+<span class="material-symbols-outlined p-2 hover:bg-primary-container/10 rounded-full cursor-pointer" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined p-2 hover:bg-primary-container/10 rounded-full cursor-pointer" data-icon="settings">settings</span>
+</div>
+<img alt="User profile avatar with level badge" class="w-10 h-10 rounded-full chunky-border bg-secondary-fixed" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8F3D2TK462OGV2iU_o7Buj5dYS2y8MGj84FC7NZ2E_4F9-ykwRYs4mJn6jQRMDgdP3vxYfiNl9OoawcnQ4Ux6DEDFrQ-1x_vE5D2Vh6DkBDaTKL7gemtt__lWn1x2wSkHQqaP-vOuarTOpNwA5u8TdLwnasyAG3Cw65ZWsQ-z4RPHba1ZmwBcwQAE27kTA4F03ePJJWwcd-1dSN4_rEC63DoXkCsSqszobddfCbM9ZD02CH71zJoY1vDkx8ASqCsjxgQU3bEbjFBP"/>
+</div>
+</div>
+</header>
+<!-- Sidebar & Content Wrapper -->
+<div class="flex pt-20">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex h-screen w-64 border-r-2 border-on-background fixed left-0 top-0 pt-24 bg-surface-container-low dark:bg-surface-container-lowest flex-col gap-unit p-4">
+<div class="flex items-center gap-3 px-2 mb-stack-md">
+<div class="w-12 h-12 rounded-lg chunky-border bg-tertiary-container flex items-center justify-center">
+<img alt="Malang Eco Warrior Avatar" class="w-10 h-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuy41Y8ogdTMguxlu4e9Xj98ynpA4Qg-7njLpBDFTdRFvoVmteY1Tlj44PKfjkWdh7jaFuiBsGUAEfOx2M3FEER_AhqWck8UF2msecvM5gthsHEq2628zWuxnyW5kmN1z1hrao-BfxTYiZEMIzrgx_rSIf3RyDSxuxVlFgVvkxKacLSSKa63walBR1NHDXe_IadSX42TWZbqHqbc1qFjAVae1QrneKNKpV0ejxojUlWEKvxFywqB4BMcs3HwI6po21lIsY-YOhu4PM"/>
+</div>
+<div>
+<h3 class="font-label-lg text-label-lg">Malang Hero</h3>
+<p class="text-label-sm text-on-surface-variant">Level 14 • 2,450 XP</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="bg-primary-container text-on-primary-container border-2 border-on-background shadow-[2px_2px_0px_0px_rgba(22,29,22,1)] rounded-lg px-4 py-3 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-lg text-label-lg">Overview</span>
+</a>
+<a class="text-on-surface hover:bg-surface-container-high rounded-lg px-4 py-3 flex items-center gap-3 transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-lg text-label-lg">My Quests</span>
+</a>
+<a class="text-on-surface hover:bg-surface-container-high rounded-lg px-4 py-3 flex items-center gap-3 transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="leaderboard">leaderboard</span>
+<span class="font-label-lg text-label-lg">Impact Stats</span>
+</a>
+<a class="text-on-surface hover:bg-surface-container-high rounded-lg px-4 py-3 flex items-center gap-3 transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="redeem">redeem</span>
+<span class="font-label-lg text-label-lg">Rewards</span>
+</a>
+<a class="text-on-surface hover:bg-surface-container-high rounded-lg px-4 py-3 flex items-center gap-3 transition-all hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-label-lg text-label-lg">Community</span>
+</a>
+</nav>
+<div class="mt-auto p-4 bg-secondary-container chunky-border rounded-xl shadow-[4px_4px_0px_0px_rgba(22,29,22,1)]">
+<p class="font-label-sm uppercase tracking-wider mb-1">Current Streak</p>
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-orange-500 text-3xl" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="text-headline-md font-extrabold">12 Days</span>
+</div>
+<button class="w-full bg-surface py-2 rounded-lg chunky-border font-bold text-label-sm active-squish">View Streaks</button>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-1 ml-0 lg:ml-64 p-margin-mobile md:p-margin-desktop bg-surface-bright min-h-screen">
+<!-- Hero Profile Section -->
+<section class="mb-stack-lg bg-white chunky-border rounded-lg p-stack-md md:p-stack-lg shadow-[8px_8px_0px_0px_rgba(22,29,22,1)] relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-[120px]" data-icon="eco">eco</span>
+</div>
+<div class="flex flex-col md:flex-row items-center gap-stack-lg relative z-10">
+<div class="relative">
+<div class="w-32 h-32 md:w-48 md:h-48 rounded-full chunky-border bg-secondary-fixed p-1">
+<img alt="EcoHeroMalang profile" class="w-full h-full rounded-full bg-surface" data-alt="A vibrant digital character portrait of a friendly cartoon dinosaur wearing an eco-warrior costume with a green recycling emblem. The art style is high-energy, chunky, and playful with bold black outlines and flat saturated colors. Soft sunny outdoor lighting illuminates the character against a bright lime green background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhRhPZsDGW3xBMR7BDFgLYgUtrSHcxMyfsqbmMw7cvnlkwOcPGXQdM0upAszgxHKpsbiClFqhzRWZ1peBzfYXBFpHqZWZF1LwV7xppuFnZB9mflXaMLMglvhIKuYEnnoO6iYT7NP2jupK3Xv63LQ8DsYbLMqru98ecaSfNNp7WGAGKwyRBlY0D7LaGq3QLehF6gdf3swgov3ezqi_8oJ7oHP7757wCnGCS9LjWKeaKpSUilEv_xuPK-R72WW0xxrx_UNvKC3WxGsJz"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-primary px-4 py-1 chunky-border rounded-full text-white font-bold text-headline-md">
+                            LVL 12
+                        </div>
+</div>
+<div class="flex-1 w-full">
+<div class="flex justify-between items-end mb-2">
+<h1 class="font-display-lg text-display-lg">EcoHeroMalang</h1>
+<span class="font-label-lg text-primary">Master Recycler</span>
+</div>
+<div class="w-full h-12 bg-surface-container chunky-border rounded-full overflow-hidden relative">
+<div class="h-full bg-primary-container w-[81%] flex items-center justify-end px-4">
+<span class="font-extrabold text-on-primary-container drop-shadow-sm">81%</span>
+</div>
+</div>
+<div class="flex justify-between mt-2 font-label-lg">
+<span>2,450 XP</span>
+<span class="text-on-surface-variant">Next Level: 3,000 XP</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Impact Stats Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-stack-lg mb-stack-lg">
+<div class="bg-primary-container chunky-border rounded-lg p-stack-md shadow-[6px_6px_0px_0px_rgba(22,29,22,1)] hover-lift transition-transform">
+<span class="material-symbols-outlined text-4xl mb-2" data-icon="delete_sweep">delete_sweep</span>
+<h3 class="text-display-lg font-extrabold leading-none">1,240kg</h3>
+<p class="font-label-lg text-on-primary-container">Waste Saved</p>
+</div>
+<div class="bg-secondary-container chunky-border rounded-lg p-stack-md shadow-[6px_6px_0px_0px_rgba(22,29,22,1)] hover-lift transition-transform">
+<span class="material-symbols-outlined text-4xl mb-2" data-icon="task_alt">task_alt</span>
+<h3 class="text-display-lg font-extrabold leading-none">50</h3>
+<p class="font-label-lg text-on-secondary-container">Quests Done</p>
+</div>
+<div class="bg-tertiary-container chunky-border rounded-lg p-stack-md shadow-[6px_6px_0px_0px_rgba(22,29,22,1)] hover-lift transition-transform">
+<span class="material-symbols-outlined text-4xl mb-2" data-icon="bolt">bolt</span>
+<h3 class="text-display-lg font-extrabold leading-none">12-Day</h3>
+<p class="font-label-lg text-on-tertiary-container">Active Streak</p>
+</div>
+</section>
+<!-- Bottom Row: Activity & Badges -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-stack-lg">
+<!-- Activity Log -->
+<section class="bg-white chunky-border rounded-lg p-stack-md shadow-[6px_6px_0px_0px_rgba(22,29,22,1)]">
+<div class="flex justify-between items-center mb-stack-md">
+<h2 class="font-headline-md text-headline-md">Recent Activity</h2>
+<button class="text-primary font-bold hover:underline">View All</button>
+</div>
+<div class="flex flex-col gap-stack-sm">
+<div class="flex items-center gap-stack-md p-stack-sm hover:bg-surface-container rounded-lg transition-colors border-2 border-transparent hover:border-on-background group cursor-pointer">
+<div class="w-12 h-12 rounded-lg bg-primary-fixed chunky-border flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+</div>
+<div class="flex-1">
+<h4 class="font-label-lg">Recycled 5kg Paper</h4>
+<p class="text-label-sm text-on-surface-variant">Malang City Center • 2h ago</p>
+</div>
+<div class="text-primary font-extrabold">+45 XP</div>
+</div>
+<div class="flex items-center gap-stack-md p-stack-sm hover:bg-surface-container rounded-lg transition-colors border-2 border-transparent hover:border-on-background group cursor-pointer">
+<div class="w-12 h-12 rounded-lg bg-secondary-fixed chunky-border flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="bottle_drop">water_drop</span>
+</div>
+<div class="flex-1">
+<h4 class="font-label-lg">Plastic Bottle Drop</h4>
+<p class="text-label-sm text-on-surface-variant">Suhat Station • 5h ago</p>
+</div>
+<div class="text-primary font-extrabold">+30 XP</div>
+</div>
+<div class="flex items-center gap-stack-md p-stack-sm hover:bg-surface-container rounded-lg transition-colors border-2 border-transparent hover:border-on-background group cursor-pointer">
+<div class="w-12 h-12 rounded-lg bg-tertiary-fixed chunky-border flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="memory">memory</span>
+</div>
+<div class="flex-1">
+<h4 class="font-label-lg">E-Waste Disposal</h4>
+<p class="text-label-sm text-on-surface-variant">UM Campus Point • Yesterday</p>
+</div>
+<div class="text-primary font-extrabold">+120 XP</div>
+</div>
+</div>
+</section>
+<!-- Badge Showcase -->
+<section class="bg-white chunky-border rounded-lg p-stack-md shadow-[6px_6px_0px_0px_rgba(22,29,22,1)]">
+<div class="flex justify-between items-center mb-stack-md">
+<h2 class="font-headline-md text-headline-md">Badges Earned</h2>
+<button class="text-primary font-bold hover:underline">Hall of Fame</button>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-stack-md">
+<div class="flex flex-col items-center gap-unit p-unit chunky-border bg-surface-container rounded-xl hover-lift">
+<div class="w-16 h-16 rounded-full bg-yellow-400 chunky-border flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+<span class="material-symbols-outlined text-3xl" data-icon="stars" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<span class="text-label-sm text-center">First Drop</span>
+</div>
+<div class="flex flex-col items-center gap-unit p-unit chunky-border bg-surface-container rounded-xl hover-lift">
+<div class="w-16 h-16 rounded-full bg-blue-400 chunky-border flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+<span class="material-symbols-outlined text-3xl" data-icon="water_drop" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+</div>
+<span class="text-label-sm text-center">Ocean Guard</span>
+</div>
+<div class="flex flex-col items-center gap-unit p-unit chunky-border bg-surface-container rounded-xl hover-lift">
+<div class="w-16 h-16 rounded-full bg-green-400 chunky-border flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+<span class="material-symbols-outlined text-3xl" data-icon="forest" style="font-variation-settings: 'FILL' 1;">forest</span>
+</div>
+<span class="text-label-sm text-center">Tree Hugger</span>
+</div>
+<div class="flex flex-col items-center gap-unit p-unit chunky-border bg-surface-container rounded-xl hover-lift">
+<div class="w-16 h-16 rounded-full bg-purple-400 chunky-border flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+<span class="material-symbols-outlined text-3xl" data-icon="workspace_premium" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<span class="text-label-sm text-center">Elite Hero</span>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="w-full border-t-2 border-on-background mt-stack-lg bg-surface-dim dark:bg-inverse-surface">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-stack-md gap-stack-md max-w-[1440px] mx-auto">
+<div class="flex flex-col items-center md:items-start">
+<span class="font-headline-md text-primary font-extrabold">CleanCycle</span>
+<p class="font-body-md text-body-md text-on-surface dark:text-inverse-on-surface">© 2024 CleanCycle Malang. Sustainably built for a greener East Java.</p>
+</div>
+<div class="flex gap-gutter">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Privacy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Terms</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Support</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm" href="#">Contact</a>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html class="light" lang="id">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>CleanCycle - Jangan Buang Dulu</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    }
+
+    .chunky-border {
+      border: 3px solid #161d16;
+    }
+
+    .block-shadow-primary {
+      box-shadow: 4px 4px 0px 0px #161d16;
+    }
+
+    .block-shadow-secondary {
+      box-shadow: 6px 6px 0px 0px #161d16;
+    }
+
+    .active-press:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0px 0px #161d16;
+    }
+  </style>
+
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+
+      theme: {
+        extend: {
+          colors: {
+            background: "#f4fcee",
+            primary: "#006e28",
+            "primary-container": "#34c759",
+            "secondary-container": "#baf474",
+            surface: "#f4fcee",
+            "surface-container": "#e8f0e3",
+            "surface-container-low": "#eef6e9",
+            "surface-container-highest": "#dde5d8",
+            "surface-variant": "#dde5d8",
+            "on-surface": "#161d16",
+            "on-surface-variant": "#3d4a3c",
+            tertiary: "#9c413d",
+            "tertiary-container": "#ff8e86"
+          },
+
+          spacing: {
+            "margin-mobile": "20px",
+            "margin-desktop": "40px",
+            "stack-lg": "32px",
+            "stack-md": "16px",
+            "stack-sm": "8px"
+          },
+
+          fontFamily: {
+            display: ["Plus Jakarta Sans"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-background text-on-surface font-['Plus_Jakarta_Sans'] overflow-x-hidden">
+
+  <!-- NAVBAR -->
+  <nav class="flex justify-between items-center w-full px-5 md:px-10 py-4 sticky top-0 z-50 border-b-4 border-on-surface bg-background shadow-[4px_4px_0px_0px_#161d16]">
+
+    <!-- LOGO -->
+    <div class="text-[48px] font-extrabold text-primary uppercase leading-none">
+      CLEANCYCLE
+    </div>
+
+    <!-- MENU -->
+    <div class="hidden md:flex gap-6 items-center">
+
+      <a class="font-bold text-primary border-b-4 border-primary pb-1" href="#">
+        Home
+      </a>
+
+      <a class="font-bold text-on-surface-variant hover:text-primary transition-colors" href="#">
+        Request
+      </a>
+
+      <a class="font-bold text-on-surface-variant hover:text-primary transition-colors" href="#">
+        Market
+      </a>
+
+      <a class="font-bold text-on-surface-variant hover:text-primary transition-colors" href="#">
+        Social
+      </a>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="flex items-center gap-4 relative">
+
+      <!-- NOTIFICATION -->
+      <button class="material-symbols-outlined text-[30px] hover:-translate-y-1 transition-all">
+        notifications
+      </button>
+
+      <!-- PROFILE -->
+      <div id="profileButton" class="relative cursor-pointer">
+
+        <!-- AVATAR -->
+       <div class="w-12 h-12 rounded-full chunky-border bg-secondary-container flex items-center justify-center">
+
+  <span class="material-symbols-outlined text-[28px] text-on-surface">
+    person
+  </span>
+
+</div>
+
+        <!-- DROPDOWN -->
+        <div
+          id="profileMenu"
+          class="hidden absolute right-0 top-16 w-56 bg-white chunky-border rounded-xl block-shadow-primary p-2 z-50"
+        >
+
+          <a
+            href="loginpage.html"
+            class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-surface-container transition-all"
+          >
+
+            <span class="material-symbols-outlined">
+              login
+            </span>
+
+            Login
+
+          </a>
+
+          <a
+            href="regist.html"
+            class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-surface-container transition-all"
+          >
+
+            <span class="material-symbols-outlined">
+              person_add
+            </span>
+
+            Register
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+  <section class="px-5 md:px-10 py-10 md:py-20 flex flex-col items-center text-center max-w-6xl mx-auto">
+
+    <!-- BADGE -->
+    <div class="bg-secondary-container chunky-border px-6 py-2 rounded-full mb-6 block-shadow-primary font-bold text-primary -rotate-2">
+      🌱 ECO-ADVENTURE IS WAITING!
+    </div>
+
+    <!-- TITLE -->
+    <h1 class="text-[70px] md:text-[110px] leading-none font-extrabold mb-6">
+      Jangan Buang Dulu.
+    </h1>
+
+    <!-- DESC -->
+    <p class="text-[22px] text-on-surface-variant max-w-3xl mb-10">
+      Ubah sampahmu menjadi barang berharga dan kumpulkan poin untuk misi penyelamatan bumi yang seru!
+    </p>
+
+    <!-- BUTTON -->
+    <div class="flex flex-col md:flex-row gap-5">
+
+      <a
+        href="awal.html"
+        class="bg-primary-container text-on-surface font-bold px-10 py-5 rounded-2xl chunky-border block-shadow-secondary active-press transition-all"
+      >
+        Mulai Menabung
+      </a>
+
+      <button
+        class="bg-surface-container-highest text-on-surface font-bold px-10 py-5 rounded-2xl chunky-border block-shadow-secondary active-press transition-all"
+      >
+        Lihat Reward
+      </button>
+
+    </div>
+
+    <!-- IMAGE -->
+    <div class="mt-20 relative w-full max-w-5xl h-[450px] bg-secondary-container chunky-border rounded-3xl block-shadow-secondary overflow-hidden">
+
+      <img
+        class="w-full h-full object-cover"
+        src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=1600&auto=format&fit=crop"
+      />
+
+      <!-- CARD -->
+      <div class="absolute inset-0 flex items-center justify-center">
+
+        <div class="bg-background chunky-border p-6 rounded-2xl block-shadow-primary max-w-xs rotate-3">
+
+          <div class="flex items-center gap-2 mb-2">
+
+            <span
+              class="material-symbols-outlined text-primary"
+              style="font-variation-settings: 'FILL' 1;"
+            >
+              eco
+            </span>
+
+            <span class="font-bold text-primary">
+              RECYCLING STREAK
+            </span>
+
+          </div>
+
+          <div class="text-[50px] font-extrabold">
+            12 Days!
+          </div>
+
+          <p class="text-sm text-on-surface-variant">
+            Kamu telah menyelamatkan 5kg plastik minggu ini!
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- MOBILE NAV -->
+  <div class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] bg-white chunky-border rounded-full p-2 flex justify-around items-center shadow-[4px_4px_0px_0px_#161d16] z-[100]">
+
+    <button class="flex flex-col items-center p-2 text-primary">
+
+      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">
+        home
+      </span>
+
+      <span class="text-[10px] font-bold">
+        Home
+      </span>
+
+    </button>
+
+    <button class="flex flex-col items-center p-2 text-on-surface-variant">
+
+      <span class="material-symbols-outlined">
+        qr_code_scanner
+      </span>
+
+      <span class="text-[10px] font-bold">
+        Scan
+      </span>
+
+    </button>
+
+    <button class="bg-primary-container p-4 -mt-10 rounded-full chunky-border block-shadow-primary active-press text-on-surface">
+
+      <span
+        class="material-symbols-outlined text-[32px]"
+        style="font-variation-settings: 'FILL' 1;"
+      >
+        add
+      </span>
+
+    </button>
+
+    <button class="flex flex-col items-center p-2 text-on-surface-variant">
+
+      <span class="material-symbols-outlined">
+        shopping_bag
+      </span>
+
+      <span class="text-[10px] font-bold">
+        Market
+      </span>
+
+    </button>
+
+    <!-- MOBILE PROFILE -->
+    <div class="relative">
+
+      <button
+        id="mobileProfileButton"
+        class="flex flex-col items-center p-2 text-on-surface-variant"
+      >
+
+        <span class="material-symbols-outlined">
+          person
+        </span>
+
+        <span class="text-[10px] font-bold">
+          Profile
+        </span>
+
+      </button>
+
+      <!-- MOBILE DROPDOWN -->
+      <div
+        id="mobileProfileMenu"
+        class="hidden absolute bottom-16 right-0 w-52 bg-white chunky-border rounded-xl block-shadow-primary p-2"
+      >
+
+        <a
+          href="loginpage.html"
+          class="flex items-center gap-2 px-4 py-3 rounded-lg hover:bg-surface-container"
+        >
+
+          <span class="material-symbols-outlined">
+            login
+          </span>
+
+          Login
+
+        </a>
+
+        <a
+          href="regist.html"
+          class="flex items-center gap-2 px-4 py-3 rounded-lg hover:bg-surface-container"
+        >
+
+          <span class="material-symbols-outlined">
+            person_add
+          </span>
+
+          Register
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+
+    // DESKTOP
+    const profileButton = document.getElementById("profileButton");
+    const profileMenu = document.getElementById("profileMenu");
+
+    profileButton.addEventListener("click", function (e) {
+
+      e.stopPropagation();
+
+      profileMenu.classList.toggle("hidden");
+
+    });
+
+    // MOBILE
+    const mobileProfileButton = document.getElementById("mobileProfileButton");
+    const mobileProfileMenu = document.getElementById("mobileProfileMenu");
+
+    mobileProfileButton.addEventListener("click", function (e) {
+
+      e.stopPropagation();
+
+      mobileProfileMenu.classList.toggle("hidden");
+
+    });
+
+    // CLOSE OUTSIDE
+    document.addEventListener("click", function () {
+
+      profileMenu.classList.add("hidden");
+      mobileProfileMenu.classList.add("hidden");
+
+    });
+
+  </script>
+
+</body>
+
+</html>
