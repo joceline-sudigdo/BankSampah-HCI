@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Daftarkan akun anda!</title>
+    <link rel="icon" href="../../public/img/img-logo.png">
+    <link rel="stylesheet" href="../styles/user-dashboard/ProfilPage.css">
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <div class="main-container"></div>
+
+    <script>
+      fetch('../component/navbar.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('navbar').innerHTML = html;
+
+          const page = window.location.pathname;
+          const map = {
+            'ProfilPage': 'nav-profil',
+            'NotifPage': 'nav-notifikasi',
+            'LeaderboardPage': 'nav-leaderboard',
+            'JualPage': 'nav-jual',
+            'PickupPage': 'nav-pickup',
+            'TukarPage': 'nav-tukar',
+            'ArtikelPage': 'nav-artikel',
+          };
+
+          for (const [key, id] of Object.entries(map)) {
+            if (page.includes(key)) {
+              document.getElementById(id)?.classList.add('active');
+              break;
+            }
+          }
+        });
+    </script>
+  </body>
+</html>

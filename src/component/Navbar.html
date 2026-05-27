@@ -2,31 +2,31 @@
 <link rel="stylesheet" href="../styles/component/Navbar.css">
 
 <nav class="sidebar">
-  <a class="nav-item" href="../profil/ProfilPage.html" id="nav-profil">
+  <a class="nav-item" href="../user-dashboard/ProfilPage.html" id="nav-profil">
     <div class="icon-wrap"><i class="ti ti-user"></i></div>
     <span class="label">Profil</span>
   </a>
-  <a class="nav-item" href="../notifikasi/NotifPage.html" id="nav-notifikasi">
+  <a class="nav-item" href="../user-dashboard/NotifPage.html" id="nav-notifikasi">
     <div class="icon-wrap"><i class="ti ti-bell"></i></div>
     <span class="label">Notifikasi</span>
   </a>
-  <a class="nav-item" href="../leaderboard/LeaderboardPage.html" id="nav-leaderboard">
+  <a class="nav-item" href="../user-dashboard/LeaderboardPage.html" id="nav-leaderboard">
     <div class="icon-wrap"><i class="ti ti-trophy"></i></div>
     <span class="label">Leaderboard</span>
   </a>
-  <a class="nav-item" href="../jual/JualPage.html" id="nav-jual">
+  <a class="nav-item" href="../user-dashboard/JualPage.html" id="nav-jual">
     <div class="icon-wrap"><i class="ti ti-building-store"></i></div>
     <span class="label">Jual Sampah</span>
   </a>
-  <a class="nav-item" href="../pickup/PickupPage.html" id="nav-pickup">
+  <a class="nav-item" href="../user-dashboard/PickupPage.html" id="nav-pickup">
     <div class="icon-wrap"><i class="ti ti-truck"></i></div>
     <span class="label">Pick Up</span>
   </a>
-  <a class="nav-item" href="../tukar/TukarPage.html" id="nav-tukar">
+  <a class="nav-item" href="../user-dashboard/TukarPage.html" id="nav-tukar">
     <div class="icon-wrap"><i class="ti ti-arrows-exchange"></i></div>
     <span class="label">Tukar Poin</span>
   </a>
-  <a class="nav-item" href="../artikel/ArtikelPage.html" id="nav-artikel">
+  <a class="nav-item" href="../user-dashboard/ArtikelPage.html" id="nav-artikel">
     <div class="icon-wrap"><i class="ti ti-news"></i></div>
     <span class="label">Artikel & Event</span>
   </a>
@@ -34,14 +34,15 @@
 
 <script>
   const page = window.location.pathname;
+  console.log('pathname:', page);
   const map = {
-    'profil': 'nav-profil',
-    'notifikasi': 'nav-notifikasi',
-    'leaderboard': 'nav-leaderboard',
-    'jual': 'nav-jual',
-    'pickup': 'nav-pickup',
-    'tukar': 'nav-tukar',
-    'artikel': 'nav-artikel',
+    'ProfilPage': 'nav-profil',
+    'NotifPage': 'nav-notifikasi',
+    'LeaderboardPage': 'nav-leaderboard',
+    'JualPage': 'nav-jual',
+    'PickupPage': 'nav-pickup',
+    'TukarPage': 'nav-tukar',
+    'ArtikelPage': 'nav-artikel',
   };
 
   for (const [key, id] of Object.entries(map)) {
