@@ -1,3 +1,5 @@
+@import url('../fonts.css');
+
 body {
   background-image: url('../../../public/img/img-login-bg.png');
   background-repeat: no-repeat;
@@ -13,4 +15,132 @@ body::before {
   inset: 0;
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 0;
+}
+
+p {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Nunito', sans-serif;
+}
+
+h1 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+}
+
+button {
+  font-family: 'Nunito', sans-serif;
+}
+
+.welcome-message {
+  width: 400px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  position: relative;
+}
+
+.main-content {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* Safari */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  position: relative;
+  z-index: 10;
+  padding: 100px 80px 120px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  width: 500px;
+}
+
+.form-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+.input-form {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+input {
+  padding: 12px;
+  padding-right: 0px;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  box-shadow: 6px 6px 7px rgba(0, 0, 0, 0.3);
+  border: 4px solid transparent;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border: 4px solid #026b23;
+  outline: none;
+}
+
+.masuk-btn {
+  padding: 15px 50px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 30px;
+  border: 4px solid transparent;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.masuk-btn:hover {
+  box-shadow: 6px 6px 7px rgba(0, 0, 0, 0.3);
+}
+
+.masuk-btn:active {
+  background-color: #C8E8B5;
+  box-shadow: none;
+  transition: background-color 0.1s ease, box-shadow 0.1s ease;
+}
+
+.regist {
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #0D5322;
+  font-weight: bold;
+}
+
+.admin-btn {
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 5px;
+  font-weight: 700;
+  color: #0D5322;
+  font-size: 12px;
 }
