@@ -1,1 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+@font-face {
+  font-family: 'Poor Richard';
+  src: url('../../public/fonts/POORICH.TTF') format('truetype');
+}
