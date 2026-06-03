@@ -1,0 +1,303 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  background-image: url('../../../public/img/img-landing-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+}
+
+#navbar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.main-container {
+  flex: 1;
+  height: 100vh;
+  padding: 32px 36px 32px 32px;
+  display: flex;
+  gap: 28px;
+  overflow: hidden;
+}
+
+.left-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: hidden;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.tab {
+  padding: 8px 28px;
+  border-radius: 999px;
+  border: 2px solid #1a1a1a;
+  background: rgba(255, 255, 255, 0.615);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.tab.active {
+  background: #ffffff;
+  color: #1a1a1a;
+}
+
+.tab:not(.active):hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.notif-list {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.notif-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #ffffff;
+  position: relative;
+}
+
+.notif-item.unread {
+  background: #e8f5e2;
+}
+
+.notif-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pickup-icon {
+  background: #e0a800;
+}
+
+.account-icon {
+  background: #9b59b6;
+}
+
+.notif-content {
+  flex: 1;
+}
+
+.notif-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 2px;
+}
+
+.notif-desc {
+  font-size: 0.78rem;
+  color: #555;
+  font-weight: 400;
+}
+
+.unread-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #1a1a1a;
+  flex-shrink: 0;
+}
+
+.right-section {
+  width: 320px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.complain-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a5c2a;
+}
+
+.chat-card {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 20px 18px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.chat-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.chat-sender {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.chat-bubble {
+  background: #d4edda;
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 0.85rem;
+  color: #1a1a1a;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.btn-chat-detail {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  background: rgba(255,255,255,0.7);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-chat-detail:hover {
+  background: rgba(255,255,255,0.95);
+}
+
+.chat-input-row {
+  display: flex;
+  align-items: center;
+}
+
+.chat-input-wrapper {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.85);
+  border-radius: 999px;
+  padding: 6px 10px 6px 10px;
+  gap: 8px;
+  flex: 1;
+  border: 1.5px solid #ddd;
+}
+
+.add-btn,
+.send-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.chat-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.82rem;
+  color: #333;
+  outline: none;
+}
+
+.chat-input::placeholder {
+  color: #aaa;
+}
+
+.rate-card {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.rate-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a5c2a;
+}
+
+.stars-row {
+  display: flex;
+  gap: 8px;
+}
+
+.star {
+  font-size: 2rem;
+  color: transparent;
+  -webkit-text-stroke: 2.5px #1a5c2a;
+  cursor: pointer;
+  transition: color 0.15s, -webkit-text-stroke 0.15s;
+}
+
+.star.selected,
+.star.hovered {
+  color: #1a5c2a;
+  -webkit-text-stroke: 2.5px #1a5c2a;
+}
+
+.btn-kirim {
+  padding: 8px 48px;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  background: rgba(255,255,255,0.75);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-kirim:hover {
+  background: #fff;
+}
