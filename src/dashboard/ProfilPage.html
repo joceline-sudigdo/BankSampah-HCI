@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Dashboard - Profile</title>
+    <link rel="icon" href="../../../public/icon/ic-logo.png">
+    <link rel="stylesheet" href="../styles/dashboard/ProfilPage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <div class="main-container">
+
+      <div class="profile-header">
+        <div class="profile-identity">
+          <div class="avatar-wrap">
+            <img src="../../../public/img/img-admin.png" alt="Admin" class="avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="avatar-fallback" style="display:none"><i class="ti ti-user"></i></div>
+            <span class="avatar-verified"><i class="ti ti-rosette-discount-check-filled"></i></span>
+          </div>
+          <div class="profile-name-wrap">
+            <h1 class="profile-name">Muh. Dahlan</h1>
+            <div class="profile-meta">
+              <span class="role-badge">ADMIN</span>
+              <span class="profile-loc"><i class="ti ti-point-filled"></i> Malang Waste Bank HQ</span>
+            </div>
+          </div>
+        </div>
+        <button class="btn-edit"><i class="ti ti-pencil"></i> Edit Profil</button>
+      </div>
+
+      <div class="body-grid">
+
+        <div class="left-col">
+          <div class="section-title-row">
+            <i class="ti ti-chart-bar"></i>
+            <h2 class="section-title">Statistik Performa</h2>
+          </div>
+
+          <div class="impact-card">
+            <div class="impact-left">
+              <p class="impact-label">IMPACT SCORE</p>
+              <p class="impact-value">9.8 <span class="impact-denom">/ 10</span></p>
+              <p class="impact-desc">Performa administratif luar biasa dalam 30 hari terakhir.</p>
+            </div>
+            <div class="impact-icon-wrap">
+              <div class="impact-circle">
+                <i class="ti ti-leaf"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="stats-row2">
+            <div class="sampah-card">
+              <div class="sampah-icon"><i class="ti ti-recycle"></i></div>
+              <p class="sampah-label">TOTAL SAMPAH</p>
+              <p class="sampah-value">2,481 Ton</p>
+              <div class="progress-bar"><div class="progress-fill"></div></div>
+            </div>
+            <div class="loyalty-card">
+              <p class="loyalty-label">LOYALTY LEVEL</p>
+              <p class="loyalty-value">A+</p>
+              <div class="loyalty-tags">
+                <span class="ltag vip">VIP</span>
+                <span class="ltag eco">ECO</span>
+                <span class="ltag yr">10Y</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-title-row">
+            <i class="ti ti-adjustments-horizontal"></i>
+            <h2 class="section-title">Pengaturan Umum</h2>
+          </div>
+
+          <div class="settings-card">
+            <div class="setting-item">
+              <div class="setting-icon"><i class="ti ti-user"></i></div>
+              <div class="setting-info">
+                <p class="setting-name">Detail Profil</p>
+                <p class="setting-desc">Identitas admin, alamat, dan kontak personal.</p>
+              </div>
+              <i class="ti ti-chevron-right setting-arrow"></i>
+            </div>
+            <div class="setting-divider"></div>
+            <div class="setting-item">
+              <div class="setting-icon"><i class="ti ti-lock"></i></div>
+              <div class="setting-info">
+                <p class="setting-name">Ubah Password</p>
+                <p class="setting-desc">Perbarui kredensial keamanan akun Anda.</p>
+              </div>
+              <i class="ti ti-chevron-right setting-arrow"></i>
+            </div>
+            <div class="setting-divider"></div>
+            <div class="setting-item">
+              <div class="setting-icon"><i class="ti ti-help-square"></i></div>
+              <div class="setting-info">
+                <p class="setting-name">Pusat Bantuan</p>
+                <p class="setting-desc">Panduan sistem dan FAQ administrator.</p>
+              </div>
+              <i class="ti ti-chevron-right setting-arrow"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-col">
+          <div class="section-title-row">
+            <i class="ti ti-bolt"></i>
+            <h2 class="section-title">Aksi Administratif</h2>
+          </div>
+
+          <div class="aksi-list">
+            <div class="aksi-item">
+              <div class="aksi-icon"><i class="ti ti-speakerphone"></i></div>
+              <div class="aksi-info">
+                <p class="aksi-name">Broadcast Notifikasi</p>
+                <p class="aksi-desc">Kirim pesan massal ke seluruh nasabah.</p>
+              </div>
+              <i class="ti ti-chevron-right aksi-arrow"></i>
+            </div>
+            <div class="aksi-item">
+              <div class="aksi-icon"><i class="ti ti-download"></i></div>
+              <div class="aksi-info">
+                <p class="aksi-name">Unduh Laporan</p>
+                <p class="aksi-desc">Generate PDF laporan bulanan sistem.</p>
+              </div>
+              <i class="ti ti-chevron-right aksi-arrow"></i>
+            </div>
+            <div class="aksi-item">
+              <div class="aksi-icon"><i class="ti ti-cash"></i></div>
+              <div class="aksi-info">
+                <p class="aksi-name">Kelola Harga Sampah</p>
+                <p class="aksi-desc">Update kurs harga per kategori sampah.</p>
+              </div>
+              <i class="ti ti-chevron-right aksi-arrow"></i>
+            </div>
+          </div>
+
+          <button class="btn-logout">
+            <i class="ti ti-logout"></i> Logout dari Sistem
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <script>
+      fetch('../component/NavbarAdmin.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('navbar').innerHTML = html;
+          const page = window.location.pathname;
+          const map = {
+            'HomePage':         'nav-home',
+            'UsersPage':        'nav-users',
+            'TransactionsPage': 'nav-transactions',
+            'InventoryPage':    'nav-inventory',
+            'ContentPage':      'nav-content',
+            'ProfilPage':      'nav-profile',
+          };
+          for (const [key, id] of Object.entries(map)) {
+            if (page.includes(key)) {
+              document.getElementById(id)?.classList.add('active');
+              break;
+            }
+          }
+        });
+    </script>
+  </body>
+</html>

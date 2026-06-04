@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Dashboard - Content</title>
+    <link rel="icon" href="../../../public/icon/ic-logo.png">
+    <link rel="stylesheet" href="../styles/dashboard/ContentPage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <div class="main-container">
+
+      <div class="top-bar">
+        <div class="filter-tabs">
+          <button class="tab active"><i class="ti ti-infinity"></i> Semua</button>
+          <button class="tab">Edukasi</button>
+          <button class="tab">Berita</button>
+          <button class="tab">Event</button>
+          <button class="tab">Tips & Trik</button>
+        </div>
+        <div class="search-box">
+          <i class="ti ti-search"></i>
+          <input type="text" placeholder="Cari artikel...">
+        </div>
+      </div>
+
+      <div class="body-grid">
+
+        <div class="side-panel">
+          <button class="btn-tambah">
+            <i class="ti ti-circle-plus"></i>
+            <span>TAMBAH ARTIKEL</span>
+          </button>
+          <div class="stat-mini">
+            <p class="stat-mini-label">Total Artikel</p>
+            <div class="stat-mini-row">
+              <span class="stat-mini-value">124</span>
+              <span class="stat-mini-badge green">+12%</span>
+            </div>
+          </div>
+          <div class="stat-mini">
+            <p class="stat-mini-label">Draft</p>
+            <div class="stat-mini-row">
+              <span class="stat-mini-value">8</span>
+              <i class="ti ti-notes stat-mini-icon"></i>
+            </div>
+          </div>
+          <div class="stat-mini">
+            <p class="stat-mini-label">Total Pembaca</p>
+            <div class="stat-mini-row">
+              <span class="stat-mini-value">8.2K</span>
+              <span class="stat-mini-badge teal">+5.4K</span>
+            </div>
+          </div>
+          <div class="draft-card">
+            <div class="draft-img-area">
+              <span class="card-badge draft-badge">DRAFT</span>
+              <i class="ti ti-photo draft-icon"></i>
+            </div>
+            <div class="draft-body">
+              <h3 class="draft-title">Draft Artikel: Inovasi...</h3>
+              <p class="draft-desc">Draft konten mengenai integrasi teknologi AI dalam sistem pemilihan...</p>
+              <div class="draft-footer">
+                <span class="draft-time"><i class="ti ti-history"></i> Terakhir diubah 10m lalu</span>
+                <div class="card-actions">
+                  <button class="btn-icon edit"><i class="ti ti-pencil"></i></button>
+                  <button class="btn-icon delete"><i class="ti ti-trash"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="articles-grid">
+          <div class="article-card">
+            <div class="card-img">
+              <span class="card-badge edukasi">EDUKASI</span>
+              <img src="https://images.unsplash.com/photo-1604187351574-c75ca79f5807?w=700&q=80" alt="Edukasi">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Cara Memilah Sampah Rumah Tangga dengan</h3>
+              <p class="card-desc">Belajar teknik dasar pemilahan sampah organik dan anorganik untuk</p>
+              <div class="card-footer">
+                <span class="card-time"><i class="ti ti-clock"></i> 2 jam lalu</span>
+                <div class="card-actions">
+                  <button class="btn-icon edit"><i class="ti ti-pencil"></i></button>
+                  <button class="btn-icon delete"><i class="ti ti-trash"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-card">
+            <div class="card-img">
+              <span class="card-badge event-badge">EVENT</span>
+              <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=700&q=80" alt="Event">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Malang Green Festival 2024: Tukar Sampah...</h3>
+              <p class="card-desc">Ikuti kemeriahan festival lingkungan terbesar di Malang dan menangkan...</p>
+              <div class="card-footer">
+                <span class="card-time"><i class="ti ti-clock"></i> 1 hari lalu</span>
+                <div class="card-actions">
+                  <button class="btn-icon edit"><i class="ti ti-pencil"></i></button>
+                  <button class="btn-icon delete"><i class="ti ti-trash"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-card">
+            <div class="card-img">
+              <span class="card-badge tips-badge">TIPS</span>
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80" alt="Tips">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">5 Tips Mengurangi Sampah Plastik Sekali...</h3>
+              <p class="card-desc">Langkah kecil namun berdampak besar. Simak cara mudah mengganti...</p>
+              <div class="card-footer">
+                <span class="card-time"><i class="ti ti-clock"></i> 3 hari lalu</span>
+                <div class="card-actions">
+                  <button class="btn-icon edit"><i class="ti ti-pencil"></i></button>
+                  <button class="btn-icon delete"><i class="ti ti-trash"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="article-card">
+            <div class="card-img">
+              <span class="card-badge berita-badge">BERITA</span>
+              <img src="https://images.unsplash.com/photo-1542601906897-b82f4ab11418?w=700&q=80" alt="Berita">
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Kerjasama Bank Sampah dengan UMKM</h3>
+              <p class="card-desc">Kini poin tabungan Anda bisa ditukarkan dengan voucer belanja di...</p>
+              <div class="card-footer">
+                <span class="card-time"><i class="ti ti-clock"></i> 1 minggu lalu</span>
+                <div class="card-actions">
+                  <button class="btn-icon edit"><i class="ti ti-pencil"></i></button>
+                  <button class="btn-icon delete"><i class="ti ti-trash"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script>
+      fetch('../component/NavbarAdmin.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('navbar').innerHTML = html;
+          const page = window.location.pathname;
+          const map = {
+            'HomePage':         'nav-home',
+            'UsersPage':        'nav-users',
+            'TransactionsPage': 'nav-transactions',
+            'InventoryPage':    'nav-inventory',
+            'ContentPage':      'nav-content',
+            'ProfilPage':      'nav-profile',
+          };
+          for (const [key, id] of Object.entries(map)) {
+            if (page.includes(key)) {
+              document.getElementById(id)?.classList.add('active');
+              break;
+            }
+          }
+        });
+
+      document.querySelectorAll('.tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+        });
+      });
+    </script>
+  </body>
+</html>

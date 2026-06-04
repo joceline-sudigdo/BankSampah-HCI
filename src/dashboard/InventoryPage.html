@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Dashboard - Inventory</title>
+    <link rel="icon" href="../../../public/icon/ic-logo.png">
+    <link rel="stylesheet" href="../styles/dashboard/InventoryPage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <div class="main-container">
+
+      <div class="page-header">
+        <div class="header-left">
+          <h1 class="page-title">Kelola Poin & Reward</h1>
+          <p class="page-sub">Pantau distribusi poin dan manajemen hadiah katalog.</p>
+        </div>
+        <button class="btn-tambah"><i class="ti ti-plus"></i> Tambah Reward Baru</button>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-top">
+            <div class="stat-icon green"><i class="ti ti-layout-list"></i></div>
+            <span class="stat-badge">+12% Bulan ini</span>
+          </div>
+          <p class="stat-label">Total Poin Terdistribusi</p>
+          <p class="stat-value">2.450.000 <span class="stat-unit">Poin</span></p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-top">
+            <div class="stat-icon red"><i class="ti ti-gift"></i></div>
+          </div>
+          <p class="stat-label">Permintaan Pending</p>
+          <p class="stat-value">24 <span class="stat-unit">Pengajuan</span></p>
+        </div>
+        <div class="stat-card wide">
+          <div class="stat-top">
+            <div class="stat-icon green"><i class="ti ti-gift"></i></div>
+          </div>
+          <p class="stat-label">Reward Terpopuler</p>
+          <p class="stat-value popular">Sembako Paket A</p>
+          <i class="ti ti-star stat-star"></i>
+        </div>
+      </div>
+
+      <div class="bottom-row">
+        <div class="katalog-section">
+          <div class="section-header">
+            <h2 class="section-title">Katalog Reward Aktif</h2>
+            <a class="lihat-semua" href="#">Lihat Semua ›</a>
+          </div>
+          <div class="katalog-grid">
+            <div class="katalog-card">
+              <div class="katalog-img" style="background:#2d4a38;">
+                <img src="../../../public/img/img-sembako.png" alt="Sembako" onerror="this.style.display='none'">
+              </div>
+              <div class="katalog-info">
+                <p class="katalog-name">Sembako Paket A</p>
+                <p class="katalog-poin">1.500 Poin</p>
+                <div class="katalog-actions">
+                  <button class="btn-icon edit"><i class="ti ti-pencil"></i></button>
+                  <button class="btn-icon delete"><i class="ti ti-trash"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="katalog-card">
+              <div class="katalog-img teal">
+                <img src="../../../public/img/img-voucher.png" alt="Voucher" onerror="this.style.display='none'">
+              </div>
+              <div class="katalog-info">
+                <p class="katalog-name">Voucher Listrik 50k</p>
+                <p class="katalog-poin">5.000 Poin</p>
+                <div class="katalog-actions">
+                  <button class="btn-icon edit"><i class="ti ti-pencil"></i></button>
+                  <button class="btn-icon delete"><i class="ti ti-trash"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="katalog-card">
+              <div class="katalog-img dark">
+                <img src="../../../public/img/img-tunai1.png" alt="Tunai" onerror="this.style.display='none'">
+              </div>
+              <div class="katalog-info">
+                <p class="katalog-name">Tarik Tunai Rp 25k</p>
+                <p class="katalog-poin">2.500 Poin</p>
+                <div class="katalog-actions">
+                  <button class="btn-icon edit"><i class="ti ti-pencil"></i></button>
+                  <button class="btn-icon delete"><i class="ti ti-trash"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="katalog-card">
+              <div class="katalog-img dark2">
+                <img src="../../../public/img/img-tunai2.png" alt="Tunai" onerror="this.style.display='none'">
+              </div>
+              <div class="katalog-info">
+                <p class="katalog-name">Tarik Tunai Rp 25k</p>
+                <p class="katalog-poin">2.500 Poin</p>
+                <div class="katalog-actions">
+                  <button class="btn-icon edit"><i class="ti ti-pencil"></i></button>
+                  <button class="btn-icon delete"><i class="ti ti-trash"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="katalog-card">
+              <div class="katalog-img dark">
+                <img src="../../../public/img/img-tunai3.png" alt="Tunai" onerror="this.style.display='none'">
+              </div>
+              <div class="katalog-info">
+                <p class="katalog-name">Tarik Tunai Rp 25k</p>
+                <p class="katalog-poin">2.500 Poin</p>
+                <div class="katalog-actions">
+                  <button class="btn-icon edit"><i class="ti ti-pencil"></i></button>
+                  <button class="btn-icon delete"><i class="ti ti-trash"></i></button>
+                </div>
+              </div>
+            </div>
+            <div class="katalog-card add-card">
+              <i class="ti ti-circle-plus add-icon"></i>
+              <p class="add-label">Tambah Katalog</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="pending-section">
+          <h2 class="section-title">Pending Requests</h2>
+          <div class="pending-list">
+            <div class="pending-item">
+              <div class="pending-top">
+                <div class="user-cell">
+                  <div class="user-avatar initials bs">BS</div>
+                  <div class="user-info">
+                    <p class="user-name">Budi Santoso</p>
+                    <p class="user-time">15 Menit yang lalu</p>
+                  </div>
+                </div>
+                <span class="pending-pts">1.500 pts</span>
+              </div>
+              <p class="redeem-label">Redeem: Sembako Paket A</p>
+              <div class="pending-actions">
+                <button class="btn-approve">Approve</button>
+                <button class="btn-reject">Reject</button>
+              </div>
+            </div>
+            <div class="pending-item">
+              <div class="pending-top">
+                <div class="user-cell">
+                  <div class="user-avatar initials al">AL</div>
+                  <div class="user-info">
+                    <p class="user-name">Ani Lestari</p>
+                    <p class="user-time">1 Jam yang lalu</p>
+                  </div>
+                </div>
+                <span class="pending-pts">5.000 pts</span>
+              </div>
+              <p class="redeem-label">Redeem: Voucher Listrik 50k</p>
+              <div class="pending-actions">
+                <button class="btn-approve">Approve</button>
+                <button class="btn-reject">Reject</button>
+              </div>
+            </div>
+            <div class="pending-item">
+              <div class="pending-top">
+                <div class="user-cell">
+                  <div class="user-avatar initials kp">KP</div>
+                  <div class="user-info">
+                    <p class="user-name">Koko Prasetyo</p>
+                    <p class="user-time">2 Jam yang lalu</p>
+                  </div>
+                </div>
+                <span class="pending-pts">2.500 pts</span>
+              </div>
+              <p class="redeem-label">Redeem: Tarik Tunai Rp 25k</p>
+              <div class="pending-actions">
+                <button class="btn-approve">Approve</button>
+                <button class="btn-reject">Reject</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <script>
+      fetch('../component/NavbarAdmin.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('navbar').innerHTML = html;
+          const page = window.location.pathname;
+          const map = {
+            'HomePage':         'nav-home',
+            'UsersPage':        'nav-users',
+            'TransactionsPage': 'nav-transactions',
+            'InventoryPage':    'nav-inventory',
+            'ContentPage':      'nav-content',
+            'ProfilPage':      'nav-profile',
+          };
+          for (const [key, id] of Object.entries(map)) {
+            if (page.includes(key)) {
+              document.getElementById(id)?.classList.add('active');
+              break;
+            }
+          }
+        });
+    </script>
+  </body>
+</html>

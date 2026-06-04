@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Dashboard - Transaksi</title>
+    <link rel="icon" href="../../../public/icon/ic-logo.png">
+    <link rel="stylesheet" href="../styles/dashboard/TransPage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <div class="main-container">
+      <div class="page-header">
+        <h1 class="page-title">Kelola Tansaksi</h1>
+        <p class="page-sub">Manajemen nasabah dan kurir wilayah Malang</p>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="ti ti-users"></i></div>
+          <div class="stat-info">
+            <p class="stat-label">Total User</p>
+            <p class="stat-value">1,284</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="ti ti-heart-handshake"></i></div>
+          <div class="stat-info">
+            <p class="stat-label">Nasabah Aktif</p>
+            <p class="stat-value">1,120</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="ti ti-truck-delivery"></i></div>
+          <div class="stat-info">
+            <p class="stat-label">Kurir Terverifikasi</p>
+            <p class="stat-value">164</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="table-header">
+          <div class="search-box">
+            <i class="ti ti-search"></i>
+            <input type="text" placeholder="Cari nama, ID, atau email...">
+          </div>
+          <div class="filter-group">
+            <span class="filter-label">Filter Peran:</span>
+            <button class="filter-btn active">Semua</button>
+            <button class="filter-btn">Nasabah</button>
+            <button class="filter-btn">Kurir</button>
+          </div>
+        </div>
+
+        <div class="tx-table-wrap">
+          <table class="tx-table">
+            <thead>
+              <tr>
+                <th>NAMA & ID</th>
+                <th>PERAN</th>
+                <th>STATUS</th>
+                <th>POIN</th>
+                <th>AKSI</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="user-cell">
+                    <div class="user-avatar initials">AS</div>
+                    <div class="user-info">
+                      <p class="user-name">Ahmad Suherman</p>
+                      <p class="user-id">#Mu B-992120</p>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="role-badge nasabah">NASABAH</span></td>
+                <td>
+                  <span class="status-badge verified">
+                    <span class="status-dot green"></span>Terverifikasi
+                  </span>
+                </td>
+                <td class="poin-cell">1.250 <span class="pts">pts</span></td>
+                <td>
+                  <div class="action-group">
+                    <button class="btn-icon edit"><i class="ti ti-pencil"></i></button>
+                    <button class="btn-icon delete"><i class="ti ti-trash"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="user-cell">
+                    <div class="user-avatar img-avatar">
+                      <img src="../../../public/img/img-budi.png" alt="Budi" onerror="this.parentElement.classList.remove('img-avatar'); this.parentElement.classList.add('initials'); this.parentElement.textContent='BS'">
+                    </div>
+                    <div class="user-info">
+                      <p class="user-name">Budi Santoso</p>
+                      <p class="user-id">#Mu B-K88201</p>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="role-badge kurir">KURIR</span></td>
+                <td>
+                  <span class="status-badge waiting">
+                    <span class="status-dot yellow"></span>Menunggu Verifikasi
+                  </span>
+                </td>
+                <td class="poin-cell">450 <span class="pts">pts</span></td>
+                <td>
+                  <div class="action-group">
+                    <button class="btn-verifikasi">Verifikasi</button>
+                    <button class="btn-icon delete"><i class="ti ti-trash"></i></button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="user-cell">
+                    <div class="user-avatar initials sk">SK</div>
+                    <div class="user-info">
+                      <p class="user-name">Siti Khodijah</p>
+                      <p class="user-id">#Mu B-993412</p>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="role-badge nasabah">NASABAH</span></td>
+                <td>
+                  <span class="status-badge verified">
+                    <span class="status-dot green"></span>Terverifikasi
+                  </span>
+                </td>
+                <td class="poin-cell">3.400 <span class="pts">pts</span></td>
+                <td>
+                  <div class="action-group">
+                    <button class="btn-icon edit"><i class="ti ti-pencil"></i></button>
+                    <button class="btn-icon delete"><i class="ti ti-trash"></i></button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-footer">
+          <p class="showing-text">Menampilkan 3 dari 1,284 users</p>
+          <div class="pagination">
+            <button class="page-btn nav"><i class="ti ti-chevron-left"></i></button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <span class="page-dots">...</span>
+            <button class="page-btn">428</button>
+            <button class="page-btn nav"><i class="ti ti-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      fetch('../component/NavbarAdmin.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('navbar').innerHTML = html;
+          const page = window.location.pathname;
+          const map = {
+            'HomePage':         'nav-home',
+            'UsersPage':        'nav-users',
+            'TransactionsPage': 'nav-transactions',
+            'InventoryPage':    'nav-inventory',
+            'ContentPage':      'nav-content',
+            'ProfilPage':      'nav-profile',
+          };
+          for (const [key, id] of Object.entries(map)) {
+            if (page.includes(key)) {
+              document.getElementById(id)?.classList.add('active');
+              break;
+            }
+          }
+        });
+
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        });
+      });
+    </script>
+  </body>
+</html>
