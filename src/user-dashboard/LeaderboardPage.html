@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Leaderboard</title>
+    <link rel="icon" href="../../public/icon/ic-logo.png">
+    <link rel="stylesheet" href="../styles/user-dashboard/LeaderboarPage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <div class="main-container">
+      <div class="board-card">
+
+        <div class="board-header">
+          <div class="trophy-icon">
+            <img src="../../public/icon/ic-badge.png" alt="badge" width="48" height="48">
+          </div>
+          <h1 class="board-title">Top 10 poin tertinggi minggu ini!</h1>
+        </div>
+
+        <div class="podium-area">
+          <div class="rank-card">
+            <p class="rank-card-label">Peringkat anda</p>
+            <p class="rank-card-number">#30</p>
+            <div class="rank-progress-row">
+              <span class="rank-pct">%50</span>
+              <div class="rank-progress-bar">
+                <div class="rank-progress-fill" style="width: 50%"></div>
+              </div>
+              <span class="rank-next">370</span>
+            </div>
+            <p class="rank-poin">185 poin</p>
+          </div>
+
+          <div class="podium-wrapper">
+            <div class="podium-entry second">
+              <p class="podium-name">Orang</p>
+              <div class="podium-avatar">
+                <img src="../../public/img/img-orang.png" alt="Orang">
+              </div>
+              <div class="podium-block">
+                <img src="../../public/icon/ic-rank2.png" alt="rank 2" class="medal-img">
+                <p class="podium-poin">945</p>
+                <p class="podium-poin-label">poin</p>
+              </div>
+            </div>
+
+            <div class="podium-entry first">
+              <p class="podium-name">Joce</p>
+              <div class="podium-avatar crown">
+                <img src="../../public/img/img-joce.png" alt="Joce">
+              </div>
+              <div class="podium-block">
+                <img src="../../public/icon/ic-rank1.png" alt="rank 1" class="medal-img">
+                <p class="podium-poin">1.000</p>
+                <p class="podium-poin-label">poin</p>
+              </div>
+            </div>
+
+            <div class="podium-entry third">
+              <p class="podium-name">Kyoko</p>
+              <div class="podium-avatar">
+                <img src="../../public/img/img-kyoko.png" alt="Kyoko">
+              </div>
+              <div class="podium-block">
+                <img src="../../public/icon/ic-rank3.png" alt="rank 3" class="medal-img">
+                <p class="podium-poin">647</p>
+                <p class="podium-poin-label">poin</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="floor-bar"></div>
+
+        <div class="list-card">
+          <div class="list-col">
+            <div class="list-item">
+              <div class="list-avatar"><img src="../../public/img/img-joce.png" alt="Joce"></div>
+              <span class="list-name"><strong>1. Joce</strong></span>
+              <span class="list-poin">Poin 1.000</span>
+            </div>
+            <div class="list-item">
+              <div class="list-avatar"><img src="../../public/img/img-orang.png" alt="Orang"></div>
+              <span class="list-name"><strong>2. Orang</strong></span>
+              <span class="list-poin">Poin 945</span>
+            </div>
+            <div class="list-item">
+              <div class="list-avatar"><img src="../../public/img/img-kyoko.png" alt="Kyoko"></div>
+              <span class="list-name"><strong>3. Kyoko</strong></span>
+              <span class="list-poin">Poin 647</span>
+            </div>
+            <div class="list-item">
+              <div class="list-avatar"><img src="../../public/img/avatar-4.png" alt="Annisa"></div>
+              <span class="list-name"><strong>4. Annisa</strong></span>
+              <span class="list-poin">Poin 500</span>
+            </div>
+            <div class="list-item">
+              <div class="list-avatar"><img src="../../public/img/avatar-5.png" alt="Calista"></div>
+              <span class="list-name"><strong>5. Calista</strong></span>
+              <span class="list-poin">Poin 499</span>
+            </div>
+          </div>
+
+          <div class="list-divider"></div>
+
+          <div class="list-col">
+            <div class="list-item">
+              <div class="list-avatar"><img src="../../public/img/avatar-6.png" alt="Celine"></div>
+              <span class="list-name"><strong>6. Celine</strong></span>
+              <span class="list-poin">Poin 450</span>
+            </div>
+            <div class="list-item">
+              <div class="list-avatar"><img src="../../public/img/avatar-7.png" alt="Angela"></div>
+              <span class="list-name"><strong>7. Angela</strong></span>
+              <span class="list-poin">Poin 400</span>
+            </div>
+            <div class="list-item">
+              <div class="list-avatar"><img src="../../public/img/avatar-8.png" alt="Camani"></div>
+              <span class="list-name"><strong>8. Camani</strong></span>
+              <span class="list-poin">Poin 399</span>
+            </div>
+            <div class="list-item">
+              <div class="list-avatar"><img src="../../public/img/avatar-9.png" alt="Siti"></div>
+              <span class="list-name"><strong>9. Siti</strong></span>
+              <span class="list-poin">Poin 387</span>
+            </div>
+            <div class="list-item">
+              <div class="list-avatar"><img src="../../public/img/avatar-10.png" alt="Orang"></div>
+              <span class="list-name"><strong>10. Orang</strong></span>
+              <span class="list-poin">Poin 370</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script>
+      fetch('../component/navbar.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('navbar').innerHTML = html;
+
+          const page = window.location.pathname;
+          const map = {
+            'ProfilPage': 'nav-profil',
+            'NotifPage': 'nav-notifikasi',
+            'LeaderboardPage': 'nav-leaderboard',
+            'JualPage': 'nav-jual',
+            'PickupPage': 'nav-pickup',
+            'TukarPage': 'nav-tukar',
+            'ArtikelPage': 'nav-artikel',
+          };
+
+          for (const [key, id] of Object.entries(map)) {
+            if (page.includes(key)) {
+              document.getElementById(id)?.classList.add('active');
+              break;
+            }
+          }
+        });
+    </script>
+  </body>
+</html>
