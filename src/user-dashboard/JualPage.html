@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jual Sampah</title>
+    <link rel="icon" href="../../public/icon/ic-logo.png">
+    <link rel="stylesheet" href="../styles/user-dashboard/JualsampahPage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <div class="main-container">
+
+      <div class="left-card">
+        <h2 class="left-title">Jenis Sampah & Harga</h2>
+        <div class="category-grid">
+          <div class="category-item">
+            <div class="category-icon">
+              <img src="../../public/icon/ic-plastik.png" alt="Plastik">
+            </div>
+            <p class="category-name">Plastik</p>
+          </div>
+          <div class="category-item">
+            <div class="category-icon">
+              <img src="../../public/icon/ic-kertas.png" alt="Kertas">
+            </div>
+            <p class="category-name">Kertas</p>
+          </div>
+          <div class="category-item">
+            <div class="category-icon">
+              <img src="../../public/icon/ic-kaca.png" alt="Kaca">
+            </div>
+            <p class="category-name">Kaca</p>
+          </div>
+          <div class="category-item">
+            <div class="category-icon">
+              <img src="../../public/icon/ic-alumunium.png" alt="Alumunium">
+            </div>
+            <p class="category-name">Alumunium</p>
+          </div>
+          <div class="category-item">
+            <div class="category-icon">
+              <img src="../../public/icon/ic-elektronik.png" alt="Elektronik">
+            </div>
+            <p class="category-name">Elektronik</p>
+          </div>
+          <div class="category-item">
+            <div class="category-icon">
+              <img src="../../public/icon/ic-karet.png" alt="Karet">
+            </div>
+            <p class="category-name">Karet</p>
+          </div>
+          <div class="category-item">
+            <div class="category-icon">
+              <img src="../../public/icon/ic-tekstil.png" alt="Tekstil">
+            </div>
+            <p class="category-name">Tekstil</p>
+          </div>
+          <div class="category-item">
+            <div class="category-icon">
+              <img src="../../public/icon/ic-khusus.png" alt="Khusus">
+            </div>
+            <p class="category-name">Khusus</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-card">
+        <h2 class="right-title">Jual Sampah</h2>
+        <p class="right-subtitle">Anda bisa menjual sampah dengan mengisi data berikut.</p>
+
+        <h3 class="table-title">Data Penjualan Sampah</h3>
+
+        <div class="table-wrapper">
+          <table class="jual-table">
+            <thead>
+              <tr>
+                <th>Jenis Sampah</th>
+                <th>Kategori</th>
+                <th>Berat</th>
+                <th>Harga</th>
+              </tr>
+            </thead>
+            <tbody id="jual-tbody">
+              <tr>
+                <td>Plastik</td>
+                <td>Tutup botol</td>
+                <td>3Kg</td>
+                <td>Rp9.000,-</td>
+              </tr>
+              <tr class="add-row">
+                <td><button class="add-btn" onclick="addRow()">&#8853;</button></td>
+                <td><button class="add-btn">&#8853;</button></td>
+                <td><button class="add-btn">&#8853;</button></td>
+                <td><button class="add-btn">&#8853;</button></td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="total-row">
+            <span><strong>Total:</strong> Rp9.000,-</span>
+          </div>
+        </div>
+
+        <p class="choice-label">Apakah anda mau menjual sampah atau menabung sampah?</p>
+        <div class="choice-btns">
+          <button class="btn-choice active" id="btn-nabung" onclick="setChoice('nabung')">Menabung sampah</button>
+          <button class="btn-choice" id="btn-jual" onclick="setChoice('jual')">Jual sampah</button>
+        </div>
+
+        <div class="kirim-row">
+          <button class="btn-kirim" onclick="showPopup()">Kirim</button>
+        </div>
+      </div>
+
+    </div>
+
+    <script>
+      fetch('../component/navbar.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('navbar').innerHTML = html;
+
+          const page = window.location.pathname;
+          const map = {
+            'ProfilPage': 'nav-profil',
+            'NotifPage': 'nav-notifikasi',
+            'LeaderboardPage': 'nav-leaderboard',
+            'JualPage': 'nav-jual',
+            'PickupPage': 'nav-pickup',
+            'TukarPage': 'nav-tukar',
+            'ArtikelPage': 'nav-artikel',
+          };
+
+          for (const [key, id] of Object.entries(map)) {
+            if (page.includes(key)) {
+              document.getElementById(id)?.classList.add('active');
+              break;
+            }
+          }
+        });
+
+      function setChoice(val) {
+        document.getElementById('btn-nabung').classList.toggle('active', val === 'nabung');
+        document.getElementById('btn-jual').classList.toggle('active', val === 'jual');
+      }
+
+      function addRow() {
+        const tbody = document.getElementById('jual-tbody');
+        const addRow = tbody.querySelector('.add-row');
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+          <td><input type="text" placeholder="Jenis" class="cell-input"></td>
+          <td><input type="text" placeholder="Kategori" class="cell-input"></td>
+          <td><input type="text" placeholder="Berat" class="cell-input"></td>
+          <td><input type="text" placeholder="Harga" class="cell-input"></td>
+        `;
+        tbody.insertBefore(newRow, addRow);
+      }
+
+      function showPopup() {
+        document.getElementById('popup-overlay').classList.add('active');
+      }
+
+      function closePopup() {
+        document.getElementById('popup-overlay').classList.remove('active');
+      }
+    </script>
+
+    <div class="popup-overlay" id="popup-overlay">
+      <div class="popup-card">
+        <h2 class="popup-title">Selamat, Transaksi anda Berhasil!</h2>
+        <div class="popup-icon">
+          <img src="../../public/icon/ic-berhasil.png" alt="badge" width="150" height="140">
+        </div>
+        <p class="popup-msg">Terima kasih sudah ikut serta dalam menjaga kelestarian lingkungan!</p>
+        <button class="btn-selesai" onclick="closePopup()">Selesai</button>
+      </div>
+    </div>
+  </body>
+</html>
