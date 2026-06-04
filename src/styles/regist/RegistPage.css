@@ -48,7 +48,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
+  margin-top: 30px;
   position: relative;
 }
 
@@ -60,7 +60,7 @@ button {
   border-radius: 16px;
   position: relative;
   z-index: 10;
-  padding: 100px 80px 120px 80px;
+  padding: 50px 80px 120px 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -145,4 +145,31 @@ a {
   font-weight: 700;
   color: #0D5322;
   font-size: 12px;
+}
+
+.role {
+  padding: 12px;
+  padding-right: 40px;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+  box-shadow: 6px 6px 7px rgba(0, 0, 0, 0.3);
+  border: 4px solid transparent;
+  transition: all 0.3s ease;
+  font-size: 20px;
+  font-weight: semibold;
+  cursor: pointer;
+}
+
+.role:focus {
+  background-color: #00310F;
+  color: white;
+}
+
+.role-section {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 20px;
+  margin-bottom: 20px;
 }
