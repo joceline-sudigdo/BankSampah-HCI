@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Profil - Carmenita</title>
-    <link rel="icon" href="../../public/icon/ic-logo.png">
+    <link rel="icon" href="../../public/img/img-logo.png">
     <link rel="stylesheet" href="../styles/user-dashboard/ProfilPage.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   </head>
@@ -59,13 +59,20 @@
           </div>
         </div>
 
+        <div class="event-section">
+          <h3 class="event-section-title">Event yang Diikuti</h3>
+          <div class="event-list" id="event-list">
+            <p class="event-empty" id="event-empty">Belum ada event yang diikuti.</p>
+          </div>
+        </div>
+
         <div class="savings-section">
           <h3 class="savings-title">Tabungan sampah</h3>
           <div class="table-wrapper">
             <table class="savings-table">
               <thead>
                 <tr>
-                  <th>Tanggal</th>
+                  <th>Tgl</th>
                   <th>Keterangan</th>
                   <th>Poin</th>
                   <th>Debit</th>
@@ -153,6 +160,19 @@
             }
           }
         });
+
+      const events = JSON.parse(localStorage.getItem('registeredEvents') || '[]');
+      const eventList = document.getElementById('event-list');
+      const eventEmpty = document.getElementById('event-empty');
+      if (events.length > 0) {
+        eventEmpty.style.display = 'none';
+        events.forEach(name => {
+          const tag = document.createElement('div');
+          tag.className = 'event-tag';
+          tag.textContent = name;
+          eventList.appendChild(tag);
+        });
+      }
     </script>
   </body>
 </html>

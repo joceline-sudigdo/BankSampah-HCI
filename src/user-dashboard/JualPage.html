@@ -14,52 +14,36 @@
       <div class="left-card">
         <h2 class="left-title">Jenis Sampah & Harga</h2>
         <div class="category-grid">
-          <div class="category-item">
-            <div class="category-icon">
-              <img src="../../public/icon/ic-plastik.png" alt="Plastik">
-            </div>
+          <div class="category-item" onclick="openDetailSampah('Plastik')">
+            <div class="category-icon"><img src="../../public/icon/ic-plastik.png" alt="Plastik"></div>
             <p class="category-name">Plastik</p>
           </div>
-          <div class="category-item">
-            <div class="category-icon">
-              <img src="../../public/icon/ic-kertas.png" alt="Kertas">
-            </div>
+          <div class="category-item" onclick="openDetailSampah('Kertas')">
+            <div class="category-icon"><img src="../../public/icon/ic-kertas.png" alt="Kertas"></div>
             <p class="category-name">Kertas</p>
           </div>
-          <div class="category-item">
-            <div class="category-icon">
-              <img src="../../public/icon/ic-kaca.png" alt="Kaca">
-            </div>
+          <div class="category-item" onclick="openDetailSampah('Kaca')">
+            <div class="category-icon"><img src="../../public/icon/ic-kaca.png" alt="Kaca"></div>
             <p class="category-name">Kaca</p>
           </div>
-          <div class="category-item">
-            <div class="category-icon">
-              <img src="../../public/icon/ic-alumunium.png" alt="Alumunium">
-            </div>
+          <div class="category-item" onclick="openDetailSampah('Aluminium')">
+            <div class="category-icon"><img src="../../public/icon/ic-aluminium.png" alt="Alumunium"></div>
             <p class="category-name">Alumunium</p>
           </div>
-          <div class="category-item">
-            <div class="category-icon">
-              <img src="../../public/icon/ic-elektronik.png" alt="Elektronik">
-            </div>
+          <div class="category-item" onclick="openDetailSampah('Elektronik')">
+            <div class="category-icon"><img src="../../public/icon/ic-elektronik.png" alt="Elektronik"></div>
             <p class="category-name">Elektronik</p>
           </div>
-          <div class="category-item">
-            <div class="category-icon">
-              <img src="../../public/icon/ic-karet.png" alt="Karet">
-            </div>
+          <div class="category-item" onclick="openDetailSampah('Karet')">
+            <div class="category-icon"><img src="../../public/icon/ic-karet.png" alt="Karet"></div>
             <p class="category-name">Karet</p>
           </div>
-          <div class="category-item">
-            <div class="category-icon">
-              <img src="../../public/icon/ic-tekstil.png" alt="Tekstil">
-            </div>
+          <div class="category-item" onclick="openDetailSampah('Tekstil')">
+            <div class="category-icon"><img src="../../public/icon/ic-tekstil.png" alt="Tekstil"></div>
             <p class="category-name">Tekstil</p>
           </div>
-          <div class="category-item">
-            <div class="category-icon">
-              <img src="../../public/icon/ic-khusus.png" alt="Khusus">
-            </div>
+          <div class="category-item" onclick="openDetailSampah('Khusus')">
+            <div class="category-icon"><img src="../../public/icon/ic-khusus.png" alt="Khusus"></div>
             <p class="category-name">Khusus</p>
           </div>
         </div>
@@ -68,7 +52,6 @@
       <div class="right-card">
         <h2 class="right-title">Jual Sampah</h2>
         <p class="right-subtitle">Anda bisa menjual sampah dengan mengisi data berikut.</p>
-
         <h3 class="table-title">Data Penjualan Sampah</h3>
 
         <div class="table-wrapper">
@@ -77,27 +60,21 @@
               <tr>
                 <th>Jenis Sampah</th>
                 <th>Kategori</th>
-                <th>Berat</th>
+                <th>Berat (Kg)</th>
                 <th>Harga</th>
+                <th></th>
               </tr>
             </thead>
-            <tbody id="jual-tbody">
-              <tr>
-                <td>Plastik</td>
-                <td>Tutup botol</td>
-                <td>3Kg</td>
-                <td>Rp9.000,-</td>
-              </tr>
-              <tr class="add-row">
-                <td><button class="add-btn" onclick="addRow()">&#8853;</button></td>
-                <td><button class="add-btn">&#8853;</button></td>
-                <td><button class="add-btn">&#8853;</button></td>
-                <td><button class="add-btn">&#8853;</button></td>
-              </tr>
-            </tbody>
+            <tbody id="jual-tbody"></tbody>
           </table>
+          <div class="add-row-btn-wrapper">
+            <button class="add-row-btn" onclick="addRow()">
+              <img src="../../public/icon/ic-add.png" alt="tambah" width="22" height="22">
+              <span>Tambah baris</span>
+            </button>
+          </div>
           <div class="total-row">
-            <span><strong>Total:</strong> Rp9.000,-</span>
+            <span><strong>Total:</strong> <span id="total-display">Rp0,-</span></span>
           </div>
         </div>
 
@@ -114,58 +91,6 @@
 
     </div>
 
-    <script>
-      fetch('../component/navbar.html')
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById('navbar').innerHTML = html;
-
-          const page = window.location.pathname;
-          const map = {
-            'ProfilPage': 'nav-profil',
-            'NotifPage': 'nav-notifikasi',
-            'LeaderboardPage': 'nav-leaderboard',
-            'JualPage': 'nav-jual',
-            'PickupPage': 'nav-pickup',
-            'TukarPage': 'nav-tukar',
-            'ArtikelPage': 'nav-artikel',
-          };
-
-          for (const [key, id] of Object.entries(map)) {
-            if (page.includes(key)) {
-              document.getElementById(id)?.classList.add('active');
-              break;
-            }
-          }
-        });
-
-      function setChoice(val) {
-        document.getElementById('btn-nabung').classList.toggle('active', val === 'nabung');
-        document.getElementById('btn-jual').classList.toggle('active', val === 'jual');
-      }
-
-      function addRow() {
-        const tbody = document.getElementById('jual-tbody');
-        const addRow = tbody.querySelector('.add-row');
-        const newRow = document.createElement('tr');
-        newRow.innerHTML = `
-          <td><input type="text" placeholder="Jenis" class="cell-input"></td>
-          <td><input type="text" placeholder="Kategori" class="cell-input"></td>
-          <td><input type="text" placeholder="Berat" class="cell-input"></td>
-          <td><input type="text" placeholder="Harga" class="cell-input"></td>
-        `;
-        tbody.insertBefore(newRow, addRow);
-      }
-
-      function showPopup() {
-        document.getElementById('popup-overlay').classList.add('active');
-      }
-
-      function closePopup() {
-        document.getElementById('popup-overlay').classList.remove('active');
-      }
-    </script>
-
     <div class="popup-overlay" id="popup-overlay">
       <div class="popup-card">
         <h2 class="popup-title">Selamat, Transaksi anda Berhasil!</h2>
@@ -176,5 +101,300 @@
         <button class="btn-selesai" onclick="closePopup()">Selesai</button>
       </div>
     </div>
+
+    <script>
+      fetch('../component/navbar.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('navbar').innerHTML = html;
+          const page = window.location.pathname;
+          const map = {
+            'ProfilPage': 'nav-profil',
+            'NotifPage': 'nav-notifikasi',
+            'LeaderboardPage': 'nav-leaderboard',
+            'JualPage': 'nav-jual',
+            'PickupPage': 'nav-pickup',
+            'TukarPage': 'nav-tukar',
+            'ArtikelPage': 'nav-artikel',
+          };
+          for (const [key, id] of Object.entries(map)) {
+            if (page.includes(key)) {
+              document.getElementById(id)?.classList.add('active');
+              break;
+            }
+          }
+        });
+
+      const KATEGORI_PER_JENIS = {
+        'Plastik':    ['Kantong Plastik','Botol Bening','Botol Warna','HD','HD Blow','Damar','Gelas Plastik','Galon'],
+        'Kertas':     ['Kertas Koran','Kertas HVS','Karton'],
+        'Kaca':       ['Botol Kaca','Kaca Lembaran','Gelas Kaca'],
+        'Aluminium':  ['Kaleng Aluminium','Panci Bekas','Kusen Aluminium'],
+        'Elektronik': ['Kabel Tembaga','PCB/Motherboard','Baterai Bekas'],
+        'Karet':      ['Ban Motor','Ban Mobil','Sandal Bekas'],
+        'Tekstil':    ['Baju Bekas','Celana Bekas','Kain Perca'],
+        'Khusus':     ['Aki Bekas','Minyak Jelantah','Obat Kadaluarsa'],
+      };
+
+      const HARGA_PER_KG_MAP = {
+        'Kantong Plastik': 1000, 'Botol Bening': 1000, 'Botol Warna': 1000,
+        'HD': 1000, 'HD Blow': 1000, 'Damar': 1000, 'Gelas Plastik': 1000, 'Galon': 1000,
+        'Kertas Koran': 1000, 'Kertas HVS': 1000, 'Karton': 1000,
+        'Botol Kaca': 1000, 'Kaca Lembaran': 1000, 'Gelas Kaca': 1000,
+        'Kaleng Aluminium': 1000, 'Panci Bekas': 1000, 'Kusen Aluminium': 1000,
+        'Kabel Tembaga': 1000, 'PCB/Motherboard': 1000, 'Baterai Bekas': 1000,
+        'Ban Motor': 1000, 'Ban Mobil': 1000, 'Sandal Bekas': 1000,
+        'Baju Bekas': 1000, 'Celana Bekas': 1000, 'Kain Perca': 1000,
+        'Aki Bekas': 1000, 'Minyak Jelantah': 1000, 'Obat Kadaluarsa': 1000,
+      };
+
+      const DETAIL_SAMPAH = {
+        'Plastik': {
+          desc: 'Disini teman teman bisa melihat benda apa saja yang tergolong plastik beserta harganya.',
+          items: [
+            { nama: 'Kantong Plastik', harga: '1.000 /kg', img: '../../public/img/img-kantong-plastik.png' },
+            { nama: 'Botol Bening',    harga: '1.000 /kg', img: '../../public/img/img-botol-bening.png' },
+            { nama: 'Botol Warna',     harga: '1.000 /kg', img: '../../public/img/img-botol-warna.png' },
+            { nama: 'HD',              harga: '1.000 /kg', img: '../../public/img/img-hd.png' },
+            { nama: 'HD Blow',         harga: '1.000 /kg', img: '../../public/img/img-hdblow.png' },
+            { nama: 'Damar',           harga: '1.000 /kg', img: '../../public/img/img-damar.png' },
+            { nama: 'Gelas Plastik',   harga: '1.000 /kg', img: '../../public/img/img-gelas-plastik.png' },
+            { nama: 'Galon',           harga: '1.000 /kg', img: '../../public/img/img-galon.png' },
+          ]
+        },
+        'Kertas': {
+          desc: 'Daftar barang yang tergolong kertas beserta harganya.',
+          items: [
+            { nama: 'Kertas Koran', harga: '1.000 /kg', img: '../../public/img/img-kertas-koran.png' },
+            { nama: 'Kertas HVS',   harga: '1.000 /kg', img: '../../public/img/img-kertas-hvs.png' },
+            { nama: 'Karton',       harga: '1.000 /kg', img: '../../public/img/img-karton.png' },
+          ]
+        },
+        'Kaca': {
+          desc: 'Daftar barang yang tergolong kaca beserta harganya.',
+          items: [
+            { nama: 'Botol Kaca',      harga: '1.000 /kg', img: '../../public/img/img-botol-kaca.png' },
+            { nama: 'Kaca Lembaran',   harga: '1.000 /kg', img: '../../public/img/img-kaca-lembaran.png' },
+            { nama: 'Gelas Kaca',      harga: '1.000 /kg', img: '../../public/img/img-gelas-kaca.png' },
+          ]
+        },
+        'Aluminium': {
+          desc: 'Daftar barang yang tergolong aluminium beserta harganya.',
+          items: [
+            { nama: 'Kaleng Aluminium', harga: '1.000 /kg', img: '../../public/img/img-kaleng-aluminium.png' },
+            { nama: 'Panci Bekas',      harga: '1.000 /kg', img: '../../public/img/img-panci-bekas.png' },
+            { nama: 'Kusen Aluminium',  harga: '1.000 /kg', img: '../../public/img/img-kusen-aluminium.png' },
+          ]
+        },
+        'Elektronik': {
+          desc: 'Daftar barang yang tergolong elektronik beserta harganya.',
+          items: [
+            { nama: 'Kabel Tembaga',    harga: '1.000 /kg', img: '../../public/img/img-kabel-tembaga.png' },
+            { nama: 'PCB/Motherboard',  harga: '1.000 /kg', img: '../../public/img/img-pcb.png' },
+            { nama: 'Baterai Bekas',    harga: '1.000 /kg', img: '../../public/img/img-baterai-bekas.png' },
+          ]
+        },
+        'Karet': {
+          desc: 'Daftar barang yang tergolong karet beserta harganya.',
+          items: [
+            { nama: 'Ban Motor',   harga: '1.000 /kg', img: '../../public/img/img-ban-motor.png' },
+            { nama: 'Ban Mobil',   harga: '1.000 /kg', img: '../../public/img/img-ban-mobil.png' },
+            { nama: 'Sandal Bekas',harga: '1.000 /kg', img: '../../public/img/img-sandal-bekas.png' },
+          ]
+        },
+        'Tekstil': {
+          desc: 'Daftar barang yang tergolong tekstil beserta harganya.',
+          items: [
+            { nama: 'Baju Bekas',  harga: '1.000 /kg', img: '../../public/img/img-baju-bekas.png' },
+            { nama: 'Celana Bekas',harga: '1.000 /kg', img: '../../public/img/img-celana-bekas.png' },
+            { nama: 'Kain Perca',  harga: '1.000 /kg', img: '../../public/img/img-kain-perca.png' },
+          ]
+        },
+        'Khusus': {
+          desc: 'Daftar barang yang tergolong khusus beserta harganya.',
+          items: [
+            { nama: 'Aki Bekas',        harga: '1.000 /kg', img: '../../public/img/img-aki-bekas.png' },
+            { nama: 'Minyak Jelantah',  harga: '1.000 /kg', img: '../../public/img/img-minyak-jelantah.png' },
+            { nama: 'Obat Kadaluarsa',  harga: '1.000 /kg', img: '../../public/img/img-obat-kadaluarsa.png' },
+          ]
+        },
+      };
+
+      const JENIS_OPTIONS = ['Plastik','Kertas','Kaca','Aluminium','Elektronik','Karet','Tekstil','Khusus'];
+
+      let rowCount = 0;
+
+      function makeJenisSelect(id) {
+        return `<select class="cell-select" id="sel-jenis-${id}" onchange="onJenisChange(${id})">
+          <option value="">-- Pilih Jenis --</option>
+          ${JENIS_OPTIONS.map(o => `<option value="${o}">${o}</option>`).join('')}
+          <option value="__lainnya__">Lainnya (ketik)</option>
+        </select>
+        <input type="text" class="custom-input" id="sel-jenis-${id}-custom" placeholder="Ketik jenis..." style="display:none" oninput="recalcTotal()">`;
+      }
+
+      function makeKategoriSelect(id, options) {
+        const locked = !options;
+        const opts = options || [];
+        return `<select class="cell-select" id="sel-kategori-${id}" onchange="onKategoriChange(${id})" ${locked ? 'disabled' : ''}>
+          <option value="">-- Pilih Kategori --</option>
+          ${opts.map(o => `<option value="${o}">${o}</option>`).join('')}
+          <option value="__lainnya__">Lainnya (ketik)</option>
+        </select>
+        <input type="text" class="custom-input" id="sel-kategori-${id}-custom" placeholder="Ketik kategori..." style="display:none" oninput="recalcTotal()">`;
+      }
+
+      function onJenisChange(id) {
+        const jenisSel = document.getElementById('sel-jenis-' + id);
+        const jenisCustom = document.getElementById('sel-jenis-' + id + '-custom');
+        const kategoriTd = document.getElementById('td-kategori-' + id);
+
+        if (jenisSel.value === '__lainnya__') {
+          jenisCustom.style.display = 'block';
+          jenisSel.style.display = 'none';
+          kategoriTd.innerHTML = makeKategoriSelect(id, null);
+          const sel = document.getElementById('sel-kategori-' + id);
+          sel.disabled = false;
+          sel.innerHTML = `<option value="">-- Pilih Kategori --</option><option value="__lainnya__">Lainnya (ketik)</option>`;
+        } else if (jenisSel.value) {
+          jenisCustom.style.display = 'none';
+          const opts = KATEGORI_PER_JENIS[jenisSel.value] || [];
+          kategoriTd.innerHTML = makeKategoriSelect(id, opts);
+        } else {
+          jenisCustom.style.display = 'none';
+          kategoriTd.innerHTML = makeKategoriSelect(id, null);
+        }
+        recalcTotal();
+      }
+
+      function onKategoriChange(id) {
+        const sel = document.getElementById('sel-kategori-' + id);
+        const custom = document.getElementById('sel-kategori-' + id + '-custom');
+        if (sel && sel.value === '__lainnya__') {
+          custom.style.display = 'block';
+          sel.style.display = 'none';
+        } else if (custom) {
+          custom.style.display = 'none';
+        }
+        recalcTotal();
+      }
+
+      function addRow() {
+        rowCount++;
+        const id = rowCount;
+        const tbody = document.getElementById('jual-tbody');
+        const tr = document.createElement('tr');
+        tr.id = 'row-' + id;
+        tr.innerHTML = `
+          <td>${makeJenisSelect(id)}</td>
+          <td id="td-kategori-${id}">${makeKategoriSelect(id, null)}</td>
+          <td>
+            <div class="berat-cell">
+              <input type="number" class="cell-input berat-input" id="inp-berat-${id}" placeholder="0" min="0" oninput="recalcTotal()">
+              <span class="berat-unit">Kg</span>
+            </div>
+          </td>
+          <td class="harga-cell" id="harga-${id}">-</td>
+          <td><button class="del-btn" onclick="deleteRow(${id})">&#10005;</button></td>
+        `;
+        tbody.appendChild(tr);
+      }
+
+      function deleteRow(id) {
+        const row = document.getElementById('row-' + id);
+        if (row) row.remove();
+        recalcTotal();
+      }
+
+      function getKategoriValue(id) {
+        const sel = document.getElementById('sel-kategori-' + id);
+        if (!sel) return '';
+        if (sel.style.display === 'none') {
+          const custom = document.getElementById('sel-kategori-' + id + '-custom');
+          return custom ? custom.value.trim() : '';
+        }
+        return sel.value === '__lainnya__' ? '' : sel.value;
+      }
+
+      function recalcTotal() {
+        let total = 0;
+        const rows = document.querySelectorAll('#jual-tbody tr');
+        rows.forEach(row => {
+          const rid = row.id.replace('row-', '');
+          if (!rid) return;
+          const beratEl = document.getElementById('inp-berat-' + rid);
+          const hargaEl = document.getElementById('harga-' + rid);
+          if (!beratEl || !hargaEl) return;
+          const berat = parseFloat(beratEl.value);
+          const kategori = getKategoriValue(rid);
+          if (!kategori || isNaN(berat) || berat <= 0) {
+            hargaEl.textContent = '-';
+            return;
+          }
+          const hargaPerKg = HARGA_PER_KG_MAP[kategori] || 1000;
+          const subtotal = berat * hargaPerKg;
+          hargaEl.textContent = 'Rp' + subtotal.toLocaleString('id-ID') + ',-';
+          total += subtotal;
+        });
+        document.getElementById('total-display').textContent = total > 0 ? 'Rp' + total.toLocaleString('id-ID') + ',-' : 'Rp0,-';
+      }
+
+      function openDetailSampah(jenis) {
+        const data = DETAIL_SAMPAH[jenis];
+        if (!data) return;
+        const popup = document.getElementById('popup-detail');
+        document.getElementById('detail-title').textContent = jenis;
+        document.getElementById('detail-icon').src = '../../public/icon/ic-' + jenis.toLowerCase() + '.png';
+        document.getElementById('detail-desc').textContent = data.desc;
+        const grid = document.getElementById('detail-grid');
+        grid.innerHTML = '';
+        data.items.forEach(item => {
+          const card = document.createElement('div');
+          card.className = 'detail-card';
+          card.innerHTML = `
+            <div class="detail-img-box"><img src="${item.img}" alt="${item.nama}"></div>
+            <p class="detail-item-name">${item.nama}</p>
+            <p class="detail-item-harga">${item.harga}</p>
+          `;
+          grid.appendChild(card);
+        });
+        popup.classList.add('active');
+      }
+
+      function closeDetailPopup() {
+        document.getElementById('popup-detail').classList.remove('active');
+      }
+
+      function setChoice(val) {
+        document.getElementById('btn-nabung').classList.toggle('active', val === 'nabung');
+        document.getElementById('btn-jual').classList.toggle('active', val === 'jual');
+      }
+
+      function showPopup() {
+        document.getElementById('popup-overlay').classList.add('active');
+      }
+
+      function closePopup() {
+        document.getElementById('popup-overlay').classList.remove('active');
+      }
+
+      addRow();
+    </script>
+    <div class="popup-overlay" id="popup-detail">
+      <div class="popup-detail-card">
+        <div class="detail-header">
+          <div class="detail-title-bar">
+            <span id="detail-title">Plastik</span>
+          </div>
+          <div class="detail-icon-circle">
+            <img id="detail-icon" src="" alt="">
+          </div>
+        </div>
+        <p class="detail-desc" id="detail-desc"></p>
+        <div class="detail-grid" id="detail-grid"></div>
+        <button class="btn-kembali" onclick="closeDetailPopup()">Kembali</button>
+      </div>
+    </div>
+
   </body>
 </html>

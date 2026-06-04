@@ -1,0 +1,283 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  background-image: url('../../../public/img/img-landing-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+}
+
+#navbar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.main-container {
+  flex: 1;
+  height: 100vh;
+  padding: 28px 36px 28px 28px;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.pickup-card {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.52);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 22px;
+  padding: 32px 36px;
+  display: flex;
+  gap: 32px;
+  overflow: hidden;
+}
+
+.left-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: hidden;
+}
+
+.pickup-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #1a5c2a;
+}
+
+.pickup-desc {
+  font-size: 0.88rem;
+  color: #333;
+  line-height: 1.5;
+  max-width: 480px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.input-field {
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  color: #333;
+  background: rgba(255,255,255,0.8);
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-field::placeholder {
+  color: #aaa;
+}
+
+.input-field:focus {
+  border-color: #1a5c2a;
+}
+
+.input-field.small {
+  width: 90px;
+}
+
+.input-field.medium {
+  width: 140px;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.choice-label {
+  font-size: 0.85rem;
+  color: #222;
+}
+
+.choice-btns {
+  display: flex;
+  gap: 14px;
+}
+
+.btn-choice {
+  padding: 10px 24px;
+  border-radius: 999px;
+  border: 2px solid #1a1a1a;
+  background: transparent;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-choice.active {
+  background: #ffffff;
+}
+
+.btn-choice:hover {
+  background: rgba(255,255,255,0.6);
+}
+
+.kirim-row {
+  display: flex;
+}
+
+.btn-kirim {
+  padding: 10px 64px;
+  border-radius: 999px;
+  border: 2px solid #1a1a1a;
+  background: rgba(255,255,255,0.7);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-kirim:hover {
+  background: #ffffff;
+}
+
+.right-section {
+  width: 340px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+}
+
+.truck-img-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.truck-img {
+  width: 100%;
+  max-width: 320px;
+  object-fit: contain;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.info-card {
+  border-radius: 14px;
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.info-card.dark {
+  background: #1a5c2a;
+}
+
+.info-main {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.info-sub {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.4;
+}
+
+.popup-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-overlay.active {
+  display: flex;
+}
+
+.popup-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 40px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+}
+
+.popup-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #1a5c2a;
+}
+
+.popup-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-msg {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a5c2a;
+  line-height: 1.5;
+}
+
+.btn-selesai {
+  padding: 10px 64px;
+  border-radius: 999px;
+  border: 2px solid #1a1a1a;
+  background: transparent;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-selesai:hover {
+  background: #f0f0f0;
+}
