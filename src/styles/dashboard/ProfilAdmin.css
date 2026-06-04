@@ -1,0 +1,477 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  background-image: url('../../../public/img/img-landing-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+}
+
+#navbar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.main-container {
+  flex: 1;
+  height: 100vh;
+  padding: 20px 28px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow: hidden;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.stat-card {
+  background: rgba(255,255,255,0.88);
+  border-radius: 16px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.stat-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.green-bg {
+  background: #d4edda;
+  color: #1a5c2a;
+}
+
+.stat-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 2px 8px;
+}
+
+.stat-badge.up {
+  background: #e6f9ee;
+  color: #1a9442;
+}
+
+.stat-unit {
+  font-size: 0.72rem;
+  color: #888;
+  font-weight: 500;
+}
+
+.stat-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #888;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.stat-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  line-height: 1.1;
+}
+
+.stat-sub {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.middle-row {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 14px;
+  flex: 1;
+  min-height: 0;
+}
+
+.chart-card {
+  background: rgba(255,255,255,0.88);
+  border-radius: 16px;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.chart-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.chart-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.chart-sub {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.chart-tabs {
+  display: flex;
+  gap: 6px;
+}
+
+.chart-tab {
+  padding: 5px 14px;
+  border-radius: 999px;
+  border: 1.5px solid #ddd;
+  background: transparent;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.chart-tab.active {
+  background: #e0ede5;
+  border-color: #1a5c2a;
+  color: #1a5c2a;
+  font-weight: 700;
+}
+
+.bar-chart {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  padding-bottom: 24px;
+  position: relative;
+}
+
+.bar-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.bar {
+  width: 100%;
+  background: #d4edda;
+  border-radius: 8px 8px 0 0;
+  min-height: 8px;
+  transition: height 0.3s;
+}
+
+.bar.active-bar {
+  background: #1a5c2a;
+}
+
+.bar-label {
+  font-size: 0.72rem;
+  color: #888;
+  font-weight: 500;
+}
+
+.target-card {
+  background: rgba(255,255,255,0.88);
+  border-radius: 16px;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.donut-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.donut-icon {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  background: #e8f5e2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: #1a5c2a;
+}
+
+.target-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+.target-desc {
+  font-size: 0.78rem;
+  color: #555;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.btn-detail {
+  width: 100%;
+  padding: 12px;
+  background: #1a5c2a;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: auto;
+  transition: background 0.2s;
+}
+
+.btn-detail:hover {
+  background: #144a20;
+}
+
+.bottom-row {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.transaksi-card,
+.pengguna-card {
+  background: rgba(255,255,255,0.88);
+  border-radius: 16px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card-header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.card-sub {
+  font-size: 0.72rem;
+  color: #888;
+}
+
+.lihat-semua {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-decoration: none;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+
+.lihat-semua:hover {
+  color: #1a5c2a;
+}
+
+.tx-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tx-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tx-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e8f5e2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #1a5c2a;
+  flex-shrink: 0;
+}
+
+.tx-info {
+  flex: 1;
+}
+
+.tx-id {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.tx-detail {
+  font-size: 0.72rem;
+  color: #666;
+}
+
+.tx-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.tx-badge.waiting {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.tx-badge.proses {
+  background: #cce5ff;
+  color: #004085;
+}
+
+.btn-konfirmasi {
+  padding: 8px 16px;
+  background: #1a5c2a;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.btn-konfirmasi:hover {
+  background: #144a20;
+}
+
+.btn-update {
+  padding: 8px 16px;
+  background: transparent;
+  color: #1a1a1a;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.btn-update:hover {
+  background: #f0f0f0;
+}
+
+.btn-add-user {
+  width: 34px;
+  height: 34px;
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  color: #1a1a1a;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #c8d8c0;
+  flex-shrink: 0;
+}
+
+.user-info {}
+
+.user-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.user-detail {
+  font-size: 0.72rem;
+  color: #666;
+}
+
+.btn-kelola-semua {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: 2px dashed #bbb;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #555;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-kelola-semua:hover {
+  background: #f5f5f5;
+}

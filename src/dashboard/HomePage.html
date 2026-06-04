@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Dashboard</title>
+    <link rel="icon" href="../../public/icon/ic-logo.png">
+    <link rel="stylesheet" href="../styles/dashboard/ProfilAdmin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <div class="main-container">
+
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-top">
+            <div class="stat-icon green-bg"><i class="ti ti-users"></i></div>
+            <span class="stat-badge up">↗ +12%</span>
+          </div>
+          <p class="stat-label">TOTAL USERS</p>
+          <p class="stat-value">1,284</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-top">
+            <div class="stat-icon green-bg"><i class="ti ti-layout-list"></i></div>
+            <span class="stat-badge up">↗ +8.4%</span>
+          </div>
+          <p class="stat-label">TOTAL TRANSACTIONS</p>
+          <p class="stat-value">45,902</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-top">
+            <div class="stat-icon green-bg"><i class="ti ti-trash"></i></div>
+            <span class="stat-unit">Kg</span>
+          </div>
+          <p class="stat-label">WASTE COLLECTED</p>
+          <p class="stat-value">12.5 <span class="stat-sub">ton</span></p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-top">
+            <div class="stat-icon green-bg"><i class="ti ti-star"></i></div>
+            <span class="stat-unit">Total Poin</span>
+          </div>
+          <p class="stat-label">POINTS ISSUED</p>
+          <p class="stat-value">845,000</p>
+        </div>
+      </div>
+
+      <div class="middle-row">
+        <div class="chart-card">
+          <div class="chart-header">
+            <div>
+              <h3 class="chart-title">Statistik Sampah</h3>
+              <p class="chart-sub">Data pengumpulan bulanan 2026</p>
+            </div>
+            <div class="chart-tabs">
+              <button class="chart-tab">Weekly</button>
+              <button class="chart-tab active">Monthly</button>
+              <button class="chart-tab">Yearly</button>
+            </div>
+          </div>
+          <div class="bar-chart">
+            <div class="bar-wrap"><div class="bar" style="height:45%"></div><span class="bar-label">Jan</span></div>
+            <div class="bar-wrap"><div class="bar" style="height:62%"></div><span class="bar-label">Feb</span></div>
+            <div class="bar-wrap"><div class="bar active-bar" style="height:85%"></div><span class="bar-label">Mar</span></div>
+            <div class="bar-wrap"><div class="bar" style="height:58%"></div><span class="bar-label">Apr</span></div>
+            <div class="bar-wrap"><div class="bar active-bar" style="height:95%"></div><span class="bar-label">Mei</span></div>
+            <div class="bar-wrap"><div class="bar" style="height:72%"></div><span class="bar-label">Jun</span></div>
+          </div>
+        </div>
+
+        <div class="target-card">
+          <div class="donut-wrapper">
+            <svg viewBox="0 0 120 120" width="120" height="120">
+              <circle cx="60" cy="60" r="50" fill="none" stroke="#e0ede5" stroke-width="12"/>
+              <circle cx="60" cy="60" r="50" fill="none" stroke="#1a5c2a" stroke-width="12"
+                stroke-dasharray="266.93" stroke-dashoffset="40.04"
+                stroke-linecap="round" transform="rotate(-90 60 60)"/>
+            </svg>
+            <div class="donut-icon"><i class="ti ti-leaf"></i></div>
+          </div>
+          <h3 class="target-title">Target Bulanan</h3>
+          <p class="target-desc">85% dari target 15 ton tercapai bulan ini!</p>
+          <button class="btn-detail">Detail Pencapaian</button>
+        </div>
+      </div>
+
+      <div class="bottom-row">
+        <div class="transaksi-card">
+          <div class="card-header-row">
+            <div>
+              <h3 class="card-title">Kelola Transaksi</h3>
+              <p class="card-sub">Request penjemputan sampah terbaru</p>
+            </div>
+            <a class="lihat-semua" href="#">Lihat Semua →</a>
+          </div>
+          <div class="tx-list">
+            <div class="tx-item">
+              <div class="tx-icon"><i class="ti ti-truck"></i></div>
+              <div class="tx-info">
+                <p class="tx-id">#TX-2024-0892</p>
+                <p class="tx-detail">Jl. Ijen No. 45 • Plastik & Kertas</p>
+              </div>
+              <span class="tx-badge waiting">MENUNGGU PICKUP</span>
+              <button class="btn-konfirmasi">Konfirmasi</button>
+            </div>
+            <div class="tx-item">
+              <div class="tx-icon"><i class="ti ti-truck"></i></div>
+              <div class="tx-info">
+                <p class="tx-id">#TX-2024-0890</p>
+                <p class="tx-detail">Kec. Lowokwaru • Campuran</p>
+              </div>
+              <span class="tx-badge proses">PROSES PICKUP</span>
+              <button class="btn-update">Update Status</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="pengguna-card">
+          <div class="card-header-row">
+            <div>
+              <h3 class="card-title">Kelola Pengguna</h3>
+              <p class="card-sub">Pendaftar terbaru</p>
+            </div>
+            <button class="btn-add-user"><i class="ti ti-user-plus"></i></button>
+          </div>
+          <div class="user-list">
+            <div class="user-item">
+              <img src="../../public/img/img-siti.png" alt="Siti" class="user-avatar">
+              <div class="user-info">
+                <p class="user-name">Siti Aminah</p>
+                <p class="user-detail">Malang Kota • 840 Poin</p>
+              </div>
+            </div>
+            <div class="user-item">
+              <img src="../../public/img/img-agus.png" alt="Agus" class="user-avatar">
+              <div class="user-info">
+                <p class="user-name">Agus Pratama</p>
+                <p class="user-detail">Sukun • 1,210 Poin</p>
+              </div>
+            </div>
+          </div>
+          <button class="btn-kelola-semua">Kelola Semua Pengguna</button>
+        </div>
+      </div>
+
+    </div>
+
+    <script>
+      fetch('../component/NavbarAdmin.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('navbar').innerHTML = html;
+          const page = window.location.pathname;
+          const map = {
+            'HomePage':         'nav-home',
+            'UsersPage':        'nav-users',
+            'TransactionsPage': 'nav-transactions',
+            'InventoryPage':    'nav-inventory',
+            'ContentPage':      'nav-content',
+            'ProfilePage':      'nav-profile',
+          };
+          for (const [key, id] of Object.entries(map)) {
+            if (page.includes(key)) {
+              document.getElementById(id)?.classList.add('active');
+              break;
+            }
+          }
+        });
+
+      document.querySelectorAll('.chart-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.chart-tab').forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+        });
+      });
+    </script>
+  </body>
+</html>
