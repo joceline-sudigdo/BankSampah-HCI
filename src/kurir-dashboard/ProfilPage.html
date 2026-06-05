@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Profil Kurir</title>
+    <link rel="icon" href="../../../public/icon/ic-logo.png">
+    <link rel="stylesheet" href="../styles/kurir-dashboard/ProfilPage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <div class="main-container">
+
+      <h1 class="page-title">Profil</h1>
+
+      <div class="body-grid">
+
+        <div class="left-col">
+          <div class="profile-card">
+            <div class="avatar-wrap">
+              <img src="../../../public/img/img-kurir.png" alt="Kurir" class="avatar-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="avatar-fallback" style="display:none"><i class="ti ti-user"></i></div>
+              <button class="avatar-edit"><i class="ti ti-pencil"></i></button>
+            </div>
+            <div class="profile-info">
+              <div class="profile-name-row">
+                <h2 class="profile-name">Ahmad Ridwan</h2>
+                <span class="role-badge"><i class="ti ti-map-pin"></i> Senior Courier</span>
+              </div>
+              <p class="profile-desc">Dedikasi menjaga kebersihan Malang sejak Februari 2023</p>
+            </div>
+          </div>
+
+          <div class="stats-row">
+            <div class="stat-card">
+              <div class="stat-icon"><i class="ti ti-truck-delivery"></i></div>
+              <p class="stat-label">TOTAL PICKUP</p>
+              <p class="stat-value">1,284</p>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="ti ti-leaf"></i></div>
+              <p class="stat-label">IMPACT SCORE</p>
+              <p class="stat-value">8.4/10</p>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="ti ti-circle-check"></i></div>
+              <p class="stat-label">SUCCESS RATE</p>
+              <p class="stat-value">99.2%</p>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon"><i class="ti ti-star"></i></div>
+              <p class="stat-label">RATING</p>
+              <p class="stat-value">4.9</p>
+            </div>
+          </div>
+
+          <div class="loyalty-card">
+            <div class="loyalty-header">
+              <div>
+                <p class="loyalty-title">Loyalty Journey</p>
+                <p class="loyalty-desc">Selesaikan 16 pickup lagi untuk mencapai Platinum Tier</p>
+              </div>
+              <span class="loyalty-target">Platinum</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 75%"></div>
+            </div>
+            <div class="progress-labels">
+              <span>Gold Tier</span>
+              <span class="progress-pct">75% Complete</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-col">
+          <div class="saldo-card">
+            <div class="saldo-top">
+              <p class="saldo-label">SALDO TERKINI</p>
+              <i class="ti ti-wallet saldo-icon-top"></i>
+            </div>
+            <p class="saldo-value">Rp 842.500</p>
+            <p class="saldo-sub">+Rp 45.000 hari ini</p>
+            <button class="btn-tarik">Tarik Saldo</button>
+          </div>
+
+          <div class="pengaturan-card">
+            <p class="pengaturan-label">PENGATURAN CEPAT</p>
+            <div class="setting-item">
+              <div class="setting-icon"><i class="ti ti-shield-lock"></i></div>
+              <span class="setting-name">Keamanan</span>
+              <i class="ti ti-chevron-right setting-arrow"></i>
+            </div>
+            <div class="setting-divider"></div>
+            <div class="setting-item">
+              <div class="setting-icon"><i class="ti ti-help-square"></i></div>
+              <span class="setting-name">Pusat Bantuan</span>
+              <i class="ti ti-chevron-right setting-arrow"></i>
+            </div>
+            <div class="setting-divider"></div>
+            <button class="btn-keluar">
+              <i class="ti ti-logout"></i> Keluar Akun
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script>
+      fetch('../component/NavbarKurir.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('navbar').innerHTML = html;
+          const page = window.location.pathname;
+          const map = {
+            'Dashboard':   'nav-dashboard',
+            'TugasPage':   'nav-tugas',
+            'RiwayatPage': 'nav-riwayat',
+            'ProfilPage':  'nav-profil',
+          };
+          for (const [key, id] of Object.entries(map)) {
+            if (page.includes(key)) {
+              document.getElementById(id)?.classList.add('active');
+              break;
+            }
+          }
+        });
+    </script>
+  </body>
+</html>

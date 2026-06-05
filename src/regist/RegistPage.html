@@ -8,7 +8,7 @@
   <body>
     <div class="main-container">
       <div class="main-content">
-        <h1>Daftar Nasabah</h1>
+        <h1 id="page-title">Daftar Nasabah</h1>
         <p class="welcome-message">Buat akun nasabah pertama anda dan mulai menabung di E-Bank Sampah</p>
 
         <div class="form-container">
@@ -39,18 +39,37 @@
         </div>
 
         <div class="role-section">
-          <button class="role">Nasabah</button>
-          <button class="role">Driver Pick Up</button>
+          <button class="role active" id="btn-nasabah" onclick="selectRole('nasabah')">Nasabah</button>
+          <button class="role" id="btn-kurir" onclick="selectRole('kurir')">Kurir</button>
         </div>
 
-        <a href="../user-dashboard/ProfilPage.html">
-          <button class="masuk-btn">Daftar</button>
-        </a>
+        <button class="masuk-btn" onclick="handleDaftar()">Daftar</button>
 
         <p class="regist">Sudah punya akun? <a href="../login/LoginPage.html">Masuk</a></p>
 
         <p class="copyright">&copy; Bank Sampah Malang. Menjaga kelestarian kota.</p>
       </div>
     </div>
+
+    <script>
+      let selectedRole = 'nasabah';
+
+      function selectRole(role) {
+        selectedRole = role;
+
+        document.getElementById('btn-nasabah').classList.toggle('active', role === 'nasabah');
+        document.getElementById('btn-kurir').classList.toggle('active', role === 'kurir');
+
+        document.getElementById('page-title').textContent = role === 'kurir' ? 'Daftar Kurir' : 'Daftar Nasabah';
+      }
+
+      function handleDaftar() {
+        if (selectedRole === 'kurir') {
+          window.location.href = '../kurir-dashboard/Dashboard.html';
+        } else {
+          window.location.href = '../user-dashboard/ProfilPage.html';
+        }
+      }
+    </script>
   </body>
 </html>

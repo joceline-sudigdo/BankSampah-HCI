@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login kedalam akun anda!</title>
+    <link rel="icon" href="../../public/icon/ic-logo.png">
+    <link rel="stylesheet" href="../styles/login/LoginPage.css">
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="main-content">
+        <h1>Login Admin</h1>
+        <p class="welcome-message">Masukkan nama dan kata sandi yang sesuai</p>
+
+        <div class="form-container">
+          <div class="input-form">
+            <p>Nama</p>
+            <input type="text" id="username" placeholder="Masukkan nama...">
+            <span class="error-msg" id="username-error"></span>
+          </div>
+          <div class="input-form">
+            <p>Kata sandi</p>
+            <input type="password" id="password" placeholder="Masukkan kata sandi...">
+            <span class="error-msg" id="password-error"></span>
+          </div>
+          <span class="error-msg global-error" id="global-error"></span>
+        </div>
+
+        <button class="masuk-btn" onclick="handleLogin()">Masuk</button>
+
+        <p class="copyright">&copy; Bank Sampah Malang. Menjaga kelestarian kota.</p>
+      </div>
+    </div>
+
+    <script>
+      const VALID_USERNAME = 'admin';
+      const VALID_PASSWORD = 'admin123';
+
+      function clearErrors() {
+        document.getElementById('username-error').textContent = '';
+        document.getElementById('password-error').textContent = '';
+        document.getElementById('global-error').textContent = '';
+        document.getElementById('username').classList.remove('input-error');
+        document.getElementById('password').classList.remove('input-error');
+      }
+
+      function handleLogin() {
+        clearErrors();
+
+        const username = document.getElementById('username').value.trim();
+        const password = document.getElementById('password').value;
+        let valid = true;
+
+        if (!username) {
+          document.getElementById('username-error').textContent = 'Nama tidak boleh kosong.';
+          document.getElementById('username').classList.add('input-error');
+          valid = false;
+        }
+
+        if (!password) {
+          document.getElementById('password-error').textContent = 'Kata sandi tidak boleh kosong.';
+          document.getElementById('password').classList.add('input-error');
+          valid = false;
+        }
+
+        if (!valid) return;
+
+        if (username !== VALID_USERNAME || password !== VALID_PASSWORD) {
+          document.getElementById('global-error').textContent = 'Nama atau kata sandi salah. Silakan coba lagi.';
+          document.getElementById('username').classList.add('input-error');
+          document.getElementById('password').classList.add('input-error');
+          return;
+        }
+
+        window.location.href = '../dashboard/HomePage.html';
+      }
+
+      document.getElementById('username').addEventListener('keydown', e => { if (e.key === 'Enter') handleLogin(); });
+      document.getElementById('password').addEventListener('keydown', e => { if (e.key === 'Enter') handleLogin(); });
+    </script>
+  </body>
+</html>

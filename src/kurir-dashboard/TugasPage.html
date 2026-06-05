@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tugas Pick Up</title>
+    <link rel="icon" href="../../../public/icon/ic-logo.png">
+    <link rel="stylesheet" href="../styles/kurir-dashboard/TugasPage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <div class="main-container">
+
+      <div class="page-title-row">
+        <h1 class="page-title">Tugas pick up hari ini</h1>
+      </div>
+
+      <div class="calendar-row">
+        <div class="day-card active">
+          <span class="day-name">Sen</span>
+          <span class="day-num">12</span>
+          <span class="day-dot"></span>
+        </div>
+        <div class="day-card">
+          <span class="day-name">Sel</span>
+          <span class="day-num">13</span>
+        </div>
+        <div class="day-card">
+          <span class="day-name">Rab</span>
+          <span class="day-num">14</span>
+        </div>
+        <div class="day-card">
+          <span class="day-name">Kam</span>
+          <span class="day-num">15</span>
+        </div>
+        <div class="day-card">
+          <span class="day-name">Jum</span>
+          <span class="day-num">16</span>
+        </div>
+        <div class="day-card">
+          <span class="day-name">Sab</span>
+          <span class="day-num">17</span>
+        </div>
+        <div class="day-card">
+          <span class="day-name">Min</span>
+          <span class="day-num">18</span>
+        </div>
+      </div>
+
+      <div class="body-grid">
+
+        <div class="queue-section">
+          <div class="queue-header">
+            <h2 class="queue-title">Daftar Antrean</h2>
+            <button class="filter-btn"><i class="ti ti-adjustments-horizontal"></i></button>
+          </div>
+
+          <div class="queue-list">
+            <div class="queue-item">
+              <div class="item-icon waiting"><i class="ti ti-clock"></i></div>
+              <div class="item-info">
+                <div class="item-top">
+                  <span class="status-badge menunggu">MENUNGGU</span>
+                  <span class="item-time">• 08:30 AM</span>
+                </div>
+                <p class="item-name">Bpk. Ahmad Subarjo</p>
+                <p class="item-addr"><i class="ti ti-map-pin"></i> Jl. Ijen No. 12, Oro-oro Dowo, Malang</p>
+              </div>
+              <div class="item-actions">
+                <button class="btn-mulai">Mulai</button>
+                <button class="btn-nav"><i class="ti ti-map-2"></i></button>
+              </div>
+            </div>
+
+            <div class="queue-item">
+              <div class="item-icon waiting"><i class="ti ti-clock"></i></div>
+              <div class="item-info">
+                <div class="item-top">
+                  <span class="status-badge menunggu">MENUNGGU</span>
+                  <span class="item-time">• 10:00 AM</span>
+                </div>
+                <p class="item-name">Apartemen Malang City</p>
+                <p class="item-addr"><i class="ti ti-map-pin"></i> Jl. MT Haryono No. 1, Lowokwaru, Malang</p>
+              </div>
+              <div class="item-actions">
+                <button class="btn-mulai">Mulai</button>
+                <button class="btn-nav"><i class="ti ti-map-2"></i></button>
+              </div>
+            </div>
+
+            <div class="queue-item">
+              <div class="item-icon proses"><i class="ti ti-truck-delivery"></i></div>
+              <div class="item-info">
+                <div class="item-top">
+                  <span class="status-badge proses">PROSES</span>
+                  <span class="item-time">• 09:15 AM</span>
+                </div>
+                <p class="item-name">Ibu Siti Aminah</p>
+                <p class="item-addr"><i class="ti ti-map-pin"></i> Perum Griyashanta Blok L-20, Malang</p>
+              </div>
+              <div class="item-actions">
+                <button class="btn-update">Update Status</button>
+                <button class="btn-nav phone"><i class="ti ti-phone"></i></button>
+              </div>
+            </div>
+
+            <div class="queue-item selesai">
+              <div class="item-icon done"><i class="ti ti-circle-check"></i></div>
+              <div class="item-info">
+                <div class="item-top">
+                  <span class="status-badge selesai">SELESAI</span>
+                  <span class="item-time">• 07:45 AM</span>
+                </div>
+                <p class="item-name">Warung Barokah</p>
+                <p class="item-addr"><i class="ti ti-map-pin"></i> Jl. Soekarno Hatta No. 45, Malang</p>
+              </div>
+              <span class="poin-reward">+250 Poin</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats-col">
+          <div class="stat-card">
+            <div class="stat-info">
+              <p class="stat-label">Today's Tasks</p>
+              <p class="stat-value">12</p>
+            </div>
+            <div class="stat-icon green"><i class="ti ti-clipboard-list"></i></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-info">
+              <p class="stat-label">In Progress</p>
+              <p class="stat-value">3</p>
+            </div>
+            <div class="stat-icon green"><i class="ti ti-refresh"></i></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-info">
+              <p class="stat-label">Completed Today</p>
+              <p class="stat-value">9</p>
+            </div>
+            <div class="stat-icon green"><i class="ti ti-circle-check"></i></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script>
+      fetch('../component/NavbarKurir.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('navbar').innerHTML = html;
+          const page = window.location.pathname;
+          const map = {
+            'Dashboard':   'nav-dashboard',
+            'TugasPage':   'nav-tugas',
+            'RiwayatPage': 'nav-riwayat',
+            'ProfilPage':  'nav-profil',
+          };
+          for (const [key, id] of Object.entries(map)) {
+            if (page.includes(key)) {
+              document.getElementById(id)?.classList.add('active');
+              break;
+            }
+          }
+        });
+
+      document.querySelectorAll('.day-card').forEach(card => {
+        card.addEventListener('click', () => {
+          document.querySelectorAll('.day-card').forEach(c => c.classList.remove('active'));
+          card.classList.add('active');
+        });
+      });
+    </script>
+  </body>
+</html>
