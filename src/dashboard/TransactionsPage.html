@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Dashboard - Transaksi</title>
+    <link rel="icon" href="../../public/icon/ic-logo.png">
+    <link rel="stylesheet" href="../styles/dashboard/UsersPage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <div class="main-container">
+      <div class="page-header">
+        <h1 class="page-title">Kelola Transaksi</h1>
+        <p class="page-sub">Kelola daftar transaksi setoran sampah dan konfirmasi penjemputan.</p>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-left">
+            <div class="stat-icon"><i class="ti ti-clock"></i></div>
+            <span class="stat-label">Menunggu Pickup</span>
+          </div>
+          <p class="stat-value">12</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-left">
+            <div class="stat-icon"><i class="ti ti-refresh"></i></div>
+            <span class="stat-label">Dalam Proses</span>
+          </div>
+          <p class="stat-value accent">08</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-left">
+            <div class="stat-icon"><i class="ti ti-circle-check"></i></div>
+            <span class="stat-label">Selesai Hari Ini</span>
+          </div>
+          <p class="stat-value">45</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-left">
+            <div class="stat-icon"><i class="ti ti-weight"></i></div>
+            <span class="stat-label">Total Kg Disetor</span>
+          </div>
+          <p class="stat-value">1,204</p>
+        </div>
+      </div>
+
+      <div class="table-card">
+        <div class="table-header">
+          <h2 class="table-title">Daftar Transaksi</h2>
+          <div class="table-controls">
+            <div class="search-box">
+              <i class="ti ti-search"></i>
+              <input type="text" placeholder="Cari ID atau Nama...">
+            </div>
+            <button class="filter-btn"><i class="ti ti-adjustments-horizontal"></i></button>
+          </div>
+        </div>
+
+        <div class="tx-table-wrap">
+        <table class="tx-table">
+          <thead>
+            <tr>
+              <th>TRANSACTION ID</th>
+              <th>USER</th>
+              <th>DATE</th>
+              <th>WASTE TYPE</th>
+              <th>STATUS</th>
+              <th>ACTIONS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="tx-id">#TRX-8821</td>
+              <td>
+                <div class="user-cell">
+                  <div class="user-avatar initials">AS</div>
+                  <div class="user-info">
+                    <p class="user-name">Ahmad Syarif</p>
+                    <p class="user-addr">Jl. Ijen No. 12</p>
+                  </div>
+                </div>
+              </td>
+              <td class="tx-date">24 Oct<br>2023</td>
+              <td><span class="waste-badge">PLASTIK (3.5kg)</span></td>
+              <td>
+                <span class="status-badge pending">
+                  <span class="status-dot"></span>PENDING PICKUP
+                </span>
+              </td>
+              <td>
+                <button class="btn-konfirmasi">Konfirmasi Pickup</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="tx-id">#TRX-8819</td>
+              <td>
+                <div class="user-cell">
+                  <div class="user-avatar img-avatar">
+                    <img src="../../../public/img/img-lina.png" alt="Lina" onerror="this.parentElement.classList.remove('img-avatar'); this.parentElement.classList.add('initials'); this.parentElement.textContent='LM'">
+                  </div>
+                  <div class="user-info">
+                    <p class="user-name">Lina Marlina</p>
+                    <p class="user-addr">Kec. Lowokwaru</p>
+                  </div>
+                </div>
+              </td>
+              <td class="tx-date">24 Oct<br>2023</td>
+              <td><span class="waste-badge">KERTAS (12kg)</span></td>
+              <td>
+                <span class="status-badge processing">
+                  <span class="status-dot"></span>PROCESSING
+                </span>
+              </td>
+              <td>
+                <div class="btn-update-wrap">
+                  <button class="btn-update">Update Status <i class="ti ti-chevron-down"></i></button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="tx-id">#TRX-8815</td>
+              <td>
+                <div class="user-cell">
+                  <div class="user-avatar initials bp">BP</div>
+                  <div class="user-info">
+                    <p class="user-name">Budi Prasetyo</p>
+                    <p class="user-addr">Perum Permata</p>
+                  </div>
+                </div>
+              </td>
+              <td class="tx-date">23 Oct<br>2023</td>
+              <td><span class="waste-badge muted">LOGAM (2kg)</span></td>
+              <td>
+                <span class="status-badge completed">
+                  <i class="ti ti-circle-check-filled"></i>COMPLETED
+                </span>
+              </td>
+              <td>
+                <button class="btn-dots"><i class="ti ti-dots-vertical"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+
+        <div class="table-footer">
+          <p class="showing-text">Showing 3 of 124 transactions</p>
+          <div class="pagination">
+            <button class="page-btn nav"><i class="ti ti-chevron-left"></i></button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn nav"><i class="ti ti-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      fetch('../component/NavbarAdmin.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('navbar').innerHTML = html;
+          const page = window.location.pathname;
+          const map = {
+            'HomePage':         'nav-home',
+            'UsersPage':        'nav-users',
+            'TransactionsPage': 'nav-transactions',
+            'InventoryPage':    'nav-inventory',
+            'ContentPage':      'nav-content',
+            'ProfilPage':      'nav-profile',
+          };
+          for (const [key, id] of Object.entries(map)) {
+            if (page.includes(key)) {
+              document.getElementById(id)?.classList.add('active');
+              break;
+            }
+          }
+        });
+    </script>
+  </body>
+</html>

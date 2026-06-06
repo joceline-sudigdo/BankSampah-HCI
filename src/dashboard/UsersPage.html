@@ -3,7 +3,7 @@
   <head>
     <title>Admin Dashboard - Pengguna</title>
     <link rel="icon" href="../../../public/icon/ic-logo.png">
-    <link rel="stylesheet" href="../styles/dashboard/UsersPage.css">
+    <link rel="stylesheet" href="../styles/dashboard/TransPage.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
   </head>
@@ -12,151 +12,223 @@
 
     <div class="main-container">
       <div class="page-header">
-        <h1 class="page-title">Kelola Transaksi</h1>
-        <p class="page-sub">Kelola daftar transaksi setoran sampah dan konfirmasi penjemputan.</p>
+        <h1 class="page-title">Kelola Pengguna</h1>
+        <p class="page-sub">Manajemen nasabah dan kurir wilayah Malang</p>
       </div>
 
       <div class="stats-row">
         <div class="stat-card">
-          <div class="stat-left">
-            <div class="stat-icon"><i class="ti ti-clock"></i></div>
-            <span class="stat-label">Menunggu Pickup</span>
+          <div class="stat-icon"><i class="ti ti-users"></i></div>
+          <div class="stat-info">
+            <p class="stat-label">Total User</p>
+            <p class="stat-value">1,284</p>
           </div>
-          <p class="stat-value">12</p>
         </div>
         <div class="stat-card">
-          <div class="stat-left">
-            <div class="stat-icon"><i class="ti ti-refresh"></i></div>
-            <span class="stat-label">Dalam Proses</span>
+          <div class="stat-icon"><i class="ti ti-heart-handshake"></i></div>
+          <div class="stat-info">
+            <p class="stat-label">Nasabah Aktif</p>
+            <p class="stat-value">1,120</p>
           </div>
-          <p class="stat-value accent">08</p>
         </div>
         <div class="stat-card">
-          <div class="stat-left">
-            <div class="stat-icon"><i class="ti ti-circle-check"></i></div>
-            <span class="stat-label">Selesai Hari Ini</span>
+          <div class="stat-icon"><i class="ti ti-truck-delivery"></i></div>
+          <div class="stat-info">
+            <p class="stat-label">Kurir Terverifikasi</p>
+            <p class="stat-value">164</p>
           </div>
-          <p class="stat-value">45</p>
-        </div>
-        <div class="stat-card">
-          <div class="stat-left">
-            <div class="stat-icon"><i class="ti ti-weight"></i></div>
-            <span class="stat-label">Total Kg Disetor</span>
-          </div>
-          <p class="stat-value">1,204</p>
         </div>
       </div>
 
       <div class="table-card">
         <div class="table-header">
-          <h2 class="table-title">Daftar Transaksi</h2>
-          <div class="table-controls">
-            <div class="search-box">
-              <i class="ti ti-search"></i>
-              <input type="text" placeholder="Cari ID atau Nama...">
-            </div>
-            <button class="filter-btn"><i class="ti ti-adjustments-horizontal"></i></button>
+          <div class="search-box">
+            <i class="ti ti-search"></i>
+            <input type="text" id="searchInput" placeholder="Cari nama, ID, atau email...">
+          </div>
+          <div class="filter-group">
+            <span class="filter-label">Filter Peran:</span>
+            <button class="filter-btn active" data-role="semua">Semua</button>
+            <button class="filter-btn" data-role="nasabah">Nasabah</button>
+            <button class="filter-btn" data-role="kurir">Kurir</button>
           </div>
         </div>
 
         <div class="tx-table-wrap">
-        <table class="tx-table">
-          <thead>
-            <tr>
-              <th>TRANSACTION ID</th>
-              <th>USER</th>
-              <th>DATE</th>
-              <th>WASTE TYPE</th>
-              <th>STATUS</th>
-              <th>ACTIONS</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="tx-id">#TRX-8821</td>
-              <td>
-                <div class="user-cell">
-                  <div class="user-avatar initials">AS</div>
-                  <div class="user-info">
-                    <p class="user-name">Ahmad Syarif</p>
-                    <p class="user-addr">Jl. Ijen No. 12</p>
+          <table class="tx-table">
+            <thead>
+              <tr>
+                <th>NAMA & ID</th>
+                <th>PERAN</th>
+                <th>STATUS</th>
+                <th>POIN</th>
+                <th>AKSI</th>
+              </tr>
+            </thead>
+            <tbody id="userTableBody">
+              <tr data-role="nasabah" data-name="Ahmad Suherman" data-id="#Mu B-992120" data-status="verified" data-poin="1250" data-email="ahmad.suherman@email.com" data-phone="08123456789">
+                <td>
+                  <div class="user-cell">
+                    <div class="user-avatar initials">AS</div>
+                    <div class="user-info">
+                      <p class="user-name">Ahmad Suherman</p>
+                      <p class="user-id">#Mu B-992120</p>
+                    </div>
                   </div>
-                </div>
-              </td>
-              <td class="tx-date">24 Oct<br>2023</td>
-              <td><span class="waste-badge">PLASTIK (3.5kg)</span></td>
-              <td>
-                <span class="status-badge pending">
-                  <span class="status-dot"></span>PENDING PICKUP
-                </span>
-              </td>
-              <td>
-                <button class="btn-konfirmasi">Konfirmasi Pickup</button>
-              </td>
-            </tr>
-            <tr>
-              <td class="tx-id">#TRX-8819</td>
-              <td>
-                <div class="user-cell">
-                  <div class="user-avatar img-avatar">
-                    <img src="../../../public/img/img-lina.png" alt="Lina" onerror="this.parentElement.classList.remove('img-avatar'); this.parentElement.classList.add('initials'); this.parentElement.textContent='LM'">
+                </td>
+                <td><span class="role-badge nasabah">NASABAH</span></td>
+                <td>
+                  <span class="status-badge verified">
+                    <span class="status-dot green"></span>Terverifikasi
+                  </span>
+                </td>
+                <td class="poin-cell">1.250 <span class="pts">pts</span></td>
+                <td>
+                  <div class="action-group">
+                    <button class="btn-icon edit" title="Edit"><i class="ti ti-pencil"></i></button>
+                    <button class="btn-icon delete" title="Hapus"><i class="ti ti-trash"></i></button>
                   </div>
-                  <div class="user-info">
-                    <p class="user-name">Lina Marlina</p>
-                    <p class="user-addr">Kec. Lowokwaru</p>
+                </td>
+              </tr>
+              <tr data-role="kurir" data-name="Budi Santoso" data-id="#Mu B-K88201" data-status="waiting" data-poin="450" data-email="budi.santoso@email.com" data-phone="08234567890">
+                <td>
+                  <div class="user-cell">
+                    <div class="user-avatar img-avatar">
+                      <img src="../../../public/img/img-budi.png" alt="Budi" onerror="this.parentElement.classList.remove('img-avatar'); this.parentElement.classList.add('initials'); this.parentElement.textContent='BS'">
+                    </div>
+                    <div class="user-info">
+                      <p class="user-name">Budi Santoso</p>
+                      <p class="user-id">#Mu B-K88201</p>
+                    </div>
                   </div>
-                </div>
-              </td>
-              <td class="tx-date">24 Oct<br>2023</td>
-              <td><span class="waste-badge">KERTAS (12kg)</span></td>
-              <td>
-                <span class="status-badge processing">
-                  <span class="status-dot"></span>PROCESSING
-                </span>
-              </td>
-              <td>
-                <div class="btn-update-wrap">
-                  <button class="btn-update">Update Status <i class="ti ti-chevron-down"></i></button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td class="tx-id">#TRX-8815</td>
-              <td>
-                <div class="user-cell">
-                  <div class="user-avatar initials bp">BP</div>
-                  <div class="user-info">
-                    <p class="user-name">Budi Prasetyo</p>
-                    <p class="user-addr">Perum Permata</p>
+                </td>
+                <td><span class="role-badge kurir">KURIR</span></td>
+                <td>
+                  <span class="status-badge waiting">
+                    <span class="status-dot yellow"></span>Menunggu Verifikasi
+                  </span>
+                </td>
+                <td class="poin-cell">450 <span class="pts">pts</span></td>
+                <td>
+                  <div class="action-group">
+                    <button class="btn-verifikasi">Verifikasi</button>
+                    <button class="btn-icon delete" title="Hapus"><i class="ti ti-trash"></i></button>
                   </div>
-                </div>
-              </td>
-              <td class="tx-date">23 Oct<br>2023</td>
-              <td><span class="waste-badge muted">LOGAM (2kg)</span></td>
-              <td>
-                <span class="status-badge completed">
-                  <i class="ti ti-circle-check-filled"></i>COMPLETED
-                </span>
-              </td>
-              <td>
-                <button class="btn-dots"><i class="ti ti-dots-vertical"></i></button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+                </td>
+              </tr>
+              <tr data-role="nasabah" data-name="Siti Khodijah" data-id="#Mu B-993412" data-status="verified" data-poin="3400" data-email="siti.khodijah@email.com" data-phone="08345678901">
+                <td>
+                  <div class="user-cell">
+                    <div class="user-avatar initials sk">SK</div>
+                    <div class="user-info">
+                      <p class="user-name">Siti Khodijah</p>
+                      <p class="user-id">#Mu B-993412</p>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="role-badge nasabah">NASABAH</span></td>
+                <td>
+                  <span class="status-badge verified">
+                    <span class="status-dot green"></span>Terverifikasi
+                  </span>
+                </td>
+                <td class="poin-cell">3.400 <span class="pts">pts</span></td>
+                <td>
+                  <div class="action-group">
+                    <button class="btn-icon edit" title="Edit"><i class="ti ti-pencil"></i></button>
+                    <button class="btn-icon delete" title="Hapus"><i class="ti ti-trash"></i></button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div id="noResult" class="no-result" style="display:none">
+            <i class="ti ti-mood-empty"></i>
+            <p>Tidak ada pengguna yang ditemukan.</p>
+          </div>
         </div>
 
         <div class="table-footer">
-          <p class="showing-text">Showing 3 of 124 transactions</p>
+          <p class="showing-text" id="showingText">Menampilkan 3 dari 1,284 users</p>
           <div class="pagination">
             <button class="page-btn nav"><i class="ti ti-chevron-left"></i></button>
             <button class="page-btn active">1</button>
             <button class="page-btn">2</button>
             <button class="page-btn">3</button>
+            <span class="page-dots">...</span>
+            <button class="page-btn">428</button>
             <button class="page-btn nav"><i class="ti ti-chevron-right"></i></button>
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="modal-overlay" id="editOverlay">
+      <div class="modal-box">
+        <div class="modal-title">Edit Pengguna</div>
+        <div class="modal-sub" id="editSub">Ubah data pengguna</div>
+        <div class="modal-avatar-row">
+          <div class="modal-avatar" id="editAvatar">AS</div>
+          <div>
+            <div class="modal-avatar-name" id="editAvatarName">Ahmad Suherman</div>
+            <div class="modal-avatar-id" id="editAvatarId">#Mu B-992120</div>
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="form-group full">
+            <label class="form-label">NAMA LENGKAP</label>
+            <input class="form-input" id="editName" type="text">
+          </div>
+          <div class="form-group">
+            <label class="form-label">EMAIL</label>
+            <input class="form-input" id="editEmail" type="email">
+          </div>
+          <div class="form-group">
+            <label class="form-label">NO. TELEPON</label>
+            <input class="form-input" id="editPhone" type="text">
+          </div>
+          <div class="form-group">
+            <label class="form-label">PERAN</label>
+            <select class="form-select" id="editRole">
+              <option value="nasabah">Nasabah</option>
+              <option value="kurir">Kurir</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">STATUS</label>
+            <select class="form-select" id="editStatus">
+              <option value="verified">Terverifikasi</option>
+              <option value="waiting">Menunggu Verifikasi</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button class="btn-cancel" id="editCancel">Batal</button>
+          <button class="btn-save" id="editSave">
+            <i class="ti ti-device-floppy"></i> Simpan Perubahan
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="deleteOverlay">
+      <div class="delete-box">
+        <div class="delete-icon"><i class="ti ti-trash-x"></i></div>
+        <div class="delete-title">Hapus Pengguna?</div>
+        <div class="delete-msg">
+          Yakin ingin menghapus <span class="delete-name" id="deleteName"></span>?
+          Tindakan ini tidak bisa dibatalkan.
+        </div>
+        <button class="btn-delete-confirm" id="deleteConfirm">
+          <i class="ti ti-trash"></i> Ya, Hapus Sekarang
+        </button>
+        <button class="btn-cancel" id="deleteCancel" style="width:100%">Batal</button>
+      </div>
+    </div>
+
+    <div class="toast" id="toast">
+      <i id="toastIcon"></i>
+      <span id="toastMsg"></span>
     </div>
 
     <script>
@@ -171,7 +243,7 @@
             'TransactionsPage': 'nav-transactions',
             'InventoryPage':    'nav-inventory',
             'ContentPage':      'nav-content',
-            'ProfilPage':      'nav-profile',
+            'ProfilPage':       'nav-profile',
           };
           for (const [key, id] of Object.entries(map)) {
             if (page.includes(key)) {
@@ -180,6 +252,166 @@
             }
           }
         });
+
+      let currentEditRow   = null;
+      let currentDeleteRow = null;
+      let activeFilter     = 'semua';
+      let searchQuery      = '';
+
+      function applyFilter() {
+        const rows = document.querySelectorAll('#userTableBody tr');
+        let visible = 0;
+
+        rows.forEach(row => {
+          const role       = row.dataset.role;
+          const name       = row.dataset.name.toLowerCase();
+          const id         = row.dataset.id.toLowerCase();
+          const roleMatch  = activeFilter === 'semua' || role === activeFilter;
+          const searchMatch = !searchQuery || name.includes(searchQuery) || id.includes(searchQuery);
+          const show       = roleMatch && searchMatch;
+
+          row.classList.toggle('hidden', !show);
+          if (show) visible++;
+        });
+
+        document.getElementById('noResult').style.display = visible === 0 ? 'block' : 'none';
+        document.getElementById('showingText').textContent =
+          `Menampilkan ${visible} dari 1,284 users`;
+      }
+
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeFilter = btn.dataset.role;
+          applyFilter();
+        });
+      });
+
+      document.getElementById('searchInput').addEventListener('input', e => {
+        searchQuery = e.target.value.trim().toLowerCase();
+        applyFilter();
+      });
+
+      document.addEventListener('click', e => {
+        const editBtn = e.target.closest('.btn-icon.edit');
+        if (editBtn) {
+          const row = editBtn.closest('tr');
+          currentEditRow = row;
+
+          const name     = row.dataset.name;
+          const initials = name.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+
+          document.getElementById('editAvatar').textContent    = initials;
+          document.getElementById('editAvatarName').textContent = name;
+          document.getElementById('editAvatarId').textContent  = row.dataset.id;
+          document.getElementById('editSub').textContent       = `Mengubah data: ${row.dataset.id}`;
+          document.getElementById('editName').value            = name;
+          document.getElementById('editEmail').value           = row.dataset.email;
+          document.getElementById('editPhone').value           = row.dataset.phone;
+          document.getElementById('editRole').value            = row.dataset.role;
+          document.getElementById('editStatus').value          = row.dataset.status;
+
+          document.getElementById('editOverlay').classList.add('show');
+        }
+
+        const delBtn = e.target.closest('.btn-icon.delete');
+        if (delBtn) {
+          const row = delBtn.closest('tr');
+          currentDeleteRow = row;
+          document.getElementById('deleteName').textContent = row.dataset.name;
+          document.getElementById('deleteOverlay').classList.add('show');
+        }
+      });
+
+      document.getElementById('editCancel').addEventListener('click', () => {
+        document.getElementById('editOverlay').classList.remove('show');
+      });
+
+      document.getElementById('editOverlay').addEventListener('click', e => {
+        if (e.target === document.getElementById('editOverlay'))
+          document.getElementById('editOverlay').classList.remove('show');
+      });
+
+      document.getElementById('editSave').addEventListener('click', () => {
+        if (!currentEditRow) return;
+
+        const newName   = document.getElementById('editName').value.trim();
+        const newRole   = document.getElementById('editRole').value;
+        const newStatus = document.getElementById('editStatus').value;
+
+        if (!newName) {
+          showToast('Nama tidak boleh kosong!', 'danger');
+          return;
+        }
+
+        currentEditRow.dataset.name   = newName;
+        currentEditRow.dataset.email  = document.getElementById('editEmail').value;
+        currentEditRow.dataset.phone  = document.getElementById('editPhone').value;
+        currentEditRow.dataset.role   = newRole;
+        currentEditRow.dataset.status = newStatus;
+
+        const initials = newName.split(' ').map(w => w[0]).join('').slice(0, 2).toUpperCase();
+        currentEditRow.querySelector('.user-name').textContent   = newName;
+        currentEditRow.querySelector('.user-avatar').textContent = initials;
+
+        const roleBadge       = currentEditRow.querySelector('.role-badge');
+        roleBadge.className   = `role-badge ${newRole}`;
+        roleBadge.textContent = newRole.toUpperCase();
+
+        const statusBadge = currentEditRow.querySelector('.status-badge');
+        if (newStatus === 'verified') {
+          statusBadge.className = 'status-badge verified';
+          statusBadge.innerHTML = '<span class="status-dot green"></span>Terverifikasi';
+        } else {
+          statusBadge.className = 'status-badge waiting';
+          statusBadge.innerHTML = '<span class="status-dot yellow"></span>Menunggu Verifikasi';
+        }
+
+        document.getElementById('editOverlay').classList.remove('show');
+        showToast('Data pengguna berhasil diperbarui!', 'success');
+        applyFilter();
+      });
+
+      document.getElementById('deleteCancel').addEventListener('click', () => {
+        document.getElementById('deleteOverlay').classList.remove('show');
+      });
+
+      document.getElementById('deleteOverlay').addEventListener('click', e => {
+        if (e.target === document.getElementById('deleteOverlay'))
+          document.getElementById('deleteOverlay').classList.remove('show');
+      });
+
+      document.getElementById('deleteConfirm').addEventListener('click', () => {
+        if (!currentDeleteRow) return;
+
+        const name = currentDeleteRow.dataset.name;
+
+        /* Animasi hilang sebelum remove */
+        currentDeleteRow.style.transition = 'opacity .3s, transform .3s';
+        currentDeleteRow.style.opacity    = '0';
+        currentDeleteRow.style.transform  = 'translateX(30px)';
+
+        setTimeout(() => {
+          currentDeleteRow.remove();
+          applyFilter();
+        }, 300);
+
+        document.getElementById('deleteOverlay').classList.remove('show');
+        showToast(`${name} berhasil dihapus.`, 'danger');
+      });
+
+      function showToast(msg, type = 'success') {
+        const toast = document.getElementById('toast');
+        const icon  = document.getElementById('toastIcon');
+
+        toast.className       = `toast ${type}`;
+        icon.className        = type === 'success' ? 'ti ti-check' : 'ti ti-x';
+        document.getElementById('toastMsg').textContent = msg;
+
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 3000);
+      }
     </script>
   </body>
 </html>
