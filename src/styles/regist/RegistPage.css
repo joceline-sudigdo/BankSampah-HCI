@@ -173,3 +173,16 @@ a {
   gap: 20px;
   margin-bottom: 20px;
 }
+
+.error-msg {
+  font-family: 'Nunito', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #c0392b;
+  display: block;
+  margin-top: 6px;
+}
+
+.role.role-error-highlight {
+  border: 2px solid #c0392b;
+}

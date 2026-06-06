@@ -8,8 +8,8 @@
   <body>
     <div class="main-container">
       <div class="main-content">
-        <h1 id="page-title">Daftar Nasabah</h1>
-        <p class="welcome-message">Buat akun nasabah pertama anda dan mulai menabung di E-Bank Sampah</p>
+        <h1 id="page-title">Daftar</h1>
+        <p class="welcome-message">Buat akun pertama anda dan mulai menabung di E-Bank Sampah</p>
 
         <div class="form-container">
           <div class="input-form">
@@ -39,9 +39,10 @@
         </div>
 
         <div class="role-section">
-          <button class="role active" id="btn-nasabah" onclick="selectRole('nasabah')">Nasabah</button>
+          <button class="role" id="btn-nasabah" onclick="selectRole('nasabah')">Nasabah</button>
           <button class="role" id="btn-kurir" onclick="selectRole('kurir')">Kurir</button>
         </div>
+        <span class="error-msg" id="role-error"></span>
 
         <button class="masuk-btn" onclick="handleDaftar()">Daftar</button>
 
@@ -52,18 +53,26 @@
     </div>
 
     <script>
-      let selectedRole = 'nasabah';
+      let selectedRole = null;
 
       function selectRole(role) {
         selectedRole = role;
-
         document.getElementById('btn-nasabah').classList.toggle('active', role === 'nasabah');
         document.getElementById('btn-kurir').classList.toggle('active', role === 'kurir');
-
         document.getElementById('page-title').textContent = role === 'kurir' ? 'Daftar Kurir' : 'Daftar Nasabah';
+        document.getElementById('role-error').textContent = '';
+        document.getElementById('btn-nasabah').classList.remove('role-error-highlight');
+        document.getElementById('btn-kurir').classList.remove('role-error-highlight');
       }
 
       function handleDaftar() {
+        if (!selectedRole) {
+          document.getElementById('role-error').textContent = 'Pilih peran terlebih dahulu sebelum mendaftar.';
+          document.getElementById('btn-nasabah').classList.add('role-error-highlight');
+          document.getElementById('btn-kurir').classList.add('role-error-highlight');
+          return;
+        }
+
         if (selectedRole === 'kurir') {
           window.location.href = '../kurir-dashboard/Dashboard.html';
         } else {

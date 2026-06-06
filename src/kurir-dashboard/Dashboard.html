@@ -1,160 +1,168 @@
 <!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dashboard Sopir</title>
-  <link rel="stylesheet" href="../styles/kurir-dashboard/Dashboard.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
-</head>
-<body>
+<html>
+  <head>
+    <title>Dashboard Sopir</title>
+    <link rel="icon" href="../../../public/icon/ic-logo.png">
+    <link rel="stylesheet" href="../styles/kurir-dashboard/Dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  </head>
+  <body>
+    <div id="navbar"></div>
 
-  <!-- SIDEBAR NAV (desktop) -->
-  <aside class="sidebar">
-    <div class="sidebar-logo">
-      <div class="logo-icon"><i class="ti ti-leaf"></i></div>
-    </div>
-    <nav class="sidebar-nav">
-      <a href="#" class="nav-item active" id="nav-dashboard">
-        <i class="ti ti-layout-dashboard"></i>
-        <span>Dashboard</span>
-      </a>
-      <a href="#" class="nav-item" id="nav-tugas">
-        <i class="ti ti-truck-delivery"></i>
-        <span>Tugas</span>
-      </a>
-      <a href="#" class="nav-item" id="nav-riwayat">
-        <i class="ti ti-clipboard-list"></i>
-        <span>Riwayat</span>
-      </a>
-      <a href="#" class="nav-item" id="nav-profil">
-        <i class="ti ti-user-circle"></i>
-        <span>Profil</span>
-      </a>
-    </nav>
-  </aside>
+    <div class="main-container">
 
-  <!-- MAIN CONTENT -->
-  <main class="main-content">
-
-    <!-- HEADER -->
-    <header class="top-header">
-      <div class="header-left">
-        <h1 class="dashboard-title">Dashboard Sopir</h1>
-        <p class="dashboard-sub">Semangat pagi! Berikut ringkasan tugas Anda hari ini.</p>
-      </div>
-      <div class="header-right">
-        <div class="user-chip">
-          <img src="https://i.pravatar.cc/40?img=12" alt="Ahmad Ridwan" class="user-avatar" onerror="this.style.display='none'">
-          <span>Ahmad Ridwan</span>
+      <div class="page-header">
+        <div>
+          <h1 class="page-title">Dashboard Sopir</h1>
+          <p class="page-sub">Semangat pagi! Berikut ringkasan tugas Anda hari ini.</p>
+        </div>
+        <div class="profile-chip">
+          <img src="../../../public/img/img-kurir.png" alt="Ahmad Ridwan" class="chip-avatar" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="chip-avatar-fallback" style="display:none"><i class="ti ti-user"></i></div>
+          <span class="chip-name">Ahmad Ridwan</span>
         </div>
       </div>
-    </header>
 
-    <!-- BODY GRID -->
-    <div class="body-grid">
+      <div class="body-grid">
 
-      <!-- LEFT COLUMN: Stats + Incentive -->
-      <div class="left-col">
-
-        <!-- STAT CARDS -->
-        <div class="stat-cards">
+        <div class="left-col">
           <div class="stat-card">
-            <div class="stat-top">
+            <div class="stat-info">
               <p class="stat-label">TOTAL PICKUP HARI INI</p>
-              <div class="stat-icon green"><i class="ti ti-building-warehouse"></i></div>
+              <p class="stat-value">24 <span class="stat-unit">Titik</span></p>
             </div>
-            <p class="stat-value">24 <span class="stat-unit">Titik</span></p>
+            <div class="stat-icon neutral"><i class="ti ti-box"></i></div>
           </div>
 
           <div class="stat-card">
-            <div class="stat-top">
+            <div class="stat-info">
               <p class="stat-label">SELESAI</p>
-              <div class="stat-icon green"><i class="ti ti-circle-check"></i></div>
+              <p class="stat-value">18 <span class="stat-unit">Titik</span></p>
             </div>
-            <p class="stat-value">18 <span class="stat-unit">Titik</span></p>
-            <div class="stat-bar">
-              <div class="stat-bar-fill" style="width: 75%"></div>
+            <div class="stat-icon green"><i class="ti ti-circle-check"></i></div>
+            <div class="stat-progress">
+              <div class="stat-bar" style="width:75%"></div>
             </div>
           </div>
 
           <div class="stat-card">
-            <div class="stat-top">
+            <div class="stat-info">
               <p class="stat-label">SISA TUGAS</p>
-              <div class="stat-icon red"><i class="ti ti-clipboard-x"></i></div>
+              <p class="stat-value red">06 <span class="stat-unit">Titik</span></p>
             </div>
-            <p class="stat-value red-val">06 <span class="stat-unit">Titik</span></p>
+            <div class="stat-icon red"><i class="ti ti-clipboard-x"></i></div>
+          </div>
+
+          <div class="bonus-card">
+            <div class="bonus-top">
+              <div class="bonus-icon"><i class="ti ti-rosette"></i></div>
+              <span class="bonus-level">Level 4</span>
+            </div>
+            <p class="bonus-title">Bonus Insentif</p>
+            <p class="bonus-desc">Selesaikan 6 titik lagi untuk mendapatkan bonus harian Rp 25.000</p>
+            <div class="bonus-bar-wrap">
+              <div class="bonus-bar" style="width:75%"></div>
+            </div>
           </div>
         </div>
 
-        <!-- BONUS INSENTIF -->
-        <div class="incentive-card">
-          <div class="incentive-header">
-            <div class="incentive-badge"><i class="ti ti-award"></i></div>
-            <span class="incentive-level">Level 4</span>
+        <div class="middle-col">
+          <div class="tugas-card">
+            <div class="tugas-header">
+              <p class="tugas-title"><i class="ti ti-map-pin"></i> Tugas Terdekat</p>
+              <span class="badge-berlangsung">Sedang Berlangsung</span>
+            </div>
+            <div class="map-area">
+              <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80" alt="Map" class="map-img">
+              <div class="map-overlay"></div>
+              <div class="map-route"></div>
+              <div class="map-pin pin-a"><i class="ti ti-map-pin-filled"></i></div>
+              <div class="map-pin pin-b"><i class="ti ti-map-pin-filled"></i></div>
+              <div class="map-jarak">
+                <p class="jarak-label">Estimasi Jarak</p>
+                <p class="jarak-val">1.2 km <span class="jarak-min">(4 min)</span></p>
+              </div>
+            </div>
           </div>
-          <h3 class="incentive-title">Bonus Insentif</h3>
-          <p class="incentive-desc">Selesaikan 6 titik lagi untuk mendapatkan bonus harian <strong>Rp 25.000</strong></p>
-          <div class="incentive-bar-bg">
-            <div class="incentive-bar-fill" style="width: 75%"></div>
+        </div>
+
+        <div class="right-col">
+          <div class="detail-card">
+            <div class="warga-row">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Warga" class="warga-avatar">
+              <div class="warga-info">
+                <p class="warga-name">Bapak Budi Santoso</p>
+                <p class="warga-addr"><i class="ti ti-map-pin"></i> Jl. Ijen No. 45, Malang</p>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <p class="detail-label">KATEGORI SAMPAH</p>
+              <div class="sampah-tags">
+                <span class="sampah-tag">Plastik (3kg)</span>
+                <span class="sampah-tag">Kertas (5kg)</span>
+              </div>
+            </div>
+
+            <div class="detail-section">
+              <p class="detail-label">CATATAN KHUSUS</p>
+              <p class="catatan-text">"Tolong dipencet bel pagar, sampah ada di teras depan samping pot bunga."</p>
+            </div>
+
+            <div class="detail-actions">
+              <button class="btn-hubungi"><i class="ti ti-phone"></i> Hubungi</button>
+              <button class="btn-setor" onclick="openModal()">
+                Setor Sampah <i class="ti ti-arrow-right"></i>
+              </button>
+            </div>
           </div>
         </div>
 
       </div>
 
-      <!-- RIGHT COLUMN: Tugas Terdekat -->
-      <div class="right-col">
-        <div class="tugas-card">
-          <div class="tugas-card-header">
-            <div class="tugas-title-row">
-              <i class="ti ti-map-pin-filled"></i>
-              <h2 class="tugas-card-title">Tugas Terdekat</h2>
+      <div class="antrean-section">
+        <div class="antrean-header">
+          <h2 class="antrean-title">Antrean Selanjutnya</h2>
+          <a class="lihat-semua" href="#">Lihat Semua Jadwal</a>
+        </div>
+        <div class="antrean-grid">
+          <div class="antrean-card">
+            <div class="antrean-top">
+              <span class="antrean-time">10:30 WIB</span>
+              <button class="btn-dots"><i class="ti ti-dots-vertical"></i></button>
             </div>
-            <span class="badge-live"><span class="live-dot"></span> Sedang Berlangsung</span>
+            <div class="antrean-user">
+              <div class="antrean-avatar">IA</div>
+              <div>
+                <p class="antrean-name">Ibu Amalia</p>
+                <p class="antrean-addr">Griya Shanta Blok J...</p>
+              </div>
+            </div>
           </div>
-
-          <div class="tugas-body">
-            <!-- MAP -->
-            <div class="map-wrap">
-              <div class="map-placeholder">
-                <div class="map-grid"></div>
-                <div class="map-route"></div>
-                <div class="map-pin-start"><i class="ti ti-map-pin"></i></div>
-                <div class="map-pin-end"><i class="ti ti-flag-filled"></i></div>
-                <div class="map-est">
-                  <p class="map-est-label">Estimasi Jarak</p>
-                  <p class="map-est-value">1.2 km <span class="map-est-sub">(4 min)</span></p>
-                </div>
+          <div class="antrean-card">
+            <div class="antrean-top">
+              <span class="antrean-time">11:15 WIB</span>
+              <button class="btn-dots"><i class="ti ti-dots-vertical"></i></button>
+            </div>
+            <div class="antrean-user">
+              <div class="antrean-avatar">RS</div>
+              <div>
+                <p class="antrean-name">Resto Sedap</p>
+                <p class="antrean-addr">Jl. Soekarno Hatta...</p>
               </div>
             </div>
-
-            <!-- DETAIL -->
-            <div class="tugas-detail">
-              <div class="customer-row">
-                <img src="https://i.pravatar.cc/48?img=68" alt="Bapak Budi" class="customer-avatar" onerror="this.style.display='none'">
-                <div>
-                  <h3 class="customer-name">Bapak Budi Santoso</h3>
-                  <p class="customer-addr"><i class="ti ti-map-pin"></i> Jl. Ijen No. 45, Malang</p>
-                </div>
-              </div>
-
-              <div class="detail-section">
-                <p class="detail-section-label">KATEGORI SAMPAH</p>
-                <div class="tag-row">
-                  <span class="tag">Plastik (3kg)</span>
-                  <span class="tag">Kertas (5kg)</span>
-                </div>
-              </div>
-
-              <div class="detail-section catatan">
-                <p class="detail-section-label">CATATAN KHUSUS</p>
-                <p class="catatan-text">"Tolong dipencet bel pagar, sampah ada di teras depan samping pot bunga."</p>
-              </div>
-
-              <div class="action-row">
-                <button class="btn-hubungi"><i class="ti ti-phone-call"></i> Hubungi</button>
-                <button class="btn-setor">Setor Sampah <i class="ti ti-arrow-right"></i></button>
+          </div>
+          <div class="antrean-card">
+            <div class="antrean-top">
+              <span class="antrean-time">13:00 WIB</span>
+              <button class="btn-dots"><i class="ti ti-dots-vertical"></i></button>
+            </div>
+            <div class="antrean-user">
+              <div class="antrean-avatar">KF</div>
+              <div>
+                <p class="antrean-name">Kopi Filosofi</p>
+                <p class="antrean-addr">Kawasan Matos...</p>
               </div>
             </div>
           </div>
@@ -163,81 +171,151 @@
 
     </div>
 
-    <!-- ANTREAN SELANJUTNYA -->
-    <section class="antrean-section">
-      <div class="antrean-header">
-        <h2 class="antrean-title">Antrean Selanjutnya</h2>
-        <a href="#" class="lihat-semua">Lihat Semua Jadwal</a>
+    <div class="modal-overlay" id="modal" onclick="closeModalOverlay(event)">
+      <div class="modal-box">
+        <div class="modal-header">
+          <div>
+            <h2 class="modal-title">Konfirmasi Transaksi</h2>
+            <p class="modal-sub">Masukkan timbangan fisik yang diterima</p>
+          </div>
+          <button class="modal-close" onclick="closeModal()"><i class="ti ti-x"></i></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="modal-left">
+            <div class="modal-map-area">
+              <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80" alt="Map" class="map-img">
+              <div class="map-overlay"></div>
+              <div class="map-pin pin-top"><i class="ti ti-map-pin-filled"></i></div>
+              <div class="map-pin pin-bottom"><i class="ti ti-map-pin-filled"></i></div>
+              <div class="map-address">
+                <i class="ti ti-map-pin"></i> Jl. Ijen No. 12, Klojen, Malang
+              </div>
+            </div>
+            <div class="modal-warga-row">
+              <div>
+                <p class="warga-label">NAMA WARGA</p>
+                <p class="warga-name-modal">Budi Santoso</p>
+              </div>
+              <div class="warga-actions">
+                <button class="btn-contact phone"><i class="ti ti-phone"></i></button>
+                <button class="btn-contact chat"><i class="ti ti-message-circle"></i></button>
+              </div>
+            </div>
+
+            <div class="estimasi-card">
+              <p class="estimasi-title"><i class="ti ti-clipboard-list"></i> Estimasi Permintaan</p>
+              <div class="estimasi-grid">
+                <div class="estimasi-item">
+                  <i class="ti ti-leaf"></i>
+                  <p class="est-label">Organik</p>
+                  <p class="est-value">~5 kg</p>
+                </div>
+                <div class="estimasi-item">
+                  <i class="ti ti-recycle"></i>
+                  <p class="est-label">Plastik</p>
+                  <p class="est-value">~2 kg</p>
+                </div>
+                <div class="estimasi-item">
+                  <i class="ti ti-file"></i>
+                  <p class="est-label">Kertas</p>
+                  <p class="est-value">~1 kg</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="poin-card">
+              <div class="poin-icon"><i class="ti ti-star-filled"></i></div>
+              <div>
+                <p class="poin-title">Potensi Poin Kamu</p>
+                <p class="poin-desc">+150 XP & Rp 2.500 Insentif</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-right">
+            <h3 class="form-title">Input Berat Aktual</h3>
+            <p class="form-sub">Masukkan timbangan fisik yang diterima</p>
+
+            <div class="field-group">
+              <label class="field-label">Plastik (kg)</label>
+              <div class="field-wrap">
+                <input type="number" step="0.1" min="0" placeholder="0.0" class="field-input">
+                <i class="ti ti-hourglass field-icon"></i>
+              </div>
+            </div>
+            <div class="field-group">
+              <label class="field-label">Kertas (kg)</label>
+              <div class="field-wrap">
+                <input type="number" step="0.1" min="0" placeholder="0.0" class="field-input">
+                <i class="ti ti-hourglass field-icon"></i>
+              </div>
+            </div>
+            <div class="field-group">
+              <label class="field-label">Logam (kg)</label>
+              <div class="field-wrap">
+                <input type="number" step="0.1" min="0" placeholder="0.0" class="field-input">
+                <i class="ti ti-hourglass field-icon"></i>
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label class="field-label">Upload Foto Bukti</label>
+              <label class="upload-area">
+                <input type="file" accept="image/*" style="display:none">
+                <i class="ti ti-camera-plus upload-icon"></i>
+                <p class="upload-label">Ambil foto timbangan & sampah</p>
+              </label>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn-konfirmasi" onclick="closeModal()">
+                Konfirmasi Selesai <i class="ti ti-circle-check"></i>
+              </button>
+              <button class="btn-batal" onclick="closeModal()">Batal Pickup</button>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
 
-      <div class="antrean-grid">
+    <script>
+      fetch('../component/NavbarKurir.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('navbar').innerHTML = html;
+          const page = window.location.pathname;
+          const map = {
+            'Dashboard':   'nav-dashboard',
+            'TugasPage':   'nav-tugas',
+            'RiwayatPage': 'nav-riwayat',
+            'ProfilPage':  'nav-profil',
+          };
+          for (const [key, id] of Object.entries(map)) {
+            if (page.includes(key)) {
+              document.getElementById(id)?.classList.add('active');
+              break;
+            }
+          }
+        });
 
-        <div class="antrean-card">
-          <div class="antrean-card-top">
-            <span class="antrean-time">10:30 WIB</span>
-            <button class="antrean-more"><i class="ti ti-dots-vertical"></i></button>
-          </div>
-          <div class="antrean-info">
-            <div class="antrean-avatar green-av">IA</div>
-            <div>
-              <p class="antrean-name">Ibu Amalia</p>
-              <p class="antrean-addr">Griya Shanta Blok J...</p>
-            </div>
-          </div>
-        </div>
+      function openModal() {
+        document.getElementById('modal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
 
-        <div class="antrean-card">
-          <div class="antrean-card-top">
-            <span class="antrean-time">11:15 WIB</span>
-            <button class="antrean-more"><i class="ti ti-dots-vertical"></i></button>
-          </div>
-          <div class="antrean-info">
-            <div class="antrean-avatar teal-av">RS</div>
-            <div>
-              <p class="antrean-name">Resto Sedap</p>
-              <p class="antrean-addr">Jl. Soekarno Hatta...</p>
-            </div>
-          </div>
-        </div>
+      function closeModal() {
+        document.getElementById('modal').classList.remove('active');
+        document.body.style.overflow = '';
+      }
 
-        <div class="antrean-card">
-          <div class="antrean-card-top">
-            <span class="antrean-time">13:00 WIB</span>
-            <button class="antrean-more"><i class="ti ti-dots-vertical"></i></button>
-          </div>
-          <div class="antrean-info">
-            <div class="antrean-avatar brown-av">KF</div>
-            <div>
-              <p class="antrean-name">Kopi Filosofi</p>
-              <p class="antrean-addr">Kawasan Matos...</p>
-            </div>
-          </div>
-        </div>
+      function closeModalOverlay(e) {
+        if (e.target === document.getElementById('modal')) closeModal();
+      }
 
-      </div>
-    </section>
-
-  </main>
-
-  <!-- BOTTOM NAV (mobile) -->
-  <nav class="bottom-nav">
-    <a href="#" class="bnav-item active">
-      <i class="ti ti-layout-dashboard"></i>
-      <span>Dashboard</span>
-    </a>
-    <a href="#" class="bnav-item">
-      <i class="ti ti-truck-delivery"></i>
-      <span>Tugas</span>
-    </a>
-    <a href="#" class="bnav-item">
-      <i class="ti ti-clipboard-list"></i>
-      <span>Riwayat</span>
-    </a>
-    <a href="#" class="bnav-item">
-      <i class="ti ti-user-circle"></i>
-      <span>Profil</span>
-    </a>
-  </nav>
-
-</body>
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeModal();
+      });
+    </script>
+  </body>
 </html>
